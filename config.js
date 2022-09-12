@@ -35,7 +35,6 @@ config.adapter='sqlite';
 config.candleWriter={enabled:true,adapter:'sqlite'};
 
 config.adviceLogger={enabled:true};
-config.backtestResultExporter={enabled:true};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING BACKTESTING
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
