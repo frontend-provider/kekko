@@ -1,4 +1,4 @@
-enabled=true
+enabled=false
 candleSize = 15
 historySize = 1
 [talib]
