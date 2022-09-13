@@ -71,7 +71,7 @@ this package is required for building Debian packages.
 apt install build-essential
 ```
 
-NVM Node Version Manager:
+##### NVM Node Version Manager:
 nvm allows you to quickly install and use different versions of node via the command line.
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -85,43 +85,30 @@ Gekko-M4
 clone project and start learn
 ```
 git clone https://github.com/universalbit-dev/gekko-m4.git
-
 ```
 
-Install Node-Gyp :
+##### Install Node-Gyp :
 node-gyp is a cross-platform command-line tool written in Node.js for compiling native addon modules for Node.js. [node-gyp](https://www.npmjs.com/package/node-gyp)
 ```
 npm i node-gyp -g
 
 ```
-
-Installation of Gekko-M4 from source: eternal development
-
+### Installation of Gekko-M4 from source: eternal development
 ```
 npm i --build-from-source
 
 ```
-
-Indicators and Database:
-the indicators are used to create a buying and selling strategy, there are hundreds and each with multiple functions. in backtest mode it is possible to understand some syntax or runtime errors
-
-Databse Sqlite and Sqlite3
-labeled as SQL database engine [sqlite npm](https://www.npmjs.com/package/sqlite)
-
-Sqlite3 module required [sqlite3](https://www.npmjs.com/package/sqlite3)
-
+Tulind Indicators : It provides 100+ technical analysis indicator functions [tulind npm](https://www.npmjs.com/package/tulind)
+Database Sqlite and Sqlite3 [sqlite npm](https://www.npmjs.com/package/sqlite)
 ```
 npm i tulind --save
 npm i sqlite3 --save
 ```
 exchange directory: /exchange
-
 ```
 npm i 
-
 ```
 Thanks developers.
-
 
 ### Start Application using Pm2
 enabled [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
