@@ -95,7 +95,7 @@ enabled [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluste
 
 ```
 npm i pm2 -g
-pm2 start gekko-m4.js
+pm2 start gekko-m4.js -i max
 ```
 Front-end:
 
