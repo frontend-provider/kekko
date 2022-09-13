@@ -98,12 +98,14 @@ npm i node-gyp -g
 npm i --build-from-source
 
 ```
-Tulind Indicators : It provides 100+ technical analysis indicator functions [tulind npm](https://www.npmjs.com/package/tulind)
-Database Sqlite and Sqlite3 [sqlite npm](https://www.npmjs.com/package/sqlite)
+-Tulind Indicators : It provides 100+ technical analysis indicator functions [tulind npm](https://www.npmjs.com/package/tulind)
+
+-Database Sqlite and Sqlite3 [sqlite npm](https://www.npmjs.com/package/sqlite)
 ```
 npm i tulind --save
 npm i sqlite3 --save
 ```
+#### Exchanges: 
 exchange directory: /exchange
 ```
 npm i 
