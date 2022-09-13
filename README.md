@@ -126,30 +126,10 @@ npm i sqlite3 --save
 exchange directory: /exchange
 
 ```
-npm i --build-from-source
-npm i sqlite3 --save
+npm i 
+
 ```
 Thanks developers.
-
-##### Some note: a working example
-
-
-* Webserver [Nginx](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/webserver.md)
-
-
-* Configure [IP](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/ip.md)
-
-
-* Exchange [API](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/api.md)
- 
-##### Edit this files for configure Exchange API
-
-*[SECRET-api-keys.json](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/SECRET-api-keys.json) 
-
-*[general.toml](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/config/general.toml)
-
-*[config.js](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/config.js)
-
 
 
 ### Start Application using Pm2
@@ -158,6 +138,12 @@ enabled [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluste
 npm i pm2 -g
 pm2 start gekko-m4.js
 ```
+Front-end:
+
+URL: http://localhost:3008
+
+
+
 ##### [Pm2 Process Manager](https://pm2.keymetrics.io/)
 
 
@@ -182,6 +168,32 @@ directory: web/vue/statics
 ```
 tar –xvzf crypto_icons.tar.gz
 ```
+
+
+
+##### Some note: examples
+
+
+* Webserver [Nginx](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/webserver.md)
+
+
+* Configure [IP](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/ip.md)
+
+
+* Exchange [API](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/api.md)
+ 
+##### Edit this files for configure Exchange API
+
+*[SECRET-api-keys.json](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/SECRET-api-keys.json) 
+
+*[general.toml](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/config/general.toml)
+
+*[config.js](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/config.js)
+
+
+
+
+
 
 Note:
 There are no easy gains
