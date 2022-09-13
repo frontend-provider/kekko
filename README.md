@@ -104,7 +104,7 @@ Gekko Gordon UI edition  Author:[Klemens Wittig](https://github.com/H256/gekko-q
 
 -----
 
-### BackTest : extract market data and start using the backtest mode
+### BackTest : extract market data and start using backtest mode
 ```
 tar -xvzf history.tar.gz
 ```
