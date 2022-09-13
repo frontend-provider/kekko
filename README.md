@@ -142,6 +142,17 @@ Front-end:
 
 URL: http://localhost:3008
 
+-----
+
+### BackTest : extract market data
+ 
+
+```
+tar -xvzf history.tar.gz
+```
+
+
+
 
 
 ##### [Pm2 Process Manager](https://pm2.keymetrics.io/)
