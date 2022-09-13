@@ -138,7 +138,7 @@ tar –xvzf crypto_icons.tar.gz
 
 * Webserver [Nginx](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/webserver.md)
 * Configure [IP](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/ip.md)
-* Exchange [API](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/api.md)
+* Exchange  [API](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/api.md)
 
 Note:
 There are no easy gains
