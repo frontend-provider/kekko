@@ -134,6 +134,8 @@ Thanks developers.
 
 ### Start Application using Pm2
 enabled [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
+##### [Pm2 Process Manager](https://pm2.keymetrics.io/)
+
 ```
 npm i pm2 -g
 pm2 start gekko-m4.js
@@ -150,12 +152,6 @@ URL: http://localhost:3008
 ```
 tar -xvzf history.tar.gz
 ```
-
-
-
-
-
-##### [Pm2 Process Manager](https://pm2.keymetrics.io/)
 
 
 #### Standard node commands:
