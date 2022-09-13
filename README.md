@@ -124,7 +124,7 @@ URL: http://localhost:3008
 
 -----
 
-### BackTest : extract market data to start using the backtest mode
+### BackTest : extract market data and start using the backtest mode
 ```
 tar -xvzf history.tar.gz
 ```
@@ -145,17 +145,14 @@ node gekko -c config.js
 
 ##### Crypto Icons
 
-To extract archive file Crypto [Icons](https://cryptoicons.io/](https://cryptoicons.net/icons.php) 
+extract archive file crypto-[icons](https://cryptoicons.net/icons.php)
 directory: web/vue/statics
 
 ```
 tar –xvzf crypto_icons.tar.gz
 ```
 
-
-
 ##### Some note: examples
-
 
 * Webserver [Nginx](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/webserver.md)
 
