@@ -102,7 +102,6 @@ Front-end:
 URL: http://localhost:3008
 Gekko Gordon UI edition  Author:[Klemens Wittig](https://github.com/H256/gekko-quasar-ui)
 
-
 -----
 
 ### BackTest : extract market data and start using the backtest mode
@@ -110,6 +109,13 @@ Gekko Gordon UI edition  Author:[Klemens Wittig](https://github.com/H256/gekko-q
 tar -xvzf history.tar.gz
 ```
 
+Gekko Support Multiple Exchange,Backtest and Realtime mode.
+
+[ Backtest mode ] simulate strategy ,buy sell with market data exchange.
+[ Realtime mode ] trade on market exchange.   
+
+On the crypto road : probably not necessary but the project looks interesting
+ccxt-js library: a JavaScript / Python / PHP library for cryptocurrency trading and e-commerce with support for many bitcoin/ether/altcoin exchange markets and merchant APIs. [ccxt](https://readthedocs.org/projects/ccxt/)
 
 #### Standard node commands:
 First Run User Interface:
@@ -123,39 +129,19 @@ node gekko -c config.js
 ```
 -----
 
-
 ##### Crypto Icons
-
 extract archive file crypto-[icons](https://cryptoicons.net/icons.php)
 directory: web/vue/statics
-
 ```
 tar –xvzf crypto_icons.tar.gz
 ```
 
-##### Some note: examples
-
 * Webserver [Nginx](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/webserver.md)
-
-
 * Configure [IP](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/ip.md)
-
-
 * Exchange [API](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/api.md)
- 
-##### Edit this files for configure Exchange API
-
-*[SECRET-api-keys.json](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/SECRET-api-keys.json) 
-
-*[general.toml](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/config/general.toml)
-
-*[config.js](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/config.js)
-
-
-
 
 ##### [Quasar](https://v0-16.quasar-framework.org/)
-* graphic components to be updated and improved.
+* graphic components.
 
 ##### [Nodejs 12](https://nodejs.org/docs/latest-v12.x/api/)
 * update and bug fixes
@@ -175,17 +161,8 @@ This strategy intended as "low freq trade",buy-sell in the event of a sudden ris
 ##### Offline Documentation: [doc](https://universalbit.it/blockchain/shared-files/1093/docs.tar.gz)
 
 
-Gekko Support Multiple Exchange,Backtest and Realtime mode.
-
-[ Backtest mode ] simulate your buy sell strategy with market data exchange.
-[ Realtime mode ] trade on market exchange.      
-
-On the crypto road : probably not necessary but the project looks interesting
-ccxt-js library: a JavaScript / Python / PHP library for cryptocurrency trading and e-commerce with support for many bitcoin/ether/altcoin exchange markets and merchant APIs. [ccxt](https://readthedocs.org/projects/ccxt/)
-
 Logs Folder:
 log files are written to this folder
-
 ```
 tail -f logs/log_filename.log
 ```
