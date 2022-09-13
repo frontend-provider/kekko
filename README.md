@@ -28,35 +28,12 @@ Gekko-M4 The MIT License (MIT) Copyright (c) 2022 UniversalBit Blockchain This S
 #### Targets:
 improve graphic and correct some errors, enhance the application by solving some vulnerabilities.
 
-
-##### [Quasar](https://v0-16.quasar-framework.org/)
-* graphic components to be updated and improved.
-
-##### [Nodejs 12](https://nodejs.org/docs/latest-v12.x/api/)
-* update and bug fixes
-
 -----
-
-
-
-
-##### it is not possible to obtain easy earnings
-
-
-
 During these months (from June 2021) I am committed to understanding how this application could work and there is still a lot of work to be done. this application is not intended as a quick profit use.
 
 
 ##### Gekko-M4 [Buy/Sell]
 ##### help to improve the UniversalBit Blockchain Project
-
-
-
-
-
-
-
-
 ##### Donation Address : LTC LWgAMAXEbcMienXHqzmSn8Gg4A6Q6RywWt
 
 
@@ -177,7 +154,11 @@ tar –xvzf crypto_icons.tar.gz
 
 
 
+##### [Quasar](https://v0-16.quasar-framework.org/)
+* graphic components to be updated and improved.
 
+##### [Nodejs 12](https://nodejs.org/docs/latest-v12.x/api/)
+* update and bug fixes
 
 Note:
 There are no easy gains
@@ -194,13 +175,13 @@ This strategy intended as "low freq trade",buy-sell in the event of a sudden ris
 ##### Offline Documentation: [doc](https://universalbit.it/blockchain/shared-files/1093/docs.tar.gz)
 
 
-Gekko Support Multiple Exchange,Watchers and PaperTrader mode.
-Backtest simulate and debug your strategy.
-      
+Gekko Support Multiple Exchange,Backtest and Realtime mode.
+
+[ Backtest mode ] simulate your buy sell strategy with market data exchange.
+[ Realtime mode ] trade on market exchange.      
 
 On the crypto road : probably not necessary but the project looks interesting
 ccxt-js library: a JavaScript / Python / PHP library for cryptocurrency trading and e-commerce with support for many bitcoin/ether/altcoin exchange markets and merchant APIs. [ccxt](https://readthedocs.org/projects/ccxt/)
-
 
 Logs Folder:
 log files are written to this folder
