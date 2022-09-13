@@ -137,9 +137,7 @@ URL: http://localhost:3008
 
 -----
 
-### BackTest : extract market data
- 
-
+### BackTest : extract market data to start using the backtest mode
 ```
 tar -xvzf history.tar.gz
 ```
