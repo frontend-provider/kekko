@@ -140,12 +140,6 @@ tar –xvzf crypto_icons.tar.gz
 * Configure [IP](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/ip.md)
 * Exchange [API](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/src/master/docs/api.md)
 
-##### [Quasar](https://v0-16.quasar-framework.org/)
-* graphic components.
-
-##### [Nodejs 12](https://nodejs.org/docs/latest-v12.x/api/)
-* update and bug fixes
-
 Note:
 There are no easy gains
 
@@ -162,9 +156,10 @@ This strategy intended as "low freq trade",buy-sell in the event of a sudden ris
 
 
 Logs Folder:
-log files are written to this folder
+exmaple log files written to this folder : /logs
 ```
-tail -f logs/log_filename.log
+tail -f logs/2022-00-00-00-00-watcher-8032292293309007.log
+tail -f logs/2022-00-00-00-00-tradebot-04218329122948088.log
 ```
 
 [Legal context](https://www.europarl.europa.eu/cmsdata/150761/TAX3%20Study%20on%20cryptocurrencies%20and%20blockchain.pdf)
