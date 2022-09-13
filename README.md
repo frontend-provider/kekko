@@ -69,28 +69,20 @@ this package is required for building Debian packages.
 
 ```
 apt install build-essential
-
 ```
 
 NVM Node Version Manager:
+nvm allows you to quickly install and use different versions of node via the command line.
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
-```
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-```
-
 ##### Installation NodeJs version 12
-
 ```
 nvm install 12
 ```
 
 Gekko-M4
 clone project and start learn
-
 ```
 git clone https://github.com/universalbit-dev/gekko-m4.git
 
@@ -98,7 +90,6 @@ git clone https://github.com/universalbit-dev/gekko-m4.git
 
 Install Node-Gyp :
 node-gyp is a cross-platform command-line tool written in Node.js for compiling native addon modules for Node.js. [node-gyp](https://www.npmjs.com/package/node-gyp)
-
 ```
 npm i node-gyp -g
 
