@@ -145,7 +145,7 @@ node gekko -c config.js
 
 ##### Crypto Icons
 
-To extract archive file [Crypto Icons](https://cryptoicons.io/](https://cryptoicons.net/icons.php) 
+To extract archive file Crypto [Icons](https://cryptoicons.io/](https://cryptoicons.net/icons.php) 
 directory: web/vue/statics
 
 ```
