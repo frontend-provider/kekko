@@ -30,7 +30,7 @@
     "poloniex-node-api": "^2.x",
     "therocktrading": "^0.9.0",
     "lodash": "^4.17.5",
-    "moment": "^2.22.1",
+    "moment": "^2.22.2",
     "request-promise": "^4.2.2",
     "retry": "^0.12.0",
     "sqlite": "^4.0.23",
