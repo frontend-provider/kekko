@@ -103,10 +103,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://universalbit.it:3000/universalbit-blockchain/Gekko-M4"
+    "url": "https://github.com/universalbit-dev/gekko-m4"
   },
   "bugs": {
-    "url": "https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/issues"
+    "url": "https://github.com/universalbit-dev/gekko-m4/issues"
   },
   "homepage": "",
   "main": "gekko.js",
