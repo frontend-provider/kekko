@@ -1,24 +1,77 @@
+const createWSConnection = require ("websocket-polyfill");
 const _ = require('lodash');
 const moment = require('moment');
 const retry = require('../exchangeUtils').retry;
 const fs=require('fs');
 const file=require('file-system');
 var exmo = require('exmo-api');
-
 const CryptoJS = require("crypto-js");
 const querystring = require('querystring');
 const request = require('request');
+const EXMO_WS_BASE_URL = `wss://ws-api.exmo.com:443/v1`;
+const EXMO_WS_PUBLIC_URL = `${EXMO_WS_BASE_URL}/public`;
+const EXMO_WS_PRIVATE_URL = `${EXMO_WS_BASE_URL}/private`;
+
+function createExmoWSConnection(url, messages) {
+  const socket = createWSConnection(url);
+  const onMessage = (event) => console.log('message:', event);
+  const onClose = (event) => console.log('connection closed:', event);
+  const onError = (error) => console.log('connection error:', error);
+  const onInitialize = () => {
+    console.log('connection opened');
+
+    for (let message of messages) {
+      console.log('sending:', message);
+      socket.send(message);
+    }
+  };
+
+  socket.on('open', onInitialize);
+  socket.on("message", onMessage);
+  socket.on('close', onClose);
+  socket.on('error', onError);
+}
+
+function connectExmoWSPublicApi() {
+  const data = [
+    '{"id":1,"method":"subscribe","topics":["spot/trades:LTC_BTC","spot/ticker:LTC_BTC"]}',
+  ];
+
+  createExmoWSConnection(EXMO_WS_PUBLIC_URL, data);
+}
+
+function connectExmoWSPrivateApi(apiKey) {
+//READ_API_KEY
+  //const apiKey ='READ_SECRET_KEY_HERE';
+//READ_SECRET_KEY
+  //const secretKey ='READ_SECRET_KEY_HERE;
+  this.secret = config.secret;
+  this.key = config.key;
+  const nonce = Date.now();
+  const sign = CryptoJS.HmacSHA512(apiKey + nonce, secretKey).toString(CryptoJS.enc.Base64);
+  const data = [
+    `{"id":1,"method":"login","api_key":"${apiKey}","sign":"${sign}","nonce":${nonce}}`,
+    '{"id":2,"method":"subscribe","topics":["spot/orders","spot/user_trades"]}',
+  ];
+
+  createExmoWSConnection(EXMO_WS_PRIVATE_URL, data);
+}
+
+module.exports = {
+  connectExmoWSPublicApi,
+  connectExmoWSPrivateApi,
+};
 
 API_URL='https://api.exmo.com/v1/';
 
 const marketData = require('./exmo-markets.json');
 
-
+//API_KEY
 const Trader = function(config) {
   _.bindAll(this);
-  //this.key="";
-  //this.secret="";
-  
+  this.key=config.key;
+//API_SECRET
+  this.secret=config.secret;
   if(_.isObject(config)) {
       if(_.isString(config.key)) this.key = config.key;
       if(_.isString(config.secret)) this.secret = config.secret;
@@ -26,12 +79,9 @@ const Trader = function(config) {
       this.asset = config.asset;
       this.pair = this.asset + '_' + this.currency;
   };
-
   this.name = 'Exmo';
   this.nonce = new Date() * 1000;
 }
-
-
 const recoverableErrors = [
   'SOCKETTIMEDOUT',
   'TIMEDOUT',
