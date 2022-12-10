@@ -42,11 +42,10 @@ function connectExmoWSPublicApi() {
 
 function connectExmoWSPrivateApi(apiKey) {
 //READ_API_KEY
-  //const apiKey ='READ_SECRET_KEY_HERE';
+//  const apiKey ='READ_API_KEY';
 //READ_SECRET_KEY
-  //const secretKey ='READ_SECRET_KEY_HERE;
-  this.secret = config.secret;
-  this.key = config.key;
+  const secretKey ='READ_API_SECRET';
+
   const nonce = Date.now();
   const sign = CryptoJS.HmacSHA512(apiKey + nonce, secretKey).toString(CryptoJS.enc.Base64);
   const data = [
@@ -69,9 +68,10 @@ const marketData = require('./exmo-markets.json');
 //API_KEY
 const Trader = function(config) {
   _.bindAll(this);
-  this.key=config.key;
+  this.key="API_KEY";
 //API_SECRET
-  this.secret=config.secret;
+  this.secret="API_SECRET_HERE";
+
   if(_.isObject(config)) {
       if(_.isString(config.key)) this.key = config.key;
       if(_.isString(config.secret)) this.secret = config.secret;
@@ -79,9 +79,12 @@ const Trader = function(config) {
       this.asset = config.asset;
       this.pair = this.asset + '_' + this.currency;
   };
+
   this.name = 'Exmo';
   this.nonce = new Date() * 1000;
 }
+
+
 const recoverableErrors = [
   'SOCKETTIMEDOUT',
   'TIMEDOUT',
