@@ -52,3 +52,7 @@ Trader.prototype.getTrades=function(since,callback,descending){const processResp
 path+='?limit_trades=2000';const handler=cb=>this.bitfinex.trades(path,this.handleResponse('getTrades',cb));retry(null,handler,processResponse);}
 Trader.getCapabilities=function(){return{name:'Bitfinex',slug:'bitfinex',currencies:marketData.currencies,assets:marketData.assets,markets:marketData.markets,requires:['key','secret'],tid:'tid',providesFullHistory:true,providesHistory:'date',tradable:true,forceReorderDelay:true,gekkoBroker:0.6};}
 module.exports=Trader;
+/*
+The MIT License (MIT)
+Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
+*/
