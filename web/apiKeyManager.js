@@ -1,6 +1,15 @@
-const fs= require('fs');const file = require('file-system');const _=require('lodash');const cache=require('./state/cache');const broadcast=cache.get('broadcast');const apiKeysFile=__dirname+'/../SECRET-api-keys.json';const noApiKeysFile=!fs.existsSync(apiKeysFile);if(noApiKeysFile)
-fs.writeFileSync(apiKeysFile,JSON.stringify({}));const apiKeys=JSON.parse(fs.readFileSync(apiKeysFile,'utf8'));module.exports={get:()=>_.keys(apiKeys),add:(exchange,props)=>{apiKeys[exchange]=props;fs.writeFileSync(apiKeysFile,JSON.stringify(apiKeys));broadcast({type:'apiKeys',exchanges:_.keys(apiKeys)});},remove:exchange=>{if(!apiKeys[exchange])
+const fs= require('fs');
+const file = require('file-system');
+const _=require('lodash');
+const cache=require('./state/cache');
+const broadcast=cache.get('broadcast');
+const apiKeysFile=__dirname+'/../SECRET-api-keys.json';
+const noApiKeysFile=!fs.existsSync(apiKeysFile);if(noApiKeysFile)
+fs.writeFileSync(apiKeysFile,JSON.stringify({}));
+const apiKeys=JSON.parse(fs.readFileSync(apiKeysFile,'utf8'));module.exports={get:()=>_.keys(apiKeys),add:(exchange,props)=>{apiKeys[exchange]=props;fs.writeFileSync(apiKeysFile,JSON.stringify(apiKeys));broadcast({type:'apiKeys',exchanges:_.keys(apiKeys)});},remove:exchange=>{if(!apiKeys[exchange])
 return;delete apiKeys[exchange];fs.writeFileSync(apiKeysFile,JSON.stringify(apiKeys));broadcast({type:'apiKeys',exchanges:_.keys(apiKeys)});},_getApiKeyPair:key=>apiKeys[key]}
+const WebSocketClient = require('websocket').client;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
