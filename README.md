@@ -85,7 +85,8 @@ npm i sqlite3 --save
 #### Exchanges: 
 exchange directory: /exchange
 ```
-npm i 
+cd /exchange
+npm i --build-from-source
 ```
 Thanks developers.
 
