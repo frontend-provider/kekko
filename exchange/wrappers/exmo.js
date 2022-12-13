@@ -292,3 +292,7 @@ Trader.getCapabilities = function () {
 }
 
 module.exports = Trader;
+/*
+The MIT License (MIT)
+Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
+*/
