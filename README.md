@@ -98,7 +98,11 @@ enabled [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluste
 ```
 npm i pm2 -g
 pm2 start gekko-m4.js
+
+pm2 monit
 ```
+![Pm2 Monit](https://github.com/universalbit-dev/gekko-m4/blob/master/2022-12-13%2002-58-41-002.png)
+
 Front-end:
 
 URL: http://localhost:3007
