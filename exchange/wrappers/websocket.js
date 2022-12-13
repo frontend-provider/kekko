@@ -6,8 +6,8 @@ var server = http.createServer(function(request, response) {
     response.writeHead(404);
     response.end();
 });
-server.listen(3008, function() {
-    console.log((new Date()) + ' Server is listening on port 3008');
+server.listen(3010, function() {
+    console.log((new Date()) + ' Server is listening on port 3010');
 });
 
 wsServer = new WebSocketServer({
