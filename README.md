@@ -62,6 +62,7 @@ Gekko-M4
 clone project and start learn
 ```
 git clone https://github.com/universalbit-dev/gekko-m4.git
+cd gekko-m4
 ```
 
 ##### Install Node-Gyp :
