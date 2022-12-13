@@ -30,4 +30,4 @@ client.on('connect', function(connection) {
     sendNumber();
 });
 
-client.connect('ws://localhost:3008/', 'echo-protocol');
+client.connect('ws://localhost:3007/', 'echo-protocol');
