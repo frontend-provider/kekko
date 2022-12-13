@@ -96,11 +96,11 @@ enabled [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluste
 
 ```
 npm i pm2 -g
-pm2 start gekko-m4.js -i max
+pm2 start gekko-m4.js
 ```
 Front-end:
 
-URL: http://localhost:3008
+URL: http://localhost:3007
 Gekko Gordon UI edition  Author:[Klemens Wittig](https://github.com/H256/gekko-quasar-ui)
 
 -----
