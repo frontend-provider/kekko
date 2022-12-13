@@ -92,7 +92,7 @@ npm i --build-from-source
 Thanks developers.
 
 ### Start Application using Pm2
-enabled [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
+enable [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
 ##### [Pm2 Process Manager](https://pm2.keymetrics.io/)
 
 ```
