@@ -1,29 +1,17 @@
 # Gekko-M4
 #### unlike easy gains
-
-
 #### Gekko is a framework for develop your own cryptocurrency trading strategy.
 
-
-Gekko 
-The MIT License (MIT) Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
-
-#If Gekko helped you in any way: 
-(BTC) 13r1jyivitShUiv9FJvjLH7Nh1ZZptumwW
-
-
+This software is for educational purposes only. Do not risk money which
+you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS
+AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.
 
 -----
 
+#### Gekko 
+The MIT License (MIT) Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
 
-
-##### Gekko-M4
-
+#### Gekko-M4
 Gekko-M4 The MIT License (MIT) Copyright (c) 2022 UniversalBit Blockchain This Software unlike easy gains
 #### Targets:
 improve graphic and correct some errors, enhance the application by solving some vulnerabilities.
@@ -35,9 +23,6 @@ During these months (from June 2021) I am committed to understanding how this ap
 ##### Gekko-M4 [Buy/Sell]
 ##### help to improve the UniversalBit Blockchain Project
 ##### Donation Address : LTC LWgAMAXEbcMienXHqzmSn8Gg4A6Q6RywWt
-
-
-
 [introduction](https://universalbit.it/blockchain/gekko-m4/)
 
 
