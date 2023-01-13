@@ -2,9 +2,9 @@
 #### unlike easy gains
 #### Gekko is a framework for develop your own cryptocurrency trading strategy.
 
-This software is for educational purposes only. Do not risk money which
+***This software is for educational purposes only. Do not risk money which
 you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS
-AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.
+AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.***
 
 -----
 
