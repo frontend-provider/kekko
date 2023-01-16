@@ -25,7 +25,7 @@ nano /web/baseUIconfig.js
 ```
 
 ```
-const CONFIG={headless:true,api:{host:'192.168.1.146',port:3006,timeout:12000},ui:{ssl:false,host:'192.168.1.146',port:3006,path:'/'}}
+const CONFIG={headless:true,api:{host:'192.168.1.146',port:3007,timeout:12000},ui:{ssl:false,host:'192.168.1.146',port:3007,path:'/'}}
 if(typeof window==='undefined')
 module.exports=CONFIG;
 else
@@ -55,13 +55,13 @@ const CONFIG = {
   headless: true,
   api: {
     host: "192.168.1.146",
-    port: 3006,
+    port: 3007,
     timeout: 60000 // 10 minutes
   },
   ui: {
     ssl: false,
     host: "192.168.1.146",
-    port: 3006,
+    port: 3007,
     path: "/"
   },
   adapter: "sqlite",
@@ -100,15 +100,7 @@ Documentation:
 start the application via terminal commands:
 
 ```
-node gekko -c config.js --ui
-
-```
-
-or
-
-```
-pm2 start gekko-m4-nodejs_v12-ccxt.js
-
+pm2 start gekko-m4.js
 ```
 
 
