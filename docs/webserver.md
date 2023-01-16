@@ -12,7 +12,7 @@ return 301 https://$server_name$request_uri;
 }
 
 upstream websocket {
-    server 192.168.1.146:3006;
+    server 192.168.1.146:3007;
 }
 
 server {
