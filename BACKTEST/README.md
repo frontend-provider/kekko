@@ -23,7 +23,7 @@ nvm install 12
 ```
 
 Install Node-Gyp :
-node-gyp is a cross-platform command-line tool written in Node.js for compiling native addon modules for Node.js.
+node-gyp is a cross-platform command-line tool written in js for compiling native addon modules for Node.js.
 
 ```
 npm i node-gyp -g
