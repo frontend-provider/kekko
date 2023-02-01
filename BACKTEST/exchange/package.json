@@ -1,0 +1,40 @@
+{
+  "name": "gekko-broker",
+  "version": "0.6.8",
+  "description": "Gekko's order execution library for bitcoin & crypto exchanges",
+  "main": "gekkoBroker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/askmike/gekko"
+  },
+  "keywords": [
+    "crypto",
+    "EDU",
+    "exchange",
+    "execution",
+    "trade"
+  ],
+  "author": "Mike van Rossum <mike@mvr.me>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.0",
+    "bfx-hf-indicators": "^2.0.8",
+    "bitfinex-api-node": "^2.0.0-beta",
+    "bitx": "^1.5.0",
+    "bluebird": "^3.5.1",
+    "co": "^4.6.0",
+    "coinfalcon": "^1.0.3",
+    "crypto-js": "^3.1.9-1",
+    "lodash": "^4.17.5",
+    "moment": "^2.22.1",
+    "request-promise": "^4.2.2",
+    "retry": "^0.12.0",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.1.4",
+    "tulind": "^0.8.20",
+    "websocket-polyfill": "0.0.3"
+  }
+}
