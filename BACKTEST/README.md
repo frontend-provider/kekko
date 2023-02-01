@@ -2,7 +2,7 @@
 #### BackTest your strategy: 
 
 
-Installation of Gekko-M4 BACKTEST:
+Installation:
 
 ```
 git clone https://github.com/universalbit-dev/gekko-m4.git
