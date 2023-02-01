@@ -1,6 +1,5 @@
 
 #### BackTest your strategy: 
-image[]
 
 
 Installation of Gekko-M4 BACKTEST:
