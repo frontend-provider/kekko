@@ -33,7 +33,8 @@ npm i --build-from-source
 ```
 
 -Tulind Indicators : It provides 100+ technical analysis indicator
--Database Sqlite and Sqlite3 sqlite npm
+
+-Database Sqlite and Sqlite3
 
 ```
 npm i tulind --save
@@ -45,6 +46,6 @@ Exchanges:
 exchange directory: /BACKTEST/exchange
 
 ```
-cd /BACKTEST/exchange
+cd BACKTEST/exchange
 npm i --build-from-source
 ```
