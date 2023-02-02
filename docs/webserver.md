@@ -62,7 +62,7 @@ nano /etc/apache2/sites-enabled/000-default.conf
 ```
 ```
 <VirtualHost *:8080>
-  ServerName 10.0.2.146
+  ServerName 192.168.1.146
   Redirect permanent / https://192.168.1.146
 </VirtualHost>
 ```
