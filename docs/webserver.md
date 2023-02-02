@@ -1,8 +1,6 @@
 WebServer Nginx
 [Install](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-10)
 
-
-
 ```
 server {
 listen 80;
@@ -51,4 +49,9 @@ server {
 
 ---
 
-WebServer Apache [Install](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-11)
+### WebServer Apache [Install](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-11)
+
+Step6 : 
+Apache Files and Directories
+Server Configuration 
+[]
