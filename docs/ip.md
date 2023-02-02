@@ -1,17 +1,6 @@
-##### Gekko-M4 Setup IP Address
-
-
-to start the graphical interface set a static ip address:
-
-by editing these two files it is possible to access the graphical interface after starting the application.
-
-
-[Quasar](https://v0-16.quasar-framework.org/) is the front end framework used for development.
-
-
+### Gekko-M4 Setup Static IP Address
 
 -----
-
 
 ##### baseUIconfig.js and UIconfig.js  
 these two files allow different settings
@@ -39,10 +28,6 @@ Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
 */
 
 ```
-
-
-
-
 
 
 ```
@@ -97,11 +82,12 @@ Documentation:
 * [webserver_nginx_reverse_proxy](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/webserver.md)
 
 
-start application via terminal commands:
+#### start application:
 
 ```
 pm2 start gekko-m4.js
 ```
+
 
 
 
