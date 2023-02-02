@@ -1,4 +1,4 @@
-WebServer Nginx
+#### WebServer Nginx
 [Install](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-10)
 
 ```
@@ -44,8 +44,7 @@ server {
 }
 
 ```
-
-### create a self signed certificate:
+#### create a self signed certificate:
 ```
     sudo mkdir /etc/nginx/ssl
     sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
