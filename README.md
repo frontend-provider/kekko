@@ -22,7 +22,8 @@ During these years (from June 2021) I am committed to understanding how this app
 
 ##### Gekko-M4 [Buy/Sell]
 ##### help to improve the UniversalBit Blockchain Project
-##### Donation Address : LTC LWgAMAXEbcMienXHqzmSn8Gg4A6Q6RywWt
+##### Donation Address : 
+
 [introduction](https://universalbit.it/blockchain/gekko-m4/)
 
 
