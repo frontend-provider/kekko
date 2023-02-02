@@ -42,9 +42,9 @@ function connectExmoWSPublicApi() {
 
 function connectExmoWSPrivateApi(apiKey) {
 //READ_API_KEY
-//  const apiKey ='READ_API_KEY';
+  const apiKey =config.key';
 //READ_SECRET_KEY
-  const secretKey ='READ_API_SECRET';
+  const secretKey =config.secret;
 
   const nonce = Date.now();
   const sign = CryptoJS.HmacSHA512(apiKey + nonce, secretKey).toString(CryptoJS.enc.Base64);
@@ -68,9 +68,9 @@ const marketData = require('./exmo-markets.json');
 //API_KEY
 const Trader = function(config) {
   _.bindAll(this);
-  this.key="API_KEY";
+  this.key=config.key;
 //API_SECRET
-  this.secret="API_SECRET_HERE";
+  this.secret=config.secret;
 
   if(_.isObject(config)) {
       if(_.isString(config.key)) this.key = config.key;
