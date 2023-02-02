@@ -45,7 +45,6 @@ server {
 
 ```
 
-
 ### create a self signed certificate:
 ```
     sudo mkdir /etc/nginx/ssl
@@ -54,9 +53,22 @@ server {
 
 ---
 
-### WebServer Apache [Install](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-11)
 
-Step6 : 
-Apache Files and Directories
-Server Configuration 
-[]
+### WebServer Apache [Install](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-11)
+Step6 : Apache Files and Directories
+
+
+Server Configuration :
+```
+nano /etc/apache2/sites-enabled/000-default.conf 
+```
+```
+<VirtualHost *:8080>
+  ServerName 10.0.2.146
+  Redirect permanent / https://192.168.1.146
+</VirtualHost>
+```
+
+```
+nano /etc/apache2/sites-enabled/default-ssl.conf
+```
