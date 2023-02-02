@@ -42,7 +42,7 @@ function connectExmoWSPublicApi() {
 
 function connectExmoWSPrivateApi(apiKey) {
 //READ_API_KEY
-  const apiKey =config.key';
+  const apiKey =config.key;
 //READ_SECRET_KEY
   const secretKey =config.secret;
 
