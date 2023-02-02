@@ -11,7 +11,7 @@ AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.***
 #### Gekko 
 The MIT License (MIT) Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
 
-#### Gekko-M4
+
 Gekko-M4 The MIT License (MIT) Copyright (c) 2022 UniversalBit Blockchain This Software unlike easy gains
 #### Targets:
 improve graphic and correct some errors, enhance the application by solving some vulnerabilities.
@@ -49,7 +49,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 nvm install 12
 ```
 
-Gekko-M4
 clone project and start learn
 ```
 git clone https://github.com/universalbit-dev/gekko-m4.git
