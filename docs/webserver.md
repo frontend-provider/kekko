@@ -46,16 +46,15 @@ server {
 ```
 #### create a self signed certificate:
 ```
-    sudo mkdir /etc/nginx/ssl
-    sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+   sudo mkdir /etc/nginx/ssl
+   sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
 ```
 
 ---
 
 
 ### WebServer Apache [Install](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-11)
-Step6 : Apache Files and Directories
-
+Step6 : Getting Familiar with Important Apache Files and Directories
 
 Server Configuration :
 ```
@@ -66,8 +65,4 @@ nano /etc/apache2/sites-enabled/000-default.conf
   ServerName 10.0.2.146
   Redirect permanent / https://192.168.1.146
 </VirtualHost>
-```
-
-```
-nano /etc/apache2/sites-enabled/default-ssl.conf
 ```
