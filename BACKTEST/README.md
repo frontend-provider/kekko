@@ -53,6 +53,10 @@ npm i --build-from-source
 
 #### First Run User Interface:
 ```
+pm2 start gekko-m4.js
+```
+or
+```
 node gekko -c config.js --ui
 ```
 
