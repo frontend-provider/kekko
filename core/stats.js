@@ -1,5 +1,5 @@
-const stats = require('stats-lite');
-const lodash = require('lodash');
+var stats = require('stats-lite');
+var _ = require('lodash');
 
 
 // simply monkey patch the stats with other stuff we
