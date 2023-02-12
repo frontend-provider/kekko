@@ -71,17 +71,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 <https://en.wikipedia.org/wiki/MIT_License>
   
-  ---
-  
-
-
------
-
-
+---
 ##### node_modules 
-
 huge work behind a simple install command
 open [issue](https://github.com/universalbit-dev/gekko-m4/issues) 
-
 -----
 
