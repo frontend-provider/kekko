@@ -81,7 +81,7 @@ SOFTWARE.
 ##### node_modules 
 
 huge work behind a simple install command
-open [issue](https://universalbit.it:3000/universalbit-blockchain/Gekko-M4/issues) 
+open [issue](https://github.com/universalbit-dev/gekko-m4/issues) 
 
 -----
 
