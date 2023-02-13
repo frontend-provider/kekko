@@ -8,6 +8,7 @@
 git clone https://github.com/universalbit-dev/gekko-m4.git
 cd BACKTEST
 ```
+---
 
 #### NVM Node Version Manager:
 nvm allows you to quickly install and use different versions of node via the command line.
