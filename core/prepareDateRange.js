@@ -1,16 +1,13 @@
 var _ = require('lodash');
 var prompt = require('prompt-lite');
 var moment = require('moment');
-
 var util = require('./util');
 var config = util.getConfig();
 var dirs = util.dirs();
 var log = require(dirs.core + 'log');
-
 var scan = require(dirs.tools + 'dateRangeScanner');
 
-// helper to store the evenutally detected
-// daterange.
+// helper to store the evenutally detected daterange.
 var setDateRange = function(from, to) {
   config.backtest.daterange = {
     from: moment.unix(from).utc().format(),
@@ -18,7 +15,6 @@ var setDateRange = function(from, to) {
   };
   util.setConfig(config);
 }
-
 
 module.exports = function(done) {
   scan((err, ranges) => {
