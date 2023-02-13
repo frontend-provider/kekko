@@ -1,3 +1,8 @@
+/*
+
+
+
+*/
 var _ = require('lodash');
 var util = require(__dirname + '/util');
 var CandleBatcher = function(candleSize) {
