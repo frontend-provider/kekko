@@ -1,4 +1,4 @@
-const pm2 = require('pm2')
+var pm2 = require('pm2');
 pm2.connect(function(err) {
   if (err) {
     console.error(err)
