@@ -3,11 +3,10 @@ var util = require(__dirname + '/util');
 var CandleBatcher = function(candleSize) {
   if(!_.isNumber(candleSize))
     throw new Error('candleSize is not a number');
-
+  
   this.candleSize = candleSize;
   this.smallCandles = [];
   this.calculatedCandles = [];
-
   _.bindAll(this);
 }
 
@@ -19,7 +18,6 @@ CandleBatcher.prototype.write = function(candles) {
   }
 
   this.emitted = 0;
-
   _.each(candles, function(candle) {
     this.smallCandles.push(candle);
     this.check();
@@ -31,7 +29,6 @@ CandleBatcher.prototype.write = function(candles) {
 CandleBatcher.prototype.check = function() {
   if(_.size(this.smallCandles) % this.candleSize !== 0)
     return;
-
   this.emitted++;
   this.calculatedCandles.push(this.calculate());
   this.smallCandles = [];
