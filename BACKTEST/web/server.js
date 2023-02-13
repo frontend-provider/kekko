@@ -1,3 +1,7 @@
+/*
+
+
+*/
 var config=require('./vue/statics/UiConfig');
 var koa=require('koa');
 var serve=require('koa-static');
