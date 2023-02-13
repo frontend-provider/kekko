@@ -9,7 +9,6 @@ pm2.connect(function(err) {
     script    : 'gekko.js',
     args      : '-c config.js --ui',
     name      : 'gekko-m4.js'
-
   },
 
 function(err, apps) {
@@ -20,11 +19,10 @@ if (err) {
 
     pm2.list((err, list) => {
       console.log(err, list)
-
-
     })
   })
 })
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
