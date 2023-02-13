@@ -1,11 +1,3 @@
-/*
-
-  Lightweight logger, print everything that is send to error, warn
-  and messages to stdout (the terminal). If config.debug is set in config
-  also print out everything send to debug.
-
-*/
-
 var moment = require('moment');
 var fmt = require('util').format;
 var _ = require('lodash');
@@ -77,8 +69,8 @@ if(silent) {
   Log.prototype.warn = _.noop;
   Log.prototype.write = _.noop;
 }
-
 module.exports = new Log;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
