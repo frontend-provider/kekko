@@ -1,10 +1,10 @@
 // Small writable stream wrapper that
 // passes data to all `candleConsumers`.
 
-const Writable = require('stream').Writable;
-const _ = require('lodash');
-const async = require('async');
-const moment = require('moment');
+var Writable = require('stream').Writable;
+var _ = require('lodash');
+var async = require('async');
+var moment = require('moment');
 
 const util = require('./util');
 const env = util.gekkoEnv();
