@@ -4,9 +4,7 @@ var moment = require('moment');
 var util = require(__dirname + '/../util');
 var CandleCreator = function() {
   _.bindAll(this);
-// TODO: remove fixed date
   this.threshold = moment("1970-01-01", "YYYY-MM-DD");
-// This also holds the leftover between fetches
   this.buckets = {};
 }
 util.makeEventEmitter(CandleCreator);
