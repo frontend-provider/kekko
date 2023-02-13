@@ -1,15 +1,11 @@
 /*
-
   Gekko is a Bitcoin trading bot for popular Bitcoin exchanges written 
   in node, it features multiple trading methods using technical analysis.
-
   If you are interested in how Gekko works, read more about Gekko's 
   architecture here:
-
   https://gekko.wizb.it/docs/internals/architecture.html
-
+  
   Disclaimer:
-
   USE AT YOUR OWN RISK!
 
   The author of this project is NOT responsible for any damage or loss caused 
@@ -17,20 +13,11 @@
   or specified. Please consider testing it first with paper trading and/or 
   backtesting on historical data. Also look at the code to see what how 
   it is working.
-
 */
 
-console.log(`
-    ______   ________  __    __  __    __   ______
-   /      \\ /        |/  |  /  |/  |  /  | /      \\
-  /$$$$$$  |$$$$$$$$/ $$ | /$$/ $$ | /$$/ /$$$$$$  |
-  $$ | _$$/ $$ |__    $$ |/$$/  $$ |/$$/  $$ |  $$ |
-  $$ |/    |$$    |   $$  $$<   $$  $$<   $$ |  $$ |
-  $$ |$$$$ |$$$$$/    $$$$$  \\  $$$$$  \\  $$ |  $$ |
-  $$ \\__$$ |$$ |_____ $$ |$$  \\ $$ |$$  \\ $$ \\__$$ |
-  $$    $$/ $$       |$$ | $$  |$$ | $$  |$$    $$/ 
-   $$$$$$/  $$$$$$$$/ $$/   $$/ $$/   $$/  $$$$$$/
-`);
+console.log('##########################################');
+console.log('UniversalBit Blockchain Powered by Gekko');
+console.log('##########################################');
 
 const util = require(__dirname + '/core/util');
 
