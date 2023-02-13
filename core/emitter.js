@@ -4,9 +4,9 @@
 //
 // More details here: https://forum.gekko.wizb.it/thread-56579.html
 
-const util = require('util');
-const events = require('events');
-const NativeEventEmitter = events.EventEmitter;
+var util = require('util');
+var events = require('events');
+var NativeEventEmitter = events.EventEmitter;
 
 const GekkoEventEmitter = function() {
   NativeEventEmitter.call(this);
