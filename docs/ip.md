@@ -82,11 +82,15 @@ Documentation:
 * [webserver_nginx_reverse_proxy](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/webserver.md)
 
 
-#### start application:
+#### Gekko UI Run Application:
 
 ```
 pm2 start gekko-m4.js
 ```
+OR 
+
+```
+node gekko.js -c config.js --ui
 
 
 
