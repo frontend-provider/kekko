@@ -14,8 +14,6 @@ var _gekkoMode = false;
 var _gekkoEnv = false;
 
 var _args = false;
-
-// helper functions
 var util = {
   getConfig: function() {
     // cache
@@ -31,7 +29,6 @@ var util = {
     _config = require(util.dirs().gekko + program.config);
     return _config;
   },
-  // overwrite the whole config
   setConfig: function(config) {
     _config = config;
   },
