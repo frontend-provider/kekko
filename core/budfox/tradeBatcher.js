@@ -1,40 +1,7 @@
-// 
-// Small wrapper that only propagates new trades.
-// 
-// Expects trade batches to be written like:
-// [
-//  {
-//    tid: x, // tid is preferred, but if none available date will also work
-//    price: x,
-//    date: (timestamp),
-//    amount: x
-//  },
-//  {
-//    tid: x + 1,
-//    price: x,
-//    date: (timestamp),
-//    amount: x
-//  }
-// ]
-// 
-// Emits 'new trades' event with:
-// {
-//   amount: x,
-//   start: (moment),
-//   end: (moment),
-//   first: (trade),
-//   last: (trade)
-//   data: [
-//      // batch of new trades with 
-//      // moments instead of timestamps
-//   ]
-// }
-
 var _ = require('lodash');
 var moment = require('moment');
 var util = require('../util');
 var log = require('../log');
-
 var TradeBatcher = function(tid) {
   if(!_.isString(tid))
     throw new Error('tid is not a string');
@@ -86,7 +53,7 @@ TradeBatcher.prototype.write = function(batch) {
 
   this.last = last[this.tid];
 
-  // we overwrote those, get unix ts back
+// we overwrote those, get unix ts back
   if(this.tid === 'date')
     this.last = this.last.unix();
 
@@ -99,16 +66,11 @@ TradeBatcher.prototype.filter = function(batch) {
   if(lastTid === lastTid + 1)
     util.die('trade tid is max int, Gekko can\'t process..');
 
-  // remove trades that have zero amount
-  // see @link
-  // https://github.com/askmike/gekko/issues/486
+// remove trades that have zero amount
+// read more: https://github.com/askmike/gekko/issues/486
   batch = _.filter(batch, function(trade) {
     return trade.amount > 0;
   });
-
-  // weed out known trades
-  // TODO: optimize by stopping as soon as the
-  // first trade is too old (reverse first)
   return _.filter(batch, function(trade) {
     return this.last < trade[this.tid];
   }, this);
@@ -122,3 +84,14 @@ TradeBatcher.prototype.convertDates = function(batch) {
 }
 
 module.exports = TradeBatcher;
+/*
+The MIT License (MIT)
+Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+
+
+
