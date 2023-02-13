@@ -42,27 +42,21 @@
 //    // etc.
 // ]
 //
-
 var _ = require('lodash');
 var moment = require('moment');
-
 var util = require(__dirname + '/../util');
-
 var CandleCreator = function() {
   _.bindAll(this);
-
-  // TODO: remove fixed date
+// TODO: remove fixed date
   this.threshold = moment("1970-01-01", "YYYY-MM-DD");
 
-  // This also holds the leftover between fetches
+// This also holds the leftover between fetches
   this.buckets = {};
 }
-
 util.makeEventEmitter(CandleCreator);
 
 CandleCreator.prototype.write = function(batch) {
   var trades = batch.data;
-
   if(_.isEmpty(trades))
     return;
 
@@ -75,15 +69,14 @@ CandleCreator.prototype.write = function(batch) {
   if(_.isEmpty(candles))
     return;  
 
-  // the last candle is not complete
+// the last candle is not complete
   this.threshold = candles.pop().start;
-
   this.emit('candles', candles);
 }
 
 CandleCreator.prototype.filter = function(trades) {
-  // make sure we only include trades more recent
-  // than the previous emitted candle
+// make sure we only include trades more recent
+// than the previous emitted candle
   return _.filter(trades, function(trade) {
     return trade.date > this.threshold;
   }, this);
@@ -106,8 +99,7 @@ CandleCreator.prototype.fillBuckets = function(trades) {
 // convert each bucket into a candle
 CandleCreator.prototype.calculateCandles = function() {
   var minutes = _.size(this.buckets);
-
-  // catch error from high volume getTrades
+// catch error from high volume getTrades
   if (this.lastTrade !== undefined)
     // create a string referencing the minute this trade happened in
     var lastMinute = this.lastTrade.date.format('YYYY-MM-DD HH:mm');
@@ -115,8 +107,8 @@ CandleCreator.prototype.calculateCandles = function() {
   var candles = _.map(this.buckets, function(bucket, name) {
     var candle = this.calculateCandle(bucket);
 
-    // clean all buckets, except the last one:
-    // this candle is not complete
+ // clean all buckets, except the last one:
+ // this candle is not complete
     if(name !== lastMinute)
       delete this.buckets[name];
 
@@ -164,7 +156,7 @@ CandleCreator.prototype.addEmptyCandles = function(candles) {
   if(!amount)
     return candles;
 
-  // iterator
+// iterator
   var start = _.first(candles).start.clone();
   var end = _.last(candles).start;
   var i, j = -1;
@@ -198,3 +190,11 @@ CandleCreator.prototype.addEmptyCandles = function(candles) {
 }
 
 module.exports = CandleCreator;
+
+/*
+The MIT License (MIT)
+Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
