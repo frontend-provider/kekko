@@ -88,13 +88,6 @@ Documentation:
 pm2 start gekko-m4.js
 ```
 OR 
-
 ```
 node gekko.js -c config.js --ui
-
-
-
-
-
-
-
+```
