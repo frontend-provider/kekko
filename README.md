@@ -83,7 +83,7 @@ Thanks developers.
 
 ### Start Application using Pm2
 enable [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
-##### [Pm2 Process Manager](https://pm2.keymetrics.io/)
+##### [Pm2 Process Manager](https://www.npmjs.com/package/pm2)
 
 ```
 npm i pm2 -g
