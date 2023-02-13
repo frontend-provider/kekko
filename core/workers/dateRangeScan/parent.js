@@ -1,5 +1,5 @@
 var ForkTask = require('relieve').tasks.ForkTask;
-var fork = require('child_process').fork;
+const fork = require('child_process').fork;
 
 module.exports = function(config, done) {
   var debug = typeof v8debug === 'object';
