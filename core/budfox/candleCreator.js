@@ -1,3 +1,4 @@
+//The CandleCreator creates one minute candles based on trade batches. 
 var _ = require('lodash');
 var moment = require('moment');
 var util = require(__dirname + '/../util');
@@ -5,7 +6,6 @@ var CandleCreator = function() {
   _.bindAll(this);
 // TODO: remove fixed date
   this.threshold = moment("1970-01-01", "YYYY-MM-DD");
-
 // This also holds the leftover between fetches
   this.buckets = {};
 }
@@ -24,15 +24,11 @@ CandleCreator.prototype.write = function(batch) {
 
   if(_.isEmpty(candles))
     return;  
-
-// the last candle is not complete
   this.threshold = candles.pop().start;
   this.emit('candles', candles);
 }
 
 CandleCreator.prototype.filter = function(trades) {
-// make sure we only include trades more recent
-// than the previous emitted candle
   return _.filter(trades, function(trade) {
     return trade.date > this.threshold;
   }, this);
@@ -51,20 +47,14 @@ CandleCreator.prototype.fillBuckets = function(trades) {
 
   this.lastTrade = _.last(trades);
 }
-
-// convert each bucket into a candle
 CandleCreator.prototype.calculateCandles = function() {
   var minutes = _.size(this.buckets);
-// catch error from high volume getTrades
   if (this.lastTrade !== undefined)
     // create a string referencing the minute this trade happened in
     var lastMinute = this.lastTrade.date.format('YYYY-MM-DD HH:mm');
 
   var candles = _.map(this.buckets, function(bucket, name) {
     var candle = this.calculateCandle(bucket);
-
- // clean all buckets, except the last one:
- // this candle is not complete
     if(name !== lastMinute)
       delete this.buckets[name];
 
@@ -78,7 +68,6 @@ CandleCreator.prototype.calculateCandle = function(trades) {
   var first = _.first(trades);
 
   var f = parseFloat;
-
   var candle = {
     start: first.date.clone().startOf('minute'),
     open: f(first.price),
@@ -147,39 +136,10 @@ CandleCreator.prototype.addEmptyCandles = function(candles) {
 
 module.exports = CandleCreator;
 
-
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
-
-/*// The CandleCreator creates one minute candles based on trade batches. 
-//Note that it also adds empty candles to fill gaps with no volume.
-// Expects trade batches to be written like:
-
-{
-  amount: x,
-  start: (moment),
-  end: (moment),
-  first: (trade),
-  last: (trade),
-  timespan: x,
-  all: []
-}
-
-[
-  {
-    start: (moment),end: (moment),
-    high: (float),open: (float),low: (float),close: (float),
-    volume: (float),vwp: (float) 
-  },
-  {
-    start: (moment),end: (moment),
-    high: (float),open: (float),low: (float),close: (float),
-    volume: (float),vwp: (float)
-  }
-]
 */
