@@ -92,10 +92,7 @@ CandleCreator.prototype.calculateCandle = function(trades) {
 }
 
 // Gekko expects a candle every minute, if nothing happened
-// during a particilar minute Gekko will add empty candles with:
-//
-// - open, high, close, low, vwp are the same as the close of the previous candle.
-// - trades, volume are 0
+// during a particular minute Gekko will add empty candles with:
 CandleCreator.prototype.addEmptyCandles = function(candles) {
   var amount = _.size(candles);
   if(!amount)
