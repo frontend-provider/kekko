@@ -16,13 +16,22 @@ For the first one you configure a config file: copy `gekko/sample-config.js` to 
 ## Running Gekko
 
 For live mode run:
-
-    node gekko --config config.js
-
+```
+node gekko --config config.js
+```
 To backtesting run:
-
-    node gekko --config config.js --backtest
-
+```
+node gekko --config config.js --backtest
+```
 To import run:
-
-    node gekko --config config.js --import
+```
+node gekko --config config.js --import
+```    
+## Gekko UI
+```
+pm2 start gekko-m4.js
+```
+OR 
+```
+node gekko.js -c config.js --ui
+```
