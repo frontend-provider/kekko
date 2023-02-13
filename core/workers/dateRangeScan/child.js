@@ -4,13 +4,8 @@ var ipc = require('relieve').IPCEE(process);
 
 ipc.on('start', config => {
 
-  // force correct gekko env
   util.setGekkoEnv('child-process');
-
-  // force disable debug
   config.debug = false;
-
-  // persist config
   util.setConfig(config);
 
   var scan = require(dirs.tools + 'dateRangeScanner');
