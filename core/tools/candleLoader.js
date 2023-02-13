@@ -1,25 +1,21 @@
-// TODO: properly handle a daterange for which no data is available.
+var batchSize = 1000;
+var _ = require('lodash');
+var fs = require('fs');
+var moment = require('moment');
+var util = require('../../core/util');
+var config = util.getConfig();
+var dirs = util.dirs();
+var log = require(dirs.core + '/log');
 
-const batchSize = 1000;
+var adapter = config[config.adapter];
+var Reader = require(dirs.gekko + adapter.path + '/reader');
+var daterange = config.daterange;
 
-const _ = require('lodash');
-const fs = require('fs');
-const moment = require('moment');
+var CandleBatcher = require(dirs.core + 'candleBatcher');
 
-const util = require('../../core/util');
-const config = util.getConfig();
-const dirs = util.dirs();
-const log = require(dirs.core + '/log');
-
-const adapter = config[config.adapter];
-const Reader = require(dirs.gekko + adapter.path + '/reader');
-const daterange = config.daterange;
-
-const CandleBatcher = require(dirs.core + 'candleBatcher');
-
-const to = moment.utc(daterange.to).startOf('minute');
-const from = moment.utc(daterange.from).startOf('minute');
-const toUnix = to.unix();
+var to = moment.utc(daterange.to).startOf('minute');
+var from = moment.utc(daterange.from).startOf('minute');
+var toUnix = to.unix();
 
 if(to <= from)
   util.die('This daterange does not make sense.')
