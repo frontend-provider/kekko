@@ -1,21 +1,17 @@
 /*
-//UniversalBit BlockChain INVERTER Strategy
-//
-//Source Code: [Gab0](https://github.com/Gab0/)
-//https://github.com/Gab0/gekko-adapted-strategies
-//
-//Authors:
-//RSI_BULL_BEAR & RSI_BULL_BEAR_ADX (@TommieHansen)
-//PingPong Function for sideways market(@RafaelMartín)
-//(CC BY-SA 4.0:https://creativecommons.org/licenses/by-sa/4.0/)
-//
-//Extra Indicators : https://github.com/Gab0/gekko-extra-indicators
-//Gabriel Araujo (@Gab0)
+UniversalBit BlockChain INVERTER Strategy
+Source Code: [Gab0](https://github.com/Gab0/)
+https://github.com/Gab0/gekko-adapted-strategies
+Authors:
+RSI_BULL_BEAR & RSI_BULL_BEAR_ADX (@TommieHansen)
+PingPong Function for sideways market(@RafaelMartín)
+(CC BY-SA 4.0:https://creativecommons.org/licenses/by-sa/4.0/)
+Extra Indicators : https://github.com/Gab0/gekko-extra-indicators
+Gabriel Araujo (@Gab0)
 */
 
 var log = require('../core/log.js');
 var config = require('../core/util.js').getConfig();
-
 var coretulind = require('../core/tulind.js');
 var _ = require('lodash');
 var ws = require ('reconnecting-websocket');
@@ -32,37 +28,22 @@ this.name = 'INVERTER';
 this.resetTrend();
 // DEBUG
 this.debug = true;
-      
+
 //Indicators
 //SMA
 this.addTulipIndicator('maFast', 'sma', { optInTimePeriod: this.settings.SMA_long});
-//this.addIndicator("maFast", "SMA", {optInTimePeriod: this.settings.SMA_long});//
-
 this.addTulipIndicator('maSlow', 'sma', { optInTimePeriod: this.settings.SMA_short});
-//this.addIndicator("maSlow", "SMA", {optInTimePeriod: this.settings.SMA_short});//
-
 //RSI
 this.addTulipIndicator('BULL_RSI', 'rsi', { optInTimePeriod: this.settings.BULL_RSI });
-//this.addIndicator("BULL_RSI", "RSI", {optInTimePeriod: this.settings.BULL_RSI});
-
 this.addTulipIndicator('BEAR_RSI', 'rsi', { optInTimePeriod: this.settings.BEAR_RSI });
-//this.addIndicator("BEAR_RSI", "RSI", {optInTimePeriod: this.settings.BEAR_RSI});//
-
 //DEMA
 this.addTulipIndicator('longDEMA', 'dema', {optInTimePeriod : this.settings.DEMA_long});
-//this.addIndicator("longDEMA", "DEMA", {optInTimePeriod: this.settings.DEMA_long});//
-
 this.addTulipIndicator('shortDEMA', 'dema', {optInTimePeriod : this.settings.DEMA_short});
-//this.addIndicator("shortDEMA", "DEMA", {optInTimePeriod: this.settings.DEMA_short});//
-
 //RSI
 this.addTulipIndicator('rsi', 'rsi', {optInTimePeriod : this.settings.RSI});
-//this.addIndicator("rsi", "RSI", {optInTimePeriod: this.settings.RSI});//
-
 //ADX
 this.addTulipIndicator('adx', 'adx', {optInTimePeriod: this.settings.ADX});
-//this.addIndicator("adx", "ADX", {optInTimePeriod: this.settings.ADX});//
-
+		
 //Mod (RSI modifiers)
 this.BULL_MOD_high = this.settings.BULL_MOD_high;
 this.BULL_MOD_low = this.settings.BULL_MOD_low;
@@ -112,24 +93,22 @@ cur = this.stat.bull;
 	else if( val > cur.max ) this.stat.bull.max = val;
 }
 
-else 
+else
 {
 cur = this.stat.adx;
-        if( val < cur.min ) this.stat.adx.min = val;
-        else if( val > cur.max ) this.stat.adx.max = val;
+if( val < cur.min ) this.stat.adx.min = val;
+	else if( val > cur.max ) this.stat.adx.max = val;
 }
-
-},
-
+  },
 //Check
 check: function()
 {
 //Indicators
 let ind=this.tulipIndicators,
 rsi =this.tulipIndicators.rsi.result,
-maSlow =this.tulipIndicators.maSlow.result,
-maFast =this.tulipIndicators.maFast.result,
-longDEMA =this.tulipIndicators.longDEMA.result,
+maSlow =this.tulipIndicators.maSlow.result,   
+maFast =this.tulipIndicators.maFast.result,   
+longDEMA =this.tulipIndicators.longDEMA.result,   
 shortDEMA=this.tulipIndicators.shortDEMA.result,
 adx=this.tulipIndicators.adx.result;
 
@@ -149,8 +128,7 @@ if((longDEMA < shortDEMA) && (maFast < maSlow))
 	let rsi_hi = this.settings.BEAR_RSI_high,
         rsi_low = this.settings.BEAR_RSI_low;
 // Adx
-	if( adx > this.settings.ADX_high )
-        rsi_hi = rsi_hi + this.BEAR_MOD_high;
+	if( adx > this.settings.ADX_high ) rsi_hi = rsi_hi + this.BEAR_MOD_high;
 	else if( adx < this.settings.ADX_low ) rsi_low = rsi_low + this.BEAR_MOD_low;
 
 	if( rsi > rsi_hi ) this.short();
