@@ -1,18 +1,19 @@
 /*
-//UniversalBit BlockChain INVERTER Strategy
-//
-//Source Code: [Gab0](https://github.com/Gab0/)
-//https://github.com/Gab0/gekko-adapted-strategies
-//
-//Authors:
-//RSI_BULL_BEAR & RSI_BULL_BEAR_ADX (@TommieHansen)
-//PingPong Function for sideways market(@RafaelMartín)
-//(CC BY-SA 4.0:https://creativecommons.org/licenses/by-sa/4.0/)
-//
-//Extra Indicators : https://github.com/Gab0/gekko-extra-indicators
-//Gabriel Araujo (@Gab0)
-*/
 
+UniversalBit BlockChain INVERTER Strategy
+
+Source Code: [Gab0](https://github.com/Gab0/)
+https://github.com/Gab0/gekko-adapted-strategies
+
+Authors:
+RSI_BULL_BEAR & RSI_BULL_BEAR_ADX (@TommieHansen)
+PingPong Function for sideways market(@RafaelMartín)
+(CC BY-SA 4.0:https://creativecommons.org/licenses/by-sa/4.0/)
+
+Extra Indicators : https://github.com/Gab0/gekko-extra-indicators
+Gabriel Araujo (@Gab0)
+
+*/
 
 var log = require('../core/log.js');
 var config = require('../core/util.js').getConfig();
@@ -32,12 +33,11 @@ this.name = 'INVERTER';
 this.resetTrend();
 // DEBUG
 this.debug = true;
-      
+
 //Indicators
 //SMA
 this.addTulipIndicator('maFast', 'sma', { optInTimePeriod: this.settings.SMA_long});
 //this.addIndicator("maFast", "SMA", {optInTimePeriod: this.settings.SMA_long});//
-
 this.addTulipIndicator('maSlow', 'sma', { optInTimePeriod: this.settings.SMA_short});
 //this.addIndicator("maSlow", "SMA", {optInTimePeriod: this.settings.SMA_short});//
 
@@ -56,6 +56,8 @@ this.addTulipIndicator('shortDEMA', 'dema', {optInTimePeriod : this.settings.DEM
 //this.addIndicator("shortDEMA", "DEMA", {optInTimePeriod: this.settings.DEMA_short});//
 
 //RSI
+var parameters = {short: 30, long: 70};
+this.addIndicator('rsi', 'RSI', parameters);
 this.addTulipIndicator('rsi', 'rsi', {optInTimePeriod : this.settings.RSI});
 //this.addIndicator("rsi", "RSI", {optInTimePeriod: this.settings.RSI});//
 
