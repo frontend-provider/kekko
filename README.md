@@ -82,6 +82,12 @@ npm i --build-from-source
 Thanks developers.
 
 ### Start Application using Pm2
+---
+
+#### [Setup Static-IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
+
+---
+
 enable [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
 ##### [Pm2 Process Manager](https://www.npmjs.com/package/pm2)
 
@@ -154,7 +160,4 @@ tail -f logs/2022-00-00-00-00-tradebot-04218329122948088.log
 [Legal context](https://www.europarl.europa.eu/cmsdata/150761/TAX3%20Study%20on%20cryptocurrencies%20and%20blockchain.pdf)
 Each exchange requires registration, 2fa and verify identity.
 
-
-[Installation & Usage]()	
-[Community & Support]()
 
