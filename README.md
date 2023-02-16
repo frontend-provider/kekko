@@ -111,7 +111,7 @@ Gekko Gordon UI edition  Author:[Klemens Wittig](https://github.com/H256/gekko-q
 
 ####  CCXT Library
 On the crypto road : probably not necessary but the project looks interesting
-ccxt-js library: a JavaScript / Python / PHP library for cryptocurrency trading and e-commerce with support for many bitcoin/ether/altcoin exchange markets and merchant APIs. [ccxt](https://readthedocs.org/projects/ccxt/)
+ccxt-js library: a JavaScript / Python / PHP library for cryptocurrency trading and e-commerce with support for many bitcoin/ether/altcoin exchange markets and merchant APIs. [ccxt](https://github.com/universalbit-dev/ccxt/tree/master/doc)
 
 #### Standard node commands:
 First Run User Interface:
