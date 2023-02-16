@@ -67,6 +67,17 @@ http://localhost:3000
 ```
 #### [Setup Static-IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
 
+---
+
+Import Data: (Integrating the CCXT library would simplify data import operations)
+#### Importer still works with these two exchanges 
+#### | Binance | Kraken |
+
+---
+
+[![Importer](https://github.com/universalbit-dev/gekko-m4/blob/master/importers/exchanges/img/importer.png)]( "importer")
+
+
 
 
 
