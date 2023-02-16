@@ -138,7 +138,7 @@ tar –xvzf crypto_icons.tar.gz
 Note:
 There are no easy gains
 
-###### Custom Strategy: INVERTER
+###### Custom Strategy: [INVERTER](https://github.com/universalbit-dev/gekko-m4/blob/master/strategies/INVERTER.js)
 This strategy intended as "low freq trade",buy-sell in the event of a sudden rise or an uptrend period.
 
 ### Resources:
@@ -151,6 +151,7 @@ This strategy intended as "low freq trade",buy-sell in the event of a sudden ris
 
 
 log files are written to this folder : logs/
+example:
 ```
 tail -f logs/2022-00-00-00-00-watcher-8032292293309007.log
 tail -f logs/2022-00-00-00-00-tradebot-04218329122948088.log
