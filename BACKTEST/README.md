@@ -65,5 +65,9 @@ node gekko -c config.js --ui
 ```
 http://localhost:3000
 ```
+#### [Setup Static-IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
+
+
+
 
 
