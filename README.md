@@ -18,17 +18,8 @@ Gekko-M4 The MIT License (MIT) Copyright (c) 2022 UniversalBit Blockchain This S
 -----
 During these years (from June 2021) I am committed to understanding how this application could work and there is still a lot of work to be done. this application is not intended as a quick profit use.
 
-
 ##### Gekko-M4 [Buy/Sell]
-##### help to improve the UniversalBit Blockchain Project
-##### Donation Address : 
-BTC:
-bc1qjvs87zn8mwt37aat3jm7vmqp9lt56rnxkh3ey8![Alt text](https://github.com/universalbit-dev/armadillium-gridbot/blob/main/cryptocurrency_icon/btc.svg "bitcoin-indicator")
-
-LTC:
-ltc1qxmevaw3pwt6a6rfzy4hx7s3jyc60p575a59hky![Alt text](https://github.com/universalbit-dev/armadillium-gridbot/blob/main/cryptocurrency_icon/ltc.svg "litecoin-indicator")
-
-[introduction](https://universalbit.it/blockchain/gekko-m4/)
+##### [Support UniversalBit ](https://github.com/universalbit-dev/universalbit-dev/tree/main/support)
 
 
 Install [Build Essential](https://packages.debian.org/bullseye/build-essential): 
