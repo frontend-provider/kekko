@@ -1,3 +1,6 @@
+/*
+
+*/
 var convnetjs = require('../core/convnet.js');
 //https://cs.stanford.edu/people/karpathy/convnetjs/started.html
 var math = require('mathjs');
