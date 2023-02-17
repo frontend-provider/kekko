@@ -1,13 +1,1 @@
-threshold_buy = 1.0
-threshold_sell = -1.0
-method = 'sgd'
-SMMA_long=10
-SMMA_short=55
-learning_rate = 0.0004
-momentum = 0.9
-decay = 0.001
-stoploss_enabled = false
-stoploss_threshold = 0.85
-hodl_threshold = 1
-price_buffer_len = 100
-min_predictions = 1000
+
