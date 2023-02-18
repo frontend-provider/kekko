@@ -1,22 +1,19 @@
+/*
+
+*/
+
 const _ = require('lodash');
 const moment = require('moment');
 const retry = require('../exchangeUtils').retry;
-
-
 const CryptoJS = require("crypto-js");
 const querystring = require('querystring');
 const request = require('request');
-
 API_URL='https://api.exmo.com/v1/';
-
 const marketData = require('./exmo-markets.json');
-
-
 const Trader = function(config) {
   _.bindAll(this);
   this.key="";
   this.secret="";
-  
   if(_.isObject(config)) {
       if(_.isString(config.key)) this.key = config.key;
       if(_.isString(config.secret)) this.secret = config.secret;
@@ -24,12 +21,9 @@ const Trader = function(config) {
       this.asset = config.asset;
       this.pair = this.asset + '_' + this.currency;
   };
-
   this.name = 'EXMO';
   this.nonce = new Date() * 1000;
 }
-
-
 const recoverableErrors = [
   'SOCKETTIMEDOUT',
   'TIMEDOUT',
@@ -38,19 +32,15 @@ const recoverableErrors = [
   'NOTFOUND',
   'EHOSTUNREACH',
 ];
-
 const includes = (str, list) => {
   if(!_.isString(str))
-    return false;
-
+  return false;
   return _.some(list, item => str.includes(item));
 }
-
 
 Trader.prototype.api_query = function(method, params, callback){
 	params.nonce = this.nonce++;
 	var post_data = querystring.stringify(params);
-
 	var options = {
 	  url: API_URL + method,
 	  headers: {'Key': this.key,'Sign': CryptoJS.HmacSHA512(post_data, this.secret).toString(CryptoJS.enc.hex) },
@@ -138,7 +128,6 @@ Trader.prototype.submitOrder = function(type, amount, price, callback) {
 
   const fetch = cb => this.api_query("order_create", { pair: this.pair, quantity: amount, price: price, type: type } , cb);
   retry(null, fetch, processResponse);
-  //callback(null, 1177669837);
 }
 
 Trader.prototype.buy = function(amount, price, callback) {
@@ -154,18 +143,12 @@ Trader.prototype.getOrder = function(order_id, callback) {
 
     if(err) 
       return callback(err);
-
     data=data[this.pair];
-
     if(data==undefined) return callback(new Error('Orders not found'));
-
     const order = _.find(data, function(o) { return o.order_id === +order_id });
-
     if(!order) return callback(new Error('Order not found'));
-
     callback(undefined, { price: order.price, amount: order.amount, date: moment.unix(order.date) });
   }
-
   const fetch = cb => this.api_query("user_trades", { pair: this.pair} , cb);
   retry(null, fetch, processResponse); 
 }
@@ -175,9 +158,7 @@ Trader.prototype.checkOrder = function(order_id, callback) {
 
     if(err) 
       return callback(err);
-
     data=data[this.pair];
-
     if(data==undefined) {
       return callback(undefined, { executed: true, open: false });
     }
@@ -185,7 +166,6 @@ Trader.prototype.checkOrder = function(order_id, callback) {
     const order = _.find(data, function(o) { return o.order_id === +order_id });
     if(!order) 
       return callback(undefined, { executed: true, open: false });
-
     callback(undefined, { executed: false, open: true /*, filledAmount: order.startingAmount - order.amount*/ });
   }
 
@@ -198,10 +178,8 @@ Trader.prototype.cancelOrder = function(order_id, callback) {
     if (err) {
       return callback(err);
     }
-
     return callback(undefined, false);
   }
-
   const fetch = cb => this.api_query("order_cancel", { order_id } , cb);
   retry(null, fetch, processResponse);
 }
@@ -209,14 +187,11 @@ Trader.prototype.cancelOrder = function(order_id, callback) {
 Trader.prototype.getPortfolio = function(callback) {
   const processResponse = (err, data) => {
     if (err) return callback(err);
-
     data=data["balances"];
     const balances = _.map(data, function (v,k){ return {name: k, amount: +v};});
     const portfolio = balances.filter(c => c.name===this.asset || c.name===this.currency)
-
     callback(undefined, portfolio);
   };
-
   const fetch = cb => this.api_query("user_info", {}, cb);
   retry(null, fetch, processResponse);
 }
