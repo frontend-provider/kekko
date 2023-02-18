@@ -1,20 +1,25 @@
 const Bitfinex=require('bitfinex-api-node');const file= require('file-system');const fs= require('fs');
-const _=require('lodash');const moment=require('moment');const Errors=require('../exchangeErrors');const retry=require('../exchangeUtils').retry;const marketData=require('./bitfinex-markets.json');
-
+const _=require('lodash');const moment=require('moment');const Errors=require('../exchangeErrors');
+const retry=require('../exchangeUtils').retry;
+const marketData=require('./bitfinex-markets.json');
 const Trader = function(config) {
   _.bindAll(this);
-  //key='';
-  //secret='';
+  this.key="";
+  this.secret="";
   if(_.isObject(config)) {
     this.key = config.key;
     this.secret = config.secret;
     this.currency = config.currency;
     this.asset = config.asset;
-  }
-  this.name = 'Bitfinex';
-  this.balance;
-  this.price;
-  this.pair=this.asset+this.currency;this.bitfinex=new Bitfinex.RESTv1({apiKey:this.key,apiSecret:this.secret,transform:true});this.interval=4000;}
+    this.pair = this.asset + this.currency;
+    this.name = 'Bitfinex';
+    this.balance;
+    this.price;
+    this.bitfinex= new Bitfinex.RESTv1({apiKey:this.key,apiSecret:this.secret,transform:true});this.interval=4000;
+  };
+  this.nonce = new Date() * 1000;
+}
+
 const includes=(str,list)=>{if(!_.isString(str))
 return false;return _.some(list,item=>str.includes(item));}
 const recoverableErrors=['SOCKETTIMEDOUT','ESOCKETTIMEDOUT','TIMEDOUT','CONNRESET','CONNREFUSED','NOTFOUND','443','504','503','502','Empty response','Nonce is too small'];Trader.prototype.handleResponse=function(funcName,callback){return(error,data)=>{if(!error&&_.isEmpty(data)){error=new Error('Empty response');}
@@ -50,8 +55,25 @@ return callback(undefined,false);}
 const handler=cb=>this.bitfinex.cancel_order(order_id,this.handleResponse('cancelOrder',cb));retry(null,handler,processResponse);}
 Trader.prototype.getTrades=function(since,callback,descending){const processResponse=(err,data)=>{if(err)return callback(err);var trades=_.map(data,function(trade){return{tid:trade.tid,date:trade.timestamp,price:+trade.price,amount:+trade.amount}});callback(undefined,descending?trades:trades.reverse());};var path=this.pair;if(since)
 path+='?limit_trades=2000';const handler=cb=>this.bitfinex.trades(path,this.handleResponse('getTrades',cb));retry(null,handler,processResponse);}
-Trader.getCapabilities=function(){return{name:'Bitfinex',slug:'bitfinex',currencies:marketData.currencies,assets:marketData.assets,markets:marketData.markets,requires:['key','secret'],tid:'tid',providesFullHistory:true,providesHistory:'date',tradable:true,forceReorderDelay:true,gekkoBroker:0.6};}
+
+Trader.getCapabilities = function () {
+  return {
+    name: 'Bitfinex',
+    slug: 'bitfinex',
+    currencies: marketData.currencies,
+    assets: marketData.assets,
+    markets: marketData.markets,
+    requires: ['key', 'secret'],
+    providesHistory: false,
+    tid: 'tid',
+    tradable: true,
+    gekkoBroker: 0.6
+  };
+}
+
 module.exports=Trader;
+
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
