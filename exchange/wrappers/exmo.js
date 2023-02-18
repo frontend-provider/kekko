@@ -1,13 +1,16 @@
 /*
 
-*/
 
+*/
 const _ = require('lodash');
 const moment = require('moment');
 const retry = require('../exchangeUtils').retry;
 const CryptoJS = require("crypto-js");
 const querystring = require('querystring');
 const request = require('request');
+const file= require('file-system');
+const fs= require('fs');
+
 API_URL='https://api.exmo.com/v1/';
 const marketData = require('./exmo-markets.json');
 const Trader = function(config) {
