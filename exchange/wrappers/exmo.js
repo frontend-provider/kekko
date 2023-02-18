@@ -13,6 +13,7 @@ const fs= require('fs');
 
 API_URL='https://api.exmo.com/v1/';
 const marketData = require('./exmo-markets.json');
+
 const Trader = function(config) {
   _.bindAll(this);
   this.key="";
@@ -215,6 +216,7 @@ Trader.getCapabilities = function () {
 }
 
 module.exports = Trader;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
