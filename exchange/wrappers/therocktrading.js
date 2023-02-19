@@ -1,3 +1,8 @@
+/*
+
+
+*/
+
 const Therocktrading = require('therocktrading');
 const _ = require('lodash');
 const moment = require('moment');
@@ -283,3 +288,12 @@ Trader.getCapabilities = function() {
 };
 
 module.exports = Trader;
+
+/*
+
+The MIT License (MIT)
+Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
+
+*/
+        
+          
