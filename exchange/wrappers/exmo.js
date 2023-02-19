@@ -10,6 +10,8 @@ const querystring = require('querystring');
 const request = require('request');
 const file= require('file-system');
 const fs= require('fs');
+const config = util.getConfig();
+const util = require('../../core/util');
 const wss_exmo=require('./wss-exmo');
 
 API_URL='https://api.exmo.com/v1/';
