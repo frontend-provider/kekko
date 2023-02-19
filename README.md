@@ -147,9 +147,11 @@ This strategy intended as "low freq trade",buy-sell in the event of a sudden ris
 
 ##### Offline Documentation: [doc](https://universalbit.it/blockchain/shared-files/1093/docs.tar.gz)
 
+---
 
 log files are written to this folder : logs/
-example:
+Example of viewing a log file:
+
 ```
 tail -f logs/2022-00-00-00-00-watcher-8032292293309007.log
 tail -f logs/2022-00-00-00-00-tradebot-04218329122948088.log
