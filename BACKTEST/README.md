@@ -61,7 +61,7 @@ or
 node gekko -c config.js --ui
 ```
 
-#### User Interface:
+#### User Interface: [BackTest]
 ```
 http://192.168.1.146:3000
 ```
