@@ -1,3 +1,7 @@
+/*
+
+
+*/
 var WebSocketClient = require('websocket').client;
 var client = new WebSocketClient();
 const CryptoJS = require('crypto-js');
