@@ -28,8 +28,7 @@ const Trader = function(config) {
       this.currency = config.currency;
       this.asset = config.asset;
       this.pair = this.asset + '_' + this.currency;
-      this.balance;
-      this.price;
+ 
       
   };
   this.name = 'EXMO';
