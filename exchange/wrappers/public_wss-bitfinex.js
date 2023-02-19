@@ -1,3 +1,7 @@
+/*
+
+
+*/
 const ws = require('ws')
 const w = new ws('wss://api-pub.bitfinex.com/ws/2')
 
