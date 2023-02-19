@@ -6,6 +6,8 @@
 const Bitfinex=require('bitfinex-api-node');const file= require('file-system');const fs= require('fs');
 const _=require('lodash');const moment=require('moment');
 const Errors=require('../exchangeErrors');const retry=require('../exchangeUtils').retry;
+const util = require('../../core/util');
+const config = util.getConfig();
 const marketData=require('./bitfinex-markets.json');
 const public_wss_bitfinex=('./public_wss-bitfinex');
 const private_wss_bitfinex=require('./private_wss-bitfinex');
