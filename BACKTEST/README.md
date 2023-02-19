@@ -35,7 +35,7 @@ npm i --build-from-source
 
 #### Tulind Indicators : It provides 100+ technical analysis indicator
 
-#### Database Sqlite and Sqlite3
+#### Database Sqlite3
 
 ```
 npm i tulind --save
@@ -63,9 +63,9 @@ node gekko -c config.js --ui
 
 #### User Interface:
 ```
-http://localhost:3000
+http://192.168.1.146:3000
 ```
-#### [Setup Static-IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
+#### [Setup/Change Static-IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
 
 ---
 
