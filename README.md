@@ -89,6 +89,20 @@ pm2 monit
 ```
 ![Pm2 Monit](https://github.com/universalbit-dev/gekko-m4/blob/master/2022-12-13%2002-58-41-002.png)
 
+---
+
+#### Standard node commands:
+First Run User Interface:
+```
+node gekko -c config.js --ui
+```
+
+Terminal with DEBUG Messages:
+```
+node gekko -c config.js
+```
+---
+
 Front-end: http://192.168.1.146:3007
 Gekko Gordon UI edition  Author:[Klemens Wittig](https://github.com/H256/gekko-quasar-ui)
 
@@ -103,16 +117,6 @@ Gekko Gordon UI edition  Author:[Klemens Wittig](https://github.com/H256/gekko-q
 On the crypto road : probably not necessary but the project looks interesting
 ccxt-js library: a JavaScript / Python / PHP library for cryptocurrency trading and e-commerce with support for many bitcoin/ether/altcoin exchange markets and merchant APIs. [ccxt](https://github.com/universalbit-dev/ccxt/tree/master/doc)
 
-#### Standard node commands:
-First Run User Interface:
-```
-node gekko -c config.js --ui
-```
-
-Terminal with DEBUG Messages:
-```
-node gekko -c config.js
-```
 -----
 
 ##### Crypto Icons [optional]
