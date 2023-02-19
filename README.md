@@ -132,6 +132,9 @@ There are no easy gains
 ###### Custom Strategy: [INVERTER](https://github.com/universalbit-dev/gekko-m4/blob/master/strategies/INVERTER.js)
 This strategy intended as "low freq trade",buy-sell in the event of a sudden rise or an uptrend period.
 
+##### [TOML](https://toml.io/en/) : TOML is a file format for configuration files. 
+[Configuration files](https://github.com/universalbit-dev/gekko-m4/tree/master/config)
+
 ### Resources:
 * [Documentation](https://gekko.wizb.it/docs/installation/installing_gekko.html)
 * [Forum](https://forum.gekko.wizb.it/)
