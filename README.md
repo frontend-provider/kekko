@@ -89,7 +89,7 @@ pm2 monit
 ```
 ![Pm2 Monit](https://github.com/universalbit-dev/gekko-m4/blob/master/2022-12-13%2002-58-41-002.png)
 
-Front-end:
+Front-end: http://192./168.1.146:3007
 Gekko Gordon UI edition  Author:[Klemens Wittig](https://github.com/H256/gekko-quasar-ui)
 
 ![Gekko-Gordon](https://github.com/universalbit-dev/gekko-m4/blob/master/2022-12-13%2002-57-57.png)
@@ -115,7 +115,7 @@ node gekko -c config.js
 ```
 -----
 
-##### Crypto Icons
+##### Crypto Icons [optional]
 extract archive file crypto-[icons](https://cryptoicons.net/icons.php)
 directory: web/vue/statics
 ```
