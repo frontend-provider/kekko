@@ -2,10 +2,12 @@
 
 
 */
+
 const _ = require('lodash');
 const moment = require('moment');
 const retry = require('../exchangeUtils').retry;
 const CryptoJS = require("crypto-js");
+const exmo = require('exmo-api');
 const querystring = require('querystring');
 const request = require('request');
 const file= require('file-system');
@@ -19,20 +21,20 @@ API_URL='https://api.exmo.com/v1/';
 const marketData = require('./exmo-markets.json');
 
 const Trader = function(config) {
-  _.bindAll(this);
-  this.key="";
-  this.secret="";
-  if(_.isObject(config)) {
-      if(_.isString(config.key)) this.key = config.key;
-      if(_.isString(config.secret)) this.secret = config.secret;
-      this.currency = config.currency;
-      this.asset = config.asset;
-      this.pair = this.asset + '_' + this.currency;
- 
-      
-  };
-  this.name = 'EXMO';
-  this.nonce = new Date() * 1000;
+_.bindAll(this);
+this.key="";
+this.secret="";
+if(_.isObject(config)) {
+if(_.isString(config.key)) this.key = config.key;
+if(_.isString(config.secret)) this.secret = config.secret;
+this.currency = config.currency;
+this.asset = config.asset;
+this.pair = this.asset + '_' + this.currency;
+exmo.init_exmo({key:this.key, secret:this.secret});     
+};
+
+this.name = 'EXMO';
+this.nonce = new Date() * 1000;
 }
 const recoverableErrors = [
   'SOCKETTIMEDOUT',
