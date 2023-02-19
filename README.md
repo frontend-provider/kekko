@@ -8,13 +8,13 @@ AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.***
 
 -----
 
-#### Gekko 
+#### Gekko
 The MIT License (MIT) Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
 
-
-Gekko-M4 The MIT License (MIT) Copyright (c) 2022 UniversalBit Blockchain This Software unlike easy gains
+Gekko-M4 The MIT License (MIT) Copyright (c) 2023 UniversalBit Blockchain This Software unlike easy gains
 #### improve graphic and correct some errors, enhance the application by solving some vulnerabilities.
 ##### [gekko-ui](https://github.com/universalbit-dev/gekko-quasar-ui)
+
 -----
 During these years (from June 2021) I am committed to understanding how this application could work and there is still a lot of work to be done. this application is not intended as a quick profit use.
 
@@ -58,7 +58,7 @@ npm i --build-from-source
 ```
 -Tulind Indicators : It provides 100+ technical analysis indicator functions [tulind npm](https://www.npmjs.com/package/tulind)
 
--Database Sqlite and Sqlite3 [sqlite npm](https://www.npmjs.com/package/sqlite)
+-Database Sqlite3 [sqlite3 npm](https://www.npmjs.com/package/sqlite3)
 ```
 npm i tulind --save
 npm i sqlite3 --save
