@@ -1,4 +1,4 @@
-const CONFIG={headless:true,api:{host:'localhost',port:3007,timeout:60000},ui:{ssl:false,host:'localhost',port:3007,path:'/'}}
+const CONFIG={headless:true,api:{host:'192.168.1.146',port:3007,timeout:60000},ui:{ssl:false,host:'192.168.1.146',port:3007,path:'/'}}
 if(typeof window==='undefined')
 module.exports=CONFIG;
 else
