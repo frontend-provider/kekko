@@ -10,6 +10,7 @@ const querystring = require('querystring');
 const request = require('request');
 const file= require('file-system');
 const fs= require('fs');
+const wss_exmo=require('./wss-exmo');
 
 API_URL='https://api.exmo.com/v1/';
 const marketData = require('./exmo-markets.json');
