@@ -1,3 +1,7 @@
+/*
+
+
+*/
 var plugins = [
   {
     name: 'Candle writer',
