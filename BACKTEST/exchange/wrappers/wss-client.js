@@ -1,5 +1,4 @@
 var WebSocketClient = require('websocket').client;
-
 var client = new WebSocketClient();
 
 client.on('connectFailed', function(error) {
@@ -29,4 +28,4 @@ client.on('connect', function(connection) {
     sendNumber();
 });
 
-client.connect('ws://localhost:3010/', 'echo-protocol');
+client.connect('ws://localhost:3012/', 'echo-protocol');
