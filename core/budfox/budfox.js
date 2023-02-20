@@ -1,6 +1,6 @@
-// Budfox is the realtime market for Gekko!
-// Read more here:
-// @link https://github.com/askmike/gekko/blob/stable/docs/internals/budfox.md
+/*
+
+*/
 var _ = require('lodash');
 var async = require('async');
 var util = require(__dirname + '/../util');
