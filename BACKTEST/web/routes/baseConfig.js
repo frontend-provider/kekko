@@ -1,3 +1,7 @@
+/*
+
+
+*/
 var UIconfig = require('../vue/statics/UiConfig');
 var config = {};
 
