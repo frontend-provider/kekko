@@ -6,7 +6,7 @@ var server = http.createServer(function(request, response) {
     response.writeHead(404);
     response.end();
 });
-server.listen(3010, function() {
+server.listen(3012, function() {
     console.log((new Date()) + ' Server is listening on port 3012');
 });
 
