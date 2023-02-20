@@ -1,10 +1,13 @@
+/*
+
+
+*/
 var _ = require('lodash');
 var util = require(__dirname + '/../util');
 var MarketFetcher = require('./marketFetcher');
 var dirs = util.dirs();
 var Manager = function(config) {
   _.bindAll(this);
-
 // fetch trades
   this.source = new MarketFetcher(config);
 // relay newly fetched trades
@@ -18,7 +21,6 @@ util.makeEventEmitter(Manager);
 Manager.prototype.retrieve = function() {
   this.source.fetch();
 }
-
 
 Manager.prototype.relayTrades = function(batch) {
   this.sendMarketStart(batch);
