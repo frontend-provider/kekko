@@ -1,5 +1,5 @@
 #### BackTest your strategy:
-[![RoundTrips](https://github.com/universalbit-dev/gekko-m4/blob/master/BACKTEST/img/gekko-m4-backtest.png)]( "backtest")
+[![RoundTrips](https://github.com/universalbit-dev/gekko-m4/blob/master/BACKTEST/img/gekko-m4_backtest.png)]( "backtest")
  Quasar Framework 1.22.5 [UI](https://github.com/universalbit-dev/gekko-quasar-ui)
  
 #### Installation:
