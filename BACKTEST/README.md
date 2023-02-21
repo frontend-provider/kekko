@@ -73,6 +73,7 @@ Import Data: (Integrating the CCXT library would simplify data import operations
 #### Importer still works with these two exchanges 
 #### | Binance | Kraken |
 
+[![RoundTrips]()]( "backtest")
 ---
 
 
