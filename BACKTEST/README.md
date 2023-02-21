@@ -1,8 +1,7 @@
-#### BackTest your strategy: 
-The goal is to remove the live functions and use only the simulator: [UI](https://github.com/universalbit-dev/gekko-quasar-ui)
-
+#### BackTest your strategy:
 [![RoundTrips](https://github.com/universalbit-dev/gekko-m4/blob/master/BACKTEST/img/gekko-m4-backtest.png)]( "backtest")
-
+ Quasar Framework 1.22.5 [UI](https://github.com/universalbit-dev/gekko-quasar-ui)
+ 
 #### Installation:
 
 ```
