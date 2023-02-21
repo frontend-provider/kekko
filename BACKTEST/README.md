@@ -75,8 +75,6 @@ Import Data: (Integrating the CCXT library would simplify data import operations
 
 ---
 
-[![Importer](https://github.com/universalbit-dev/gekko-m4/blob/master/importers/exchanges/img/importer.png)]( "importer")
-
 
 
 
