@@ -1,117 +1,61 @@
-// 
-// Subscriptions glue plugins to events
-// flowing through the Gekko.
-// 
+var plugins = [
+  {
+    name: 'Candle writer',
+    description: 'Store candles in a database',
+    slug: 'candleWriter',
+    async: true,
+    modes: ['importer'],
+    path: config => 'sqlite' + '/writer',
+    version: 0.1,
+  },
+  {
+    name: 'Trading Advisor',
+    description: 'Calculate trading advice',
+    slug: 'tradingAdvisor',
+    async: true,
+    modes: ['backtest'],
+    emits: true,
+    path: config => 'tradingAdvisor/tradingAdvisor.js',
+  },
 
-var subscriptions = [
   {
-    emitter: 'market',
-    event: 'candle',
-    handler: 'processCandle'
+    name: 'Paper Trader',
+    description: 'Paper trader that simulates fake trades.',
+    slug: 'paperTrader',
+    async: false,
+    modes: ['backtest'],
+    emits: true,
+    path: config => 'paperTrader/paperTrader.js',
   },
   {
-    emitter: 'market',
-    event: 'marketUpdate',
-    handler: 'processMarketUpdate'
+    name: 'Performance Analyzer',
+    description: 'Analyzes performances of trades',
+    slug: 'performanceAnalyzer',
+    async: false,
+    modes: ['backtest'],
+    emits: true,
+    path: config => 'performanceAnalyzer/performanceAnalyzer.js',
+  },
+
+  {
+    name: 'Event logger',
+    description: 'Logs all gekko events.',
+    slug: 'eventLogger',
+    async: false,
+    modes: ['backtest'],
+    greedy: true
   },
   {
-    emitter: 'market',
-    event: 'marketStart',
-    handler: 'processMarketStart'
+    name: 'Backtest result export',
+    description: 'Exports the results of a gekko backtest',
+    slug: 'backtestResultExporter',
+    async: false,
+    modes: ['backtest']
   },
-  {
-    emitter: 'tradingAdvisor',
-    event: 'stratWarmupCompleted',
-    handler: 'processStratWarmupCompleted'
-  },
-  {
-    emitter: 'tradingAdvisor',
-    event: 'advice',
-    handler: 'processAdvice'
-  },
-  {
-    emitter: 'tradingAdvisor',
-    event: 'stratCandle',
-    handler: 'processStratCandle'
-  },
-  {
-    emitter: 'tradingAdvisor',
-    event: 'stratUpdate',
-    handler: 'processStratUpdate'
-  },
-  {
-    emitter: 'tradingAdvisor',
-    event: 'stratNotification',
-    handler: 'processStratNotification'
-  },
-  {
-    emitter: ['trader', 'paperTrader'],
-    event: 'tradeInitiated',
-    handler: 'processTradeInitiated'
-  },
-  {
-    emitter: ['trader', 'paperTrader'],
-    event: 'tradeAborted',
-    handler: 'processTradeAborted'
-  },
-  {
-    emitter: ['trader', 'paperTrader'],
-    event: 'tradeCompleted',
-    handler: 'processTradeCompleted'
-  },
-  {
-    emitter: 'trader',
-    event: 'tradeCancelled',
-    handler: 'processTradeCancelled'
-  },
-  {
-    emitter: 'trader',
-    event: 'tradeErrored',
-    handler: 'processTradeErrored'
-  },
-  {
-    emitter: ['trader', 'paperTrader'],
-    event: 'portfolioChange',
-    handler: 'processPortfolioChange'
-  },
-  {
-    emitter: ['trader', 'paperTrader'],
-    event: 'triggerCreated',
-    handler: 'processTriggerCreated'
-  },
-  {
-    emitter: ['trader', 'paperTrader'],
-    event: 'triggerAborted',
-    handler: 'processTriggerAborted'
-  },
-  {
-    emitter: ['trader', 'paperTrader'],
-    event: 'triggerFired',
-    handler: 'processTriggerFired'
-  },
-  {
-    emitter: ['trader', 'paperTrader'],
-    event: 'portfolioValueChange',
-    handler: 'processPortfolioValueChange'
-  },
-  {
-    emitter: 'performanceAnalyzer',
-    event: 'performanceReport',
-    handler: 'processPerformanceReport'
-  },
-  {
-    emitter: 'performanceAnalyzer',
-    event: 'roundtripUpdate',
-    handler: 'processRoundtripUpdate'
-  },
-  {
-    emitter: 'performanceAnalyzer',
-    event: 'roundtrip',
-    handler: 'processRoundtrip'
-  },
+
 ];
 
-module.exports = subscriptions;
+module.exports = plugins;
 
 /*
 The MIT License (MIT)
