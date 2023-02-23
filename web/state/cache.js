@@ -1,5 +1,10 @@
+/*
+
+
+*/
 const _=require('lodash');const cache={};module.exports={set:(name,val)=>{cache[name]=val;return true;},get:name=>{if(_.has(cache,name))
 return cache[name];}}
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
