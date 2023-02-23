@@ -1,3 +1,7 @@
+/*
+
+*/
+
 const os=require('os');var isWindows=(os.platform()=='win32'||os.release().indexOf('Microsoft')>-1);module.exports=isWindows;
 /*
 The MIT License (MIT)
