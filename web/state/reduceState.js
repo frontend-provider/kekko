@@ -1,9 +1,15 @@
+/*
+
+
+*/
+
 const skipInitialEvents=['marketUpdate'];const skipLatestEvents=['marketStart','stratWarmupCompleted'];const trackAllEvents=['tradeCompleted','advice','roundtrip'];const reduce=(state,event)=>{const type=event.type;const payload=event.payload;state={...state,latestUpdate:new Date()}
 if(trackAllEvents.includes(type)){if(!state.events[type]){state={...state,events:{...state.events,[type]:[payload]}}}else{state={...state,events:{...state.events,[type]:[...state.events[type],payload]}}}}
 if(!state.events.initial[type]&&!skipInitialEvents.includes(type)){state={...state,events:{...state.events,initial:{...state.events.initial,[type]:payload}}}}
 if(!skipLatestEvents.includes(type)){state={...state,events:{...state.events,latest:{...state.events.latest,[type]:payload}}}}
 return state;}
 module.exports=reduce;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
