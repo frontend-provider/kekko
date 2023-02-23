@@ -1,3 +1,8 @@
+/*
+
+
+
+*/
 const _=require('lodash');var ListManager=function(){this._list=[];}
 ListManager.prototype.add=function(obj){if(!obj.id)
 return false;this._list.push(_.clone(obj));return true;}
@@ -11,6 +16,7 @@ return true;else
 return false;}
 ListManager.prototype.list=function(){return this._list;}
 module.exports=ListManager;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
