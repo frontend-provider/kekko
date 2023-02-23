@@ -1,3 +1,7 @@
+/*
+
+
+*/
 const _=require('lodash');const moment=require('moment');const broadcast=require('./cache').get('broadcast');const Logger=require('./logger');const pipelineRunner=require('../../core/workers/pipeline/parent');const reduceState=require('./reduceState.js');const now=()=>moment().format('YYYY-MM-DD HH:mm:ss');const GekkoManager=function(){this.gekkos={};this.instances={};this.loggers={};this.archivedGekkos={};}
 GekkoManager.prototype.add=function({mode,config}){let type;if(mode==='realtime'){if(config.market&&config.market.type)
 type=config.market.type;else
