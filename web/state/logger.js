@@ -1,3 +1,7 @@
+/*
+
+
+*/
 const fs=require('fs');
 const file=require('file-system');
 const _=require('lodash');
@@ -9,6 +13,7 @@ Logger.prototype.handleWriteCallback=function(err){if(err)
 console.error(`ERROR WRITING LOG FILE ${this.fileName}:`,err);this.writing=false;if(_.size(this.queue))
 this.write(this.queue.shift())}
 module.exports=Logger;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
