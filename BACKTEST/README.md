@@ -51,6 +51,11 @@ cd BACKTEST/exchange
 npm i --build-from-source
 ```
 
+#### SSL Create Certificates
+```
+mkdir ssl
+openssl req -x509 -newkey rsa:4096 -nodes -out ssl/cert.pem -keyout ssl/key.pem -days 99999
+```
 
 #### First Run User Interface:
 ```
