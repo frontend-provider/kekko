@@ -78,9 +78,11 @@ Thanks developers.
 
 ---
 #### SSL Create Certificates
+
+```
 mkdir ssl
 openssl req -x509 -newkey rsa:4096 -nodes -out ssl/cert.pem -keyout ssl/key.pem -days 99999
-
+```
 
 
 ##### enable [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
