@@ -10,6 +10,11 @@
     "finance",
     "economy"
   ],
+  "ssl": {
+   "key": "./ssl/key.pem",
+   "cert": "./ssl/cert.pem"
+},
+
   "scripts": {
     "test": "mocha test/*.js --recursive test -u tdd --reporter spec",
     "start": "node ./gekko --config config.js --ui"
