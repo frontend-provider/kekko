@@ -77,8 +77,13 @@ Thanks developers.
 #### [Setup Static-IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
 
 ---
+#### SSL Create Certificates
+mkdir ssl
+openssl req -x509 -newkey rsa:4096 -nodes -out ssl/cert.pem -keyout ssl/key.pem -days 99999
 
-enable [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
+
+
+##### enable [cluster-mode](https://pm2.keymetrics.io/docs/usage/cluster-mode/#cluster-mode)
 ##### [Pm2 Process Manager](https://www.npmjs.com/package/pm2)
 
 ```
