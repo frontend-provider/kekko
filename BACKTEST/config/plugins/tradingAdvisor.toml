@@ -1,5 +1,4 @@
 enabled = true
-
 candleSize = 10
 historySize = 1
 method = "INVERTER"
