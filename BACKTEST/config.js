@@ -40,7 +40,7 @@ config.trader={enabled:false,exchange:'exmo',currency:'BTC',asset:'LTC',key:'',s
 config.candleWriter={enabled:true,adapter:'sqlite'};
 
 config.adviceLogger={enabled:true};
-config.backtestResultExporter={enabled:true};
+config.backtestResultExporter={enabled:false};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING BACKTESTING
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,7 +90,7 @@ config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 config.importer={enabled:true};
 config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,journalMode: require('./web/isWindows.js') ? 'DELETE' : 'WAL',dependencies:[{module: 'sqlite3'}] };
 //Child to Parent
-config.childToParent = {enabled: false};
+config.childToParent = {enabled: true};
 //Strategy
 config.method='INVERTER';
 
