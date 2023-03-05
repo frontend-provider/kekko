@@ -1,5 +1,6 @@
+enabled =  true
 batchSize = 50      
 daterange = "scan"       
 [[daterange]]      
 from = "2022-07-13"     
-to = "2022-07-20"enabled =  true    
+to = "2023-03-05" 
