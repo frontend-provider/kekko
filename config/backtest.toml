@@ -1,4 +1,4 @@
-enabled =  true
+enabled = false
 batchSize = 50
 daterange = "scan"
 [[daterange]]
