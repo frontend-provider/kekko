@@ -1,8 +1,5 @@
-batchSize = 50
-
-# scan for available dateranges
-daterange = "scan"
-# or specify it like so:
-# [daterange]
-# from = "2015-01-01"
-# to = "2016-01-01"
+batchSize = 50      
+daterange = "scan"       
+[[daterange]]      
+from = "2022-07-13"     
+to = "2022-07-20"enabled =  true    
