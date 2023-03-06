@@ -8,13 +8,11 @@
   backtesting on historical data. Also look at the code to see what how 
   it is working.
 */
-
+const util = require(__dirname + '/core/util');
 console.log('##########################################');
 console.log('UniversalBit Blockchain Powered by Gekko');
 console.log('\tGekko v' + util.getVersion());
 console.log('##########################################');
-
-var util = require(__dirname + '/core/util.js');
 var dirs = util.dirs();
 
 //Remove if condition and enable multi-server files for running terminal one config file 
