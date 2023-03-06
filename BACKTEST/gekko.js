@@ -5,15 +5,11 @@
   architecture here:
   https://gekko.wizb.it/docs/internals/architecture.html
 */
-
+const util = require(__dirname + '/core/util');
 console.log('##########################################');
 console.log('UniversalBit Blockchain Powered by Gekko');
 console.log('\tGekko v' + util.getVersion());
 console.log('##########################################');
-
-const util = require(__dirname + '/core/util');
-
-
 const dirs = util.dirs();
 
 if(util.launchUI()) {
