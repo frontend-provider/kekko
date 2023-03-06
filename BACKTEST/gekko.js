@@ -4,11 +4,11 @@
   If you are interested in how Gekko works, read more about Gekko's 
   architecture here:
   https://gekko.wizb.it/docs/internals/architecture.html
-
 */
 
 console.log('##########################################');
 console.log('UniversalBit Blockchain Powered by Gekko');
+console.log('\tGekko v' + util.getVersion());
 console.log('##########################################');
 
 const util = require(__dirname + '/core/util');
