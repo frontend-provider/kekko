@@ -11,11 +11,10 @@
 
 console.log('##########################################');
 console.log('UniversalBit Blockchain Powered by Gekko');
-console.log('##########################################');
-var util = require(__dirname + '/core/util.js');
-
 console.log('\tGekko v' + util.getVersion());
+console.log('##########################################');
 
+var util = require(__dirname + '/core/util.js');
 var dirs = util.dirs();
 
 //Remove if condition and enable multi-server files for running terminal one config file 
