@@ -88,7 +88,7 @@
     "utf-8-validate": "^5.0.5",
     "util": "^0.12.4",
     "utils-extend": "^1.0.8",
-    "vue": "^2.x",
+    "vue": "^2.7",
     "vue-axios": "^3.2.5",
     "vue-echarts": "^3.1.1",
     "vue-i18n": "^8.0.0",
