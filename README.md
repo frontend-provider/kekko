@@ -1,8 +1,6 @@
 ### Gekko-M4
 #### unlike easy gains
-***This software is for educational purposes only. Do not risk money which
-you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS
-AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.***
+#### This software is for educational purposes only. Do not risk money which you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.
 -----
 
 #### improve graphic and correct some errors, enhance the application by solving some vulnerabilities.
@@ -50,9 +48,9 @@ npm i pm2 -g
 pm2 start gekko-m4.js
 ```
 
-[Static IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
+##### [Static IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
 ---
-URL: http://192.168.1.146:3007
+##### URL: http://192.168.1.146:3007
 ---
 
 ### Resources:
