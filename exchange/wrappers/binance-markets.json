@@ -1,0 +1,10 @@
+{
+  "assets": ["LTC"],
+  "currencies": ["BTC"],
+  "markets": [
+    {
+    "pair": ["BTC","LTC"],
+    "minimalOrder": {"amount": 0.0004,"price": 0.00001,"order": 1}
+    }
+  ]
+}

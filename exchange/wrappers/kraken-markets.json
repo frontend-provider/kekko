@@ -1,0 +1,18 @@
+{
+  "assets": [
+    "LTC"
+  ],
+  "currencies": [
+    "XBT"
+  ],
+  "markets": [
+    {
+      "pair": ["XBT","LTC"],
+      "prefixed": ["XXBT","XLTC"],
+      "book": "XLTCXXBT",
+      "minimalOrder": {"amount": "0.1","unit": "asset"},
+      "pricePrecision": 6,
+      "amountPrecision": 8
+   }]
+}
+
