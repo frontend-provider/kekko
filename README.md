@@ -28,7 +28,7 @@ git clone https://github.com/universalbit-dev/gekko-m4.git
 cd gekko-m4
 ```
 
-one line installation
+installation:
 
 -Engine
 ```
