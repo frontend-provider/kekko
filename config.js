@@ -17,56 +17,56 @@ it is working.
 var config = {};
 //General Settings
 config.debug =true;
-//**Watching a Market [BTC-LTC]
+//Watching a Market [BTC-LTC]
 config.watch = {exchange: 'bitfinex',currency: 'BTC',asset: 'LTC'};
 config.watch = {exchange: 'kraken',currency:'XBT',asset:'LTC'};
 config.watch = {exchange: 'poloniex',currency:'BTC',asset:'LTC'};
-config.watch = {exchange: 'exmo',currency:'BTC',asset:'LTC'};
-
 //Trading Advisor
 config.tradingAdvisor = {enabled:true};
 config.tradingAdvisor.candleSize=10;
 config.tradingAdvisor.historySize=1;
 config.tradingAdvisor.method= 'INVERTER';
-
 //Adapter
 config.adapter='sqlite';
-
+//Api
+config.trader ={enabled:false,exchange:'bitfinex',currency:'BTC',asset:'LTC',key:'',secret:''};
+config.trader={enabled:true,exchange:'kraken',currency:'XBT',asset:'LTC',key:'',secret:''};
+config.trader={enabled:true,exchange:'poloniex',currency:'BTC',asset:'LTC',key:'',secret:''};
 config.candleWriter={enabled:true,adapter:'sqlite'};
-
 config.adviceLogger={enabled:true};
+config.backtestResultExporter={enabled:true};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING BACKTESTING
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// For backtesting you should enable and configure the following plugins:
-//trading advisor (to run your strategy).
-//paper trader (to execute simulated trades).
-//performance analyzer (to calculate how succesfull the strategy would have been).
-//Besides that, make sure to configure config.watch.
-
-
-config.backtest = {
-  daterange: 'scan',
-  // daterange: {
-  //   from: "2018-03-01",
-  //   to: "2018-04-28"
-  //},
-  batchSize: 50
+config.backtestResultExporter = {
+  enabled: true,
+  writeToDisk: false,
+  data: {
+    stratUpdates: true,
+    roundtrips: true,
+    stratCandles: true,
+    trades: true
+  }
 };
 
-//**BTC-LTC trader=enabled:false
-//if plugin trader enabled:true  disable plugin papertrader
-config.trader ={enabled:false,exchange:'bitfinex',currency:'BTC',asset:'LTC',key:'',secret:''};
-config.trader={enabled:false,exchange:'kraken',currency:'XBT',asset:'LTC',key:'',secret:''};
-config.trader={enabled:false,exchange:'poloniex',currency:'BTC',asset:'LTC',key:'',secret:''};
-config.trader={enabled:false,exchange:'exmo',currency:'BTC',asset:'LTC',key:'',secret:''};
+config.data: {
+     candleProps: ["close", "start"],
+     indicatorResults: true,
+     report: true,
+     roundtrips: true
+};
 
+config.importer = {daterange: 'scan',
+  daterange: {from: "2018-03-01",to: "2018-04-28"},
+};
+
+config.backtest = {daterange: 'scan',
+  daterange: {from: "2018-03-01",to: "2018-04-28"},
+  batchSize: 50
+};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PAPERTRADER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-//plugin papertrade enabled:true  disable plugin trader
-
 config.paperTrader = {
   enabled: true,
   // report the profit in the currency or the asset?
@@ -88,18 +88,14 @@ config.paperTrader = {
 //                       CONFIGURING PERFORMANCE ANALYZER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
-
-
 //Importer
 config.importer={enabled:true};
 config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,journalMode: require('./web/isWindows.js') ? 'DELETE' : 'WAL',dependencies:[{module: 'sqlite3'}] };
 //Child to Parent
-config.childToParent = {enabled: false};
+config.childToParent = {enabled: true};
 //Strategy
-config.method='INVERTER';
-
 config.INVERTER= {
-SMA_long:10,SMA_short:55,DEMA_short:10,DEMA_long:21,RSI:14,
+SMA_long:10,SMA_short:21,DEMA_long:10,DEMA_short:21,RSI:14,
 BULL_RSI:7,BULL_RSI_high:82,BULL_RSI_low:60,
 BEAR_RSI:14,BEAR_RSI_high:60,BEAR_RSI_low:15,
 BULL_MOD_high:5,BULL_MOD_low:-5,BEAR_MOD_high:15,BEAR_MOD_low:-5,
@@ -107,5 +103,11 @@ ADX:14,ADX_high:70,ADX_low:50,
 Stop_Loss_Percent:3,Stop_Gain_Percent:3,Min_Loss_Percent:1.5,Min_Gain_Percent:1.5,
 PINGPONG_GAINS_PERCENTAGE:10};
 
+config.NEURALNET={
+threshold_buy:1.0,threshold_sell:-1.0,method:'sgd',learning_rate:0.0004,momentum:0.9,
+decay:0.001,SMA_long:10,SMA_short:55,stoploss_enabled:false,stoploss_threshold:0.85,
+hodl_threshold:1,price_buffer_len:100,min_predictions:1000,
+};
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
 module.exports = config;
+
