@@ -40,7 +40,8 @@ var pluginHelper = {
             'it by running: \n\n',
             '\tnpm install',
             dep.module + '@' + dep.version
-          ].join(' ');
+          ];
+          error.join(' ');
         }
       });
 
@@ -54,7 +55,7 @@ var pluginHelper = {
     if(!plugin.config || !plugin.config.enabled)
       return next();
 
-    if(!_.contains(plugin.modes, gekkoMode)) {
+    if(!_.includes(plugin.modes, gekkoMode)) {
       log.warn(
         'The plugin',
         plugin.name,

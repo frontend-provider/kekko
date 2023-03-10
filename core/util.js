@@ -7,7 +7,7 @@
 var moment = require('moment');
 var _ = require('lodash');
 var path = require('path');
-var fs = require('fs');
+var fs = require('fs-extra');
 var file = require('file-system');
 var semver = require('semver');
 var program = require('commander');
@@ -56,7 +56,7 @@ var util = {
     return _package;
   },
   getRequiredNodeVersion: function() {
-    return util.getPackage().engines.node;
+  return util.getPackage().engines.node;
   },
   recentNode: function() {
     var required = util.getRequiredNodeVersion();
