@@ -3,7 +3,7 @@
 -----
 ##### baseUIconfig.js
 ```
-nano /web/vue/statics/UiConfig.js
+nano /web/baseUIconfig.js
 ```
 ```
 const CONFIG = {
