@@ -5,8 +5,7 @@
 Exchanges node_modules:
 
 ```
-npm i --build-from-source
-
+npm i 
 ```
 
 
