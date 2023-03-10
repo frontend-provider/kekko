@@ -21,7 +21,7 @@ var coretulind = require('../core/tulind.js');
 var _ = require('lodash');
 var ws = require ('reconnecting-websocket');
 var tulind = require('tulind');
-
+var nn = require('convnet');
 console.log("Tulip Indicators version is:");
 console.log(tulind.version);
 
@@ -48,7 +48,7 @@ this.addTulipIndicator('shortDEMA', 'dema', {optInTimePeriod : this.settings.DEM
 this.addTulipIndicator('rsi', 'rsi', {optInTimePeriod : this.settings.RSI});
 //ADX
 this.addTulipIndicator('adx', 'adx', {optInTimePeriod: this.settings.ADX});
-		
+
 //Mod (RSI modifiers)
 this.BULL_MOD_high = this.settings.BULL_MOD_high;
 this.BULL_MOD_low = this.settings.BULL_MOD_low;
@@ -60,6 +60,7 @@ this.Stop_Gain_Percent = this.settings.Stop_Gain_Percent;
 this.stoplow = 0.0;
 this.stophigh = 0.0;
 this.lastLongPrice = 0.0;
+this.lastShortPrice= 0.0;
 //Short Spread
 this.Min_Loss_Percent = this.settings.Min_Loss_Percent;
 this.Min_Gain_Percent = this.settings.Min_Gain_Percent;
@@ -75,7 +76,7 @@ this.stat = {adx: { min: 1000, max: 0 },bear: { min: 1000, max: 0 },bull: { min:
 //Reset Trend
 resetTrend: function()
 {
-let trend = {duration: 0,direction: 'none',longPos: 0,pingPong : {gainsPercentage: this.settings.PINGPONG_GAINS_PERCENTAGE }};
+let trend = {duration: 0,direction: 'none',longPos: 0,shortPos:0,pingPong : {gainsPercentage: this.settings.PINGPONG_GAINS_PERCENTAGE }};
 this.trend = trend;
 //Log Trend
 console.log(this.trend);
@@ -163,7 +164,7 @@ let rsi_hi = this.settings.BULL_RSI_high,rsi_low = this.settings.BULL_RSI_low;
 //LONG
 long: function()
 {
-	if( this.trend.direction !== 'up' )
+        if ((this.trend.direction !== 'up') || ((this.stoplow != 0.0 ) && (this.candle.close < this.stoplow )) || ((this.stophigh != 0.0 ) && (this.candle.close > this.stophigh)) )
 	{
 	this.resetTrend();
 	this.trend.direction = 'up';
@@ -172,6 +173,8 @@ long: function()
 	this.stoplow = this.lastLongPrice-(this.lastLongPrice* this.Stop_Loss_Percent / 100);
 	this.stophigh = this.lastLongPrice+(this.lastLongPrice* this.Stop_Gain_Percent / 100);
 	this.advice('long');
+	this.trend.longPos = true;
+ 	this.trend.shortPos= false;
 	}
 	if( this.debug )
 	{
@@ -188,7 +191,13 @@ long: function()
 	{
  	this.resetTrend();
  	this.trend.direction = 'down';
+    this.trend.shortPos = this.candle.close;
+    this.lastShortPrice = this.candle.close;
+    this.stoplow = this.lastShortPrice-(this.lastShortPrice* this.Stop_Loss_Percent / 100);
+	this.stophigh = this.lastShortPrice+(this.lastShortPrice* this.Stop_Gain_Percent / 100);
+	this.advice('short');
  	this.trend.longPos = false;
+ 	this.trend.shortPos= true;
  	this.advice('short');
  	if(this.debug) log.info('Going short');
  	}
@@ -216,6 +225,20 @@ pingPong: function() {
         default:
         this.trend.longPos = this.candle.close;
 }
+ switch (this.trend.shortPos)
+{
+        case this.trend.direction == 'down':
+        this.resetTrend();
+        this.trend.shortPos = true;
+        break;
+        case this.trend.direction == 'up':
+        this.resetTrend();
+        this.trend.shortPos = false;
+        break;
+        default:
+        this.trend.shortPos = this.candle.close;
+}
+
 },
 
 //End Backtest
