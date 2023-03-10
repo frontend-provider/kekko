@@ -7,5 +7,5 @@ find . -name "*.toml~" -type f -delete
 find . -name "*.json.swp" -type f -delete
 find . -name ".*.json.swp" -type f -delete
 find . -name "*.swp" -type f -delete
-echo "App Cleaned"
+echo "*. ~  .swp Removed"
 
