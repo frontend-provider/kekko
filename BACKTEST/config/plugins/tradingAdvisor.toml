@@ -1,9 +1,0 @@
-enabled = true
-candleSize = 10
-historySize = 1
-method = "INVERTER"
-[talib]
-enabled = false
-version = "1.0.2"
-[tulind]
-enabled=true
