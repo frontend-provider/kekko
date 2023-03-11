@@ -1,3 +1,4 @@
+const path = require('path');
 const p = require('../../package.json');
 
 // Retrieves API information
