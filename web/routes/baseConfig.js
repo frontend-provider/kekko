@@ -1,3 +1,4 @@
+const path = require('path');
 var UIconfig = require('../vue/statics/UiConfig');
 var config = {};
 
