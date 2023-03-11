@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const fs = require('co-fs');
 const gekkoRoot = __dirname + '/../../';
+const path = require('path');
 
 //**//
 module.exports = function *() {
