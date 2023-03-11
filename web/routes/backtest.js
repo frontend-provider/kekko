@@ -3,7 +3,7 @@
 const _ = require('lodash');
 const promisify = require('tiny-promisify');
 const pipelineRunner = promisify(require('../../core/workers/pipeline/parent'));
-
+const path = require('path');
 // starts a backtest
 // requires a post body like:
 //
