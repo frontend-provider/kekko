@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const promisify = require('tiny-promisify');
 const pipelineRunner = promisify(require('../../core/workers/pipeline/parent'));
-
+const path = require('path');
 const cache = require('../state/cache');
 const broadcast = cache.get('broadcast');
 const importManager = cache.get('imports');
