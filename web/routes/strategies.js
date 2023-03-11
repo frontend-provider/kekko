@@ -3,6 +3,13 @@ const fs = require('co-fs');
 const gekkoRoot = __dirname + '/../../';
 const path = require('path');
 
+//fs.readdir(gekkoRoot + 'strategies/', function(err, files){
+//  name = files.filter(function(e){
+//    return path.extname(e).toLowerCase() === '.js'
+//  });
+//  console.log(name);
+//});
+
 //**//
 module.exports = function *() {
   const strategyDir = yield fs.readdir(gekkoRoot + 'strategies');
