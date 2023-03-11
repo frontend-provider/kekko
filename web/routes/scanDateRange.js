@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const promisify = require('promisify-node');
-
+const path = require('path');
 const scan = promisify(require('../../core/workers/dateRangeScan/parent'));
 
 // starts a scan
