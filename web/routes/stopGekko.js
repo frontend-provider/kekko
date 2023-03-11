@@ -1,6 +1,6 @@
 const cache = require('../state/cache');
 const gekkoManager = cache.get('gekkos');
-
+const path = require('path');
 // stops a Gekko
 // requires a post body with an id
 module.exports = function *() {
