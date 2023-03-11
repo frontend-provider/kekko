@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const fs = require('co-fs');
-
+const path = require('path');
 const parts = {
   paperTrader: 'config/plugins/paperTrader',
   candleWriter: 'config/plugins/candleWriter',
