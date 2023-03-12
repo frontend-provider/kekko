@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "async": "^2.4.3",
+    "ccxt": "^2.9.12",
     "co": "^4.6.0",
     "co-fs": "^1.2.0",
     "lodash": "^4.17.21",
