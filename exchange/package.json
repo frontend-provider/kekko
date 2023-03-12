@@ -17,6 +17,7 @@
     "execution",
     "trade"
   ],
+  "contribution": "universalbit-dev",
   "author": "Mike van Rossum <mike@mvr.me>",
   "license": "MIT",
   "dependencies": {
