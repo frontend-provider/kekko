@@ -69,15 +69,8 @@ if (typeof window === "undefined") module.exports = CONFIG;
 else window.CONFIG = CONFIG;
 ```
 
-
-Documentation:
-* [configuring_gekko_on_a_server](https://github.com/askmike/gekko/blob/develop/docs/installation/configuring_gekko_on_a_server.md)
-
 * [webserver_nginx_reverse_proxy](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/webserver.md)
-
-
-#### Gekko UI Run Application:
-
+#### Run Application:
 ```
 pm2 start gekko-m4.js
 ```
