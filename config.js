@@ -18,8 +18,8 @@ config.tradingAdvisor.method= '';
 config.adapter='sqlite';
 //Api
 config.trader ={enabled:false,exchange:'bitfinex',currency:'BTC',asset:'LTC',key:'',secret:''};
-config.trader={enabled:true,exchange:'kraken',currency:'XBT',asset:'LTC',key:'',secret:''};
-config.trader={enabled:true,exchange:'poloniex',currency:'BTC',asset:'LTC',key:'',secret:''};
+config.trader={enabled:false,exchange:'kraken',currency:'XBT',asset:'LTC',key:'',secret:''};
+config.trader={enabled:false,exchange:'poloniex',currency:'BTC',asset:'LTC',key:'',secret:''};
 config.candleWriter={enabled:true,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
 config.backtestResultExporter={enabled:true};
