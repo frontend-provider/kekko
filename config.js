@@ -94,20 +94,7 @@ config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,jo
 //Child to Parent
 config.childToParent = {enabled: true};
 //Strategy
-config.INVERTER= {
-SMA_long:10,SMA_short:21,DEMA_long:10,DEMA_short:21,RSI:14,
-BULL_RSI:7,BULL_RSI_high:82,BULL_RSI_low:60,
-BEAR_RSI:14,BEAR_RSI_high:60,BEAR_RSI_low:15,
-BULL_MOD_high:5,BULL_MOD_low:-5,BEAR_MOD_high:15,BEAR_MOD_low:-5,
-ADX:14,ADX_high:70,ADX_low:50,
-Stop_Loss_Percent:3,Stop_Gain_Percent:3,Min_Loss_Percent:1.5,Min_Gain_Percent:1.5,
-PINGPONG_GAINS_PERCENTAGE:10};
 
-config.NEURALNET={
-threshold_buy:1.0,threshold_sell:-1.0,method:'sgd',learning_rate:0.0004,momentum:0.9,
-decay:0.001,SMA_long:10,SMA_short:55,stoploss_enabled:false,stoploss_threshold:0.85,
-hodl_threshold:1,price_buffer_len:100,min_predictions:1000,
-};
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
 module.exports = config;
 
