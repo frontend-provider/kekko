@@ -63,9 +63,6 @@ pm2 start gekko-m4.js
 * [Extra-Indicators](https://github.com/Gab0/gekko-extra-indicators)
 ---
 
-###### Custom Strategy: [INVERTER](https://github.com/universalbit-dev/gekko-m4/blob/master/strategies/INVERTER.js)
-This strategy intended as "low freq trade",buy-sell in the event of a sudden rise or an uptrend period.
-
 ##### [TOML](https://toml.io/en/) : TOML is a file format for configuration files. 
 [Configuration files](https://github.com/universalbit-dev/gekko-m4/tree/master/config)
 
