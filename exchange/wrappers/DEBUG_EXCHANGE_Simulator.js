@@ -1,4 +1,4 @@
-// Fake exchanges: used to test purposes to develop Gekko (works without internet).
+//exchanges: used to test purposes to develop Gekko (works without internet).
 
 const _ = require('lodash');
 const moment = require('moment');
@@ -10,7 +10,7 @@ const Trader = function() {
   this.at = moment().subtract(30, 'minutes');
 
 
-  // fake data
+  // simulate data
   this.price = 100;
   this.trend = 'up';
   this.tid = 0;
@@ -54,12 +54,12 @@ Trader.getCapabilities = function () {
   return {
     name: 'Exchange Simulator',
     slug: 'DEBUG_exchange-simulator',
-    currencies: ['USD'],
-    assets: ['BTC', 'BTC'],
+    currencies: ['LTC'],
+    assets: ['BTC'],
     maxTradesAge: 60,
     maxHistoryFetch: null,
     markets: [
-      { pair: ['USD', 'BTC'], minimalOrder: { amount: 5, unit: 'currency' } },
+      { pair: ['BTC', 'LTC'], minimalOrder: { amount: 0.04, unit: 'currency' } },
     ],
     requires: ['key', 'secret', 'username'],
     fetchTimespan: 60,
@@ -69,4 +69,3 @@ Trader.getCapabilities = function () {
 }
 
 module.exports = Trader;
-
