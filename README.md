@@ -36,7 +36,7 @@ npm i
 ```
 -Exchanges 
 ```
-cd exchanges
+cd exchange
 npm i
 ```
 Thanks developers.
