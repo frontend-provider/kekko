@@ -7,23 +7,10 @@ adapter = "sqlite"
 [[dependencies]]
 module="sqlite3"
 
-#Watch Exchange Market :BTC-LTC
+[[watch]]
+exchange = ""
+currency = ""
+asset = ""
+key=""
+secret=""
 
-[[watch]]
-exchange = "bitfinex"
-currency = "BTC"
-asset = "LTC"
-key=""
-secret=""
-[[watch]]
-exchange = "kraken"
-currency = "XBT"
-asset = "LTC"
-key=""
-secret=""
-[[watch]]
-exchange = "poloniex"
-currency = "BTC"
-asset = "LTC"
-key=""
-secret=""
