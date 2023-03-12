@@ -5,10 +5,9 @@
 var config = {};
 //General Settings
 config.debug =true;
-//Watching a Market [BTC-LTC]
-config.watch = {exchange: 'bitfinex',currency: 'BTC',asset: 'LTC'};
-config.watch = {exchange: 'kraken',currency:'XBT',asset:'LTC'};
-config.watch = {exchange: 'poloniex',currency:'BTC',asset:'LTC'};
+//Watching 
+config.watch = {exchange: '',currency: '',asset: ''};
+
 //Trading Advisor
 config.tradingAdvisor = {enabled:true};
 config.tradingAdvisor.candleSize=10;
@@ -17,9 +16,7 @@ config.tradingAdvisor.method= '';
 //Adapter
 config.adapter='sqlite';
 //Api
-config.trader ={enabled:false,exchange:'bitfinex',currency:'BTC',asset:'LTC',key:'',secret:''};
-config.trader={enabled:false,exchange:'kraken',currency:'XBT',asset:'LTC',key:'',secret:''};
-config.trader={enabled:false,exchange:'poloniex',currency:'BTC',asset:'LTC',key:'',secret:''};
+config.trader ={enabled:false,exchange:'',currency:'',asset:'',key:'',secret:''};
 config.candleWriter={enabled:true,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
 config.backtestResultExporter={enabled:true};
