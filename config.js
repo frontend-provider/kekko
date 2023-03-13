@@ -1,7 +1,6 @@
-*/
+/*
 
 */
-
 var config = {};
 //General Settings
 config.debug =true;
@@ -36,7 +35,7 @@ config.backtestResultExporter = {
   }
 };
 
-config.data: {
+config.data={
      candleProps: ["close", "start"],
      indicatorResults: true,
      report: true,
