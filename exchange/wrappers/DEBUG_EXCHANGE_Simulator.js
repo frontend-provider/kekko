@@ -44,7 +44,7 @@ Trader.prototype.getTrades = function(since, cb) {
   });
 
   console.log(
-    `[EXCHANGE SIMULATOR] emitted ${amount} fake trades, up until ${this.at.format('YYYY-MM-DD HH:mm:ss')}.`
+    `[EXCHANGE SIMULATOR] emitted ${amount} trades, up until ${this.at.format('YYYY-MM-DD HH:mm:ss')}.`
   );
 
   cb(null, trades);
