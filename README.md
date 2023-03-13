@@ -57,7 +57,8 @@ pm2 start gekko-m4.js
 
 * Gekko-Quasar-UI [0.6.9-m4](https://github.com/universalbit-dev/gekko-quasar-ui)
 * Webserver [Apache2 and Nginx](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/webserver.md)
-* [Documentation](https://gekko.wizb.it/docs/installation/installing_gekko.html)
+* [Docs](https://github.com/universalbit-dev/gekko-m4/tree/master/docs)
+* [Gekko WebSite](https://gekko.wizb.it/docs/installation/installing_gekko.html)
 * [Forum](https://forum.gekko.wizb.it/)
 * [Strategies](https://github.com/xFFFFF/Gekko-Strategies)
 * [Extra-Indicators](https://github.com/Gab0/gekko-extra-indicators)
