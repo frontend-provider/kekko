@@ -21,6 +21,7 @@ config.trader ={enabled:false,exchange:'',currency:'',asset:'',key:'',secret:''}
 
 config.candleWriter={enabled:false,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
+config.adviceWriter={enabled:true};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING BACKTESTING
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
