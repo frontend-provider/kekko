@@ -19,7 +19,7 @@ config.adapter='sqlite';
 //Trader
 config.trader ={enabled:false,exchange:'',currency:'',asset:'',key:'',secret:''};
 
-config.candleWriter={enabled:true,adapter:'sqlite'};
+config.candleWriter={enabled:false,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING BACKTESTING
