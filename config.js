@@ -15,11 +15,11 @@ config.tradingAdvisor.historySize=1;
 config.tradingAdvisor.method= '';
 //Adapter
 config.adapter='sqlite';
-//Api
+//Trader
 config.trader ={enabled:false,exchange:'',currency:'',asset:'',key:'',secret:''};
+
 config.candleWriter={enabled:true,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
-config.backtestResultExporter={enabled:true};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING BACKTESTING
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,7 +74,6 @@ config.paperTrader = {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 //Importer
-config.importer={enabled:true};
 config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,journalMode: require('./web/isWindows.js') ? 'DELETE' : 'WAL',dependencies:[{module: 'sqlite3'}] };
 //Child to Parent
 config.childToParent = {enabled: true};
