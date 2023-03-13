@@ -12,6 +12,8 @@ config.watch = {exchange: '',currency: '',asset: ''};
 config.tradingAdvisor = {enabled:true};
 config.tradingAdvisor.candleSize=10;
 config.tradingAdvisor.historySize=1;
+
+//Strategy
 config.tradingAdvisor.method= '';
 //Adapter
 config.adapter='sqlite';
@@ -77,7 +79,6 @@ config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,journalMode: require('./web/isWindows.js') ? 'DELETE' : 'WAL',dependencies:[{module: 'sqlite3'}] };
 //Child to Parent
 config.childToParent = {enabled: true};
-//Strategy
 
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
 module.exports = config;
