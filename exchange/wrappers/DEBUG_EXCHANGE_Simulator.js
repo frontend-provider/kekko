@@ -52,8 +52,8 @@ Trader.prototype.getTrades = function(since, cb) {
 
 Trader.getCapabilities = function () {
   return {
-    name: 'Exchange Simulator',
-    slug: 'DEBUG_exchange-simulator',
+    name: 'Exchange_Simulator',
+    slug: 'exchange_simulator',
     currencies: ['LTC'],
     assets: ['BTC'],
     maxTradesAge: 60,
@@ -64,7 +64,7 @@ Trader.getCapabilities = function () {
     requires: ['key', 'secret', 'username'],
     fetchTimespan: 60,
     tid: 'tid',
-    tradable: false
+    tradable: true
   };
 }
 
