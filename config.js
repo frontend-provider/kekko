@@ -13,7 +13,7 @@ config.tradingAdvisor.candleSize=10;
 config.tradingAdvisor.historySize=1;
 
 //Strategy
-config.tradingAdvisor.method= '';
+config.tradingAdvisor.method= 'strategy';
 //Adapter
 config.adapter='sqlite';
 //Trader
