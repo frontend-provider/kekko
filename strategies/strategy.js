@@ -1,33 +1,31 @@
-/*
-
-
-*/
-
 var log = require('../core/log.js');
 var config = require('../core/util.js').getConfig();
 var _ = require('lodash');
 var ws = require ('reconnecting-websocket');
 var tulind = require('tulind');
- 
 var strat = {
-// INIT
-init: function()
-	{
-this.name = 'Strategy';
-this.resetTrend();
-// DEBUG
-this.debug = true;
 
-//Indicators
-this.addTulipIndicator('', '', { optInTimePeriod: this.settings...});
-this.addTulipIndicator('', '', { optInTimePeriod: this.settings...});
+init: function(){
+        this.name = 'Strategy';
+        this.debug = true;
 
-//Debug
+        this.addTulipIndicator('', '', {});
+        this.addTulipIndicator('', '', {});
+
+
 if(this.debug ){
-		log.info("==========================================");
-		log.info('Running', this.name);
-		log.info('==========================================');
-	},
+        log.info("==========================================");
+        log.info('Running', this.name);
+        log.info('==========================================');
+}
+
+},
+
+update: function(){},
+log: function(){},
+check: function(){},
+end: function(){},
 
 };
+
 module.exports = strat;
