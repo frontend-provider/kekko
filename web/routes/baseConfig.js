@@ -39,7 +39,7 @@ config.sqlite = {
   version: 0.1,
   dataDirectory: 'history',
   journalMode: require('../isWindows.js') ? 'PERSIST' : 'WAL',
-  dependencies: [{module: 'sqlite3',version: '5.1.4'}]
+  dependencies: [{module: 'sqlite3'}]
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
