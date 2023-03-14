@@ -36,13 +36,6 @@ config.backtestResultExporter = {
   }
 };
 
-config.data={
-     candleProps: ["close", "start"],
-     indicatorResults: true,
-     report: true,
-     roundtrips: true
-};
-
 config.importer = {daterange: 'scan',
   daterange: {from: "2018-03-01",to: "2018-04-28"},
 };
@@ -78,7 +71,7 @@ config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 //Importer
 config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,journalMode: require('./web/isWindows.js') ? 'DELETE' : 'WAL',dependencies:[{module: 'sqlite3'}] };
 //Child to Parent
-config.childToParent = {enabled: true};
+config.childToParent = {enabled: false};
 
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
 module.exports = config;
