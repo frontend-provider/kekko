@@ -1,3 +1,4 @@
+//https://github.com/universalbit-dev/gekko-m4/blob/master/docs/strategies/creating_a_strategy.md
 var log = require('../core/log.js');
 var config = require('../core/util.js').getConfig();
 var _ = require('lodash');
