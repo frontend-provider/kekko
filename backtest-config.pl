@@ -99,31 +99,6 @@ $stfu = 'no';
 
 # If You set $use_toml_files to 'no' then add Your strat's config in JSON format between brackets below.
 $stratsettings = q(
-config.neuralnet = {
-  "threshold_buy": 1,
-  "threshold_sell": -1,
-  "price_buffer_len": 100,
-  "learning_rate": 1,
-  "momentum": 0.9,
-  "decay": 0.01,
-  "min_predictions": 1000,
-  "stoploss_enabled": false,
-  "stoploss_threshold": 0.95
-};
-
-config.neuralnet_BULL_BEAR = {
-  "threshold_sell_bear":-1.0352,
-  "threshold_sell_bull":-0.992,
-  "momentum":0.0982,
-  "decay":0.0076,
-  "threshold_buy_bull":1.955,
-  "price_buffer_len":88.6,
-  "SMA_short":38,
-  "SMA_long":712,
-  "min_predictions":760,
-  "threshold_buy_bear":2.8294,
-  "learning_rate":0.2736
-};
 
 );
 
