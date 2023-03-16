@@ -99,7 +99,7 @@ Optional parameters:
   -t now    - 'now' is current time in GMT.
   -o, --output FILENAME - CSV file name.
 ```
-<img align="center" src=http://i.imgur.com/OY14rKb.png>     
+
 
 ### Some examples
 - **B**acktests of all available pairs for Binance Exchange in Gekko's scan datarange mode:   
@@ -117,7 +117,7 @@ Optional parameters:
 - **S**earch best parameters for strategy: edit TOML file in config/strategies    
 ![Strat config example](http://i.imgur.com/OkGPQSm.png)    
 The above example will generate 15 backtests with unique configurations. Syntax for brute force is: start..end: step (as in the case of TimePeriod) or value1, value2, value3 (example from interval). The generated values for TimePeriod are 15, 20, 25. After saving the file, run the backtest of the given strategy, eg backtest.pl -s BBRSI.   
-![Brute force](http://i.imgur.com/gnywgrA.png)   
+ 
 
 ## See also
 - [Gekko's Datasets](https://github.com/xFFFFF/Gekko-Datasets)   
