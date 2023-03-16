@@ -5,8 +5,8 @@
 [![Donate with Ethereum](https://en.cryptobadges.io/badge/small/0x50b7611b6dC8a4073cB4eF12A6b045f644c3a3Aa)](https://en.cryptobadges.io/donate/0x50b7611b6dC8a4073cB4eF12A6b045f644c3a3Aa)   
 ![badge](https://img.shields.io/github/release/xFFFFF/Gekko-BacktestTool.svg) ![GitHub Release Date](https://img.shields.io/github/release-date/xFFFFF/Gekko-BacktestTool.svg) ![badge](https://img.shields.io/github/downloads/xFFFFF/Gekko-BacktestTool/total.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/xFFFFF/Gekko-BacktestTool.svg) ![badge](https://img.shields.io/github/license/mashape/apistatus.svg) ![badge](https://img.shields.io/github/languages/code-size/xFFFFF/Gekko-BacktestTool.svg)  ![GitHub closed issues](https://img.shields.io/github/issues-closed/xFFFFF/Gekko-BacktestTool.svg) [![GA](https://ga-beacon.appspot.com/UA-118674108-3/r)](https://github.com/xFFFFF/Gekko-BacktestTool)    
 CLI tool that enhances the features of [Gekko's Trading Bot](https://github.com/askmike/gekko). The tool performs a test with multiple pairs on a single run. Suppose you have a strategy that you want to test on more currency pairs. You enter all the pairs on which you want to test the strategy for the BacktestTool's configuration file. You start the application and everything happens automatically. You are just waiting for the results that appear on the screen. You will see how your strategy falls on other pairs, where it works the best, and where the worst. More detailed data is available in the .CSV file, which you can open in a spreadsheet or text editor.   
-![Top Dataset](http://i.imgur.com/U7TCuSn.png)   
-You can do the same with many strategies and CandleSize values. You can test all your strategies on eg BTC-USD pair and compare results, which will allow you to choose the best strategy you will use in live trade.
+ 
+You can do the same with many strategies and CandleSize values. You can test all your strategies on eg BTC-LTC pair and compare results, which will allow you to choose the best strategy you will use in live trade.
 
 ## Features
 - **Backtest** for multiple strategies and pairs with one command
@@ -18,10 +18,8 @@ You can do the same with many strategies and CandleSize values. You can test all
 - **Multithreading** - in contrast to raw Gekko backtest this tool can uses 100% of your processor
 - **Extended statistics** - 40 variables from single backtest result, such as: *volume*, *price (min, max, avg, volality)*, *percent of win trades*, *median P&L for trades*, *marketcap*, *CoinMarketCap Rank*, etc.   
 
-<img align="center" src=http://i.imgur.com/JXjKVDT.png>   
-
 ## Minimal requirements
-- [Gekko Trading Bot](https://github.com/askmike/gekko)
+- [Gekko Trading Bot](https://github.com/universalbit-dev/gekko-m4)
 - [Binaries of BacktestTool](https://github.com/xFFFFF/Gekko-BacktestTool/releases)
 
 ## Installation
