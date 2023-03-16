@@ -8,13 +8,6 @@ CLI tool that enhances the features of [Gekko's Trading Bot](https://github.com/
 ![Top Dataset](http://i.imgur.com/U7TCuSn.png)   
 You can do the same with many strategies and CandleSize values. You can test all your strategies on eg BTC-USD pair and compare results, which will allow you to choose the best strategy you will use in live trade.
 
-## DEMO
-### Backtest machine   
-![GBT run](https://i.imgur.com/x1Ryyog.gif)
-
-### Database file
-![CSV file](https://i.imgur.com/ENj1ZDM.gif)
-
 ## Features
 - **Backtest** for multiple strategies and pairs with one command
 - **Backtests results** are exporting to CSV file [(see sample)](https://github.com/xFFFFF/Gekko-BacktestTool/blob/master/sample_output.csv)
