@@ -106,7 +106,6 @@ Optional parameters:
 `$ perl backtest.pl -i -f 2017-01-02 -t now`
 
 - **S**earch best parameters for strategy: edit TOML file in config/strategies    
-![Strat config example](http://i.imgur.com/OkGPQSm.png)    
-The above example will generate 15 backtests with unique configurations. Syntax for brute force is: start..end: step (as in the case of TimePeriod) or value1, value2, value3 (example from interval). The generated values for TimePeriod are 15, 20, 25. After saving the file, run the backtest of the given strategy, eg backtest.pl -s BBRSI.   
+ 
  
 
