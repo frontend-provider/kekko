@@ -9,6 +9,7 @@
   it is working.
 */
 const util = require(__dirname + '/core/util');
+const async = require('async');
 console.log('##########################################');
 console.log('UniversalBit Blockchain Powered by Gekko');
 console.log('\tGekko v' + util.getVersion());
