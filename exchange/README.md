@@ -22,27 +22,10 @@ Gekko Broker is a library that sits between trading applications and Gekko Broke
 
 This document descibres the API layer between the exchange wrappers and Gekko Broker.
 
-
-
-## Wrapper API spec
-
-
-
-The current API documentation is currently located [here](../extending/add_an_exchange.md).
-
-
-
 ## Wrapper API Changelog
-
-
-
 ### Gekko 0.5.x to Gekko (Broker) 0.6.0
 
-
-
 NOTE: this API design might still have minor changes leading up to the release of Gekko 0.6. See [this thread](https://forum.gekko.wizb.it/thread-57279-post-59207.html) for more information.
-
-
 
 - The wrapper files are now nested different (from `gekko/exchanges` to `gekkobroker/wrappers` (which equals `gekko/exchange/wrappers` for Gekko users).
 
