@@ -12,6 +12,7 @@
  "license": "MIT",
  "dependencies": {
   "async": "^2.4.3",
+  "cjs": "^0.0.11",
   "co-fs": "^1.2.0",
   "commander": "^2.13.0",
   "convnet": "^1.0.0",
@@ -73,6 +74,6 @@
   "doc": "docs"
  },
  "scripts": {
-  "postinstall": "npm link exchange/"
+  "postinstall": "npm link exchange/ && npm link web/vue/"
  }
 }
