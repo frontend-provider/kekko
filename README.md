@@ -34,11 +34,6 @@ installation:
 ```
 npm i
 ```
--Exchanges 
-```
-cd exchange
-npm i
-```
 Thanks developers.
 
 ##### [Pm2 Process Manager](https://www.npmjs.com/package/pm2)
