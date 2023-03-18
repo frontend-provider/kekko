@@ -16,13 +16,13 @@ const CONFIG = {
   userChartConfig: {
     //patterns:['hasInvertedHammer']
     indicators: [
-      "macd",
-      "macdSignal",
-      "macdHistogram",
-      "mystdev",
-      "dmPlus",
-      "dmLow",
-      "momentum"
+      //"macd",
+      //"macdSignal",
+      //"macdHistogram",
+      //"mystdev",
+      //"dmPlus",
+      //"dmLow",
+      //"momentum"
     ]
     //overlays: []
   }
