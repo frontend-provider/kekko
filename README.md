@@ -39,7 +39,6 @@ Thanks developers.
 ##### [Pm2 Process Manager](https://www.npmjs.com/package/pm2)
 Run Gekko-M4
 ```
-npm i pm2 -g
 pm2 start gekko-m4.js
 ```
 
