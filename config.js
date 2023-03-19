@@ -18,7 +18,6 @@ config.tradingAdvisor.method= 'strategy';
 config.adapter='sqlite';
 //Trader
 config.trader ={enabled:false,exchange:'',currency:'',asset:'',key:'',secret:''};
-
 config.candleWriter={enabled:false,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
 config.adviceWriter={enabled:true};
@@ -36,17 +35,19 @@ config.backtestResultExporter = {
   }
 };
 
-config.importer = {daterange: 'scan',
-  daterange: {from: "2018-03-01",to: "2018-04-28"},
+config.importer = {
+  daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'}
 };
 
-config.backtest = {daterange: 'scan',
-  daterange: {from: "2018-03-01",to: "2018-04-28"},
+config.backtest = {
+  daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'},
   batchSize: 50
 };
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PAPERTRADER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 config.paperTrader = {
   enabled: true,
   // report the profit in the currency or the asset?
@@ -71,8 +72,7 @@ config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 //Importer
 config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,journalMode: require('./web/isWindows.js') ? 'DELETE' : 'WAL',dependencies:[{module: 'sqlite3'}] };
 //Child to Parent
-config.childToParent = {enabled: false};
-
+config.childToParent = {enabled: true};
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
 module.exports = config;
 
