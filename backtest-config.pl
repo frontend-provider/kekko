@@ -1,25 +1,33 @@
 no warnings qw(uninitialized);
 ############################# START OF CONFIGURATION #############################
-# Put your strategy names between brackets in line below. Strategy seperate with space or newline. You can add all Your strategies from gekko/strategies directory with adding line ALL.
+# Put your strategy names between brackets in line below. Strategy seperate with space or newline.
+#You can add all Your strategies from gekko/strategies directory with adding line ALL.
 @strategies = qw(
 Strategy
 );
-# Put your pairs between brackets in line below. Use exchange:currency:asset format. Seperate pair using space or newline. You can add all Your paris with ALL line or all pairs for exchange with binance:ALL line or binance:USDT:ALL line. Another option is adding dates for dataset for indivual pairs, ex: binance:BNB:NULS:2018-04-05:2018-05-01
+# Put your pairs between brackets in line below. Use exchange:currency:asset format.
+#Seperate pair using space or newline. You can add all Your paris with ALL line or all pairs for exchange with exchange_simulator:ALL 
+#line or exchange_simulator:BTC:ALL line. Another option is adding dates for dataset for indivual pairs, 
+#ex: exchange_simulator:BNB:NULS:2018-04-05:2018-05-01
 @pairs = qw(
 exchange_simulator:LTC:BTC
 );
 
-# BUG - USE ONE CANDLE VALUE TEMPORARY! Put your candle values between brackets in line below. Use CandleSize:WarmupPeriod format. Seperate pair using space or newline.
+# BUG - USE ONE CANDLE VALUE TEMPORARY! Put your candle values between brackets in line below. 
+#Use CandleSize:WarmupPeriod format. Seperate pair using space or newline.
 @warmup = qw(
 10:73
 );
 
 ############################# OPTIONAL SETTINGS #############################
-# To specify time range for import or backtest uncomment lines below, but instead this you can use command line input ex.: backtest.pl --from "2018-01-01 00:00:00" --to "2018-01-05 00:00:00". If below lines are commented Gekko is using scan datasets feature in backtest mode.
+# To specify time range for import or backtest uncomment lines below, 
+#but instead this you can use command line input ex.: backtest.pl --from "2018-01-01 00:00:00" --to "2018-01-05 00:00:00". 
+#If below lines are commented Gekko is using scan datasets feature in backtest mode.
 $from = '2020-03-08 00:00:00';
 $to = '2023-03-08 00:00:00';
 
-# If You are using only one exchange or one exchange and one currency You can put default values below, and adding only asset name to @pairs ex: NULS, ADA, TRX - without binance:BTC before asset ex: perl backtest.pl -p NULS,ADA,TRX.
+# If You are using only one exchange or one exchange and one currency You can put default values below, 
+# and adding only asset name to @pairs ex: NULS, ADA, TRX - without binance:BTC before asset ex: perl backtest.pl -p NULS,ADA,TRX.
 $default_set = 'exchange_simulator:BTC';
 
 # CSV file name. You don't need change this. All new data will append to exist file without deleting or replacing.
@@ -28,7 +36,9 @@ $csv = 'database.csv';
 # You can add note to project below. Note will be add in CSV file. Its can be useful when You are developing strategy.
 $note = 'first run';
 
-# Sort strategies in top list by. Available values to sort: best, profitable, profit_above_market, best_PL, worst_PL, profits_sum, avg_profit, trades_win, trades_day, hodl_time
+# Sort strategies in top list by. Available values to sort: best, profitable, profit_above_market, best_PL, worst_PL, profits_sum, avg_profit, 
+#trades_win, trades_day, hodl_time
+
 $top_strategy_sort1 = 'best';
 $top_strategy_sort2 = 'profitable';
 $top_strategy_sort3 = 'profit_above_market';
@@ -40,7 +50,8 @@ $top_strategy_sort8 = 'trades_win';
 $top_strategy_sort9 = 'trades_day';
 $top_strategy_sort10= 'hodl_time';
 
-# Sort datasets ranking by. Available values to sort: best, profitable, profit_above_market, market_change, best_PL, worst_PL, profits_sum, avg_profit, trades_win, trades_day, hodl_time, price_volatility, cmc_rank, cmc_marketcap, cmc_volume, days
+# Sort datasets ranking by. Available values to sort: best, profitable, profit_above_market, market_change, 
+# best_PL, worst_PL, profits_sum, avg_profit, trades_win,trades_day, hodl_time, price_volatility, cmc_rank, cmc_marketcap, cmc_volume, days
 $top_dataset_sort1 = 'best';
 $top_dataset_sort2 = 'profitable';
 $top_dataset_sort3 = 'profit_above_market';
@@ -53,11 +64,10 @@ $top_dataset_sort9 = 'trades_win';
 $top_dataset_sort10 = 'trades_day';
 $top_dataset_sort11 = 'hodl_time';
 $top_dataset_sort12 = 'price_volatility';
-$top_dataset_sort13 = 'volatility';
-$top_dataset_sort14 = 'cmc_rank';
-$top_dataset_sort15 = 'cmc_marketcap';
-$top_dataset_sort16 = 'cmc_volume';
-$top_dataset_sort17 = 'days';
+$top_dataset_sort13 = 'cmc_rank';
+$top_dataset_sort14 = 'cmc_marketcap';
+$top_dataset_sort15 = 'cmc_volume';
+$top_dataset_sort16 = 'days';
 
 # Template of CSV output columns. Format [% variable_name %], columns MUST be seperated by comma (,) without any space.
 # Below is compact version
@@ -105,7 +115,7 @@ $top_dataset_sort2 = 'best_PL';
 $top_dataset_limit = 100;
 
 # Do you want see roundtrips report in terminal output?
-$print_roundtrips = 'no';
+$print_roundtrips = 'yes';
 
 # Use TOML strat's config files instead JSON?
 $use_toml_files = 'yes';
@@ -115,7 +125,7 @@ $toml_directory = 'config/strategies/';
 $keep_logs = 'no';
 
 # Threads amount, for 4xcpu cores is recommended to set 5-6 value.
-$threads = 5;
+$threads = 4;
 
 # When you set stfu to 'yes' only results will be displayed.
 $stfu = 'no';
@@ -134,5 +144,4 @@ $fee_using = 'maker';
 $slippage = 0.5;
 $riskFreeReturn = 5;
 ############################# END OF CONFIGURATION #############################
-
 1;
