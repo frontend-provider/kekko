@@ -31,10 +31,33 @@ $note = 'first run';
 # Sort strategies in top list by. Available values to sort: best, profitable, profit_above_market, best_PL, worst_PL, profits_sum, avg_profit, trades_win, trades_day, hodl_time
 $top_strategy_sort1 = 'best';
 $top_strategy_sort2 = 'profitable';
+$top_strategy_sort3 = 'profit_above_market';
+$top_strategy_sort4 = 'best_PL';
+$top_strategy_sort5 = 'worst_PL';
+$top_strategy_sort6 = 'profit_sum';
+$top_strategy_sort7 = 'avg_profit';
+$top_strategy_sort8 = 'trades_win';
+$top_strategy_sort9 = 'trades_day';
+$top_strategy_sort10= 'hodl_time';
 
 # Sort datasets ranking by. Available values to sort: best, profitable, profit_above_market, market_change, best_PL, worst_PL, profits_sum, avg_profit, trades_win, trades_day, hodl_time, price_volatility, cmc_rank, cmc_marketcap, cmc_volume, days
 $top_dataset_sort1 = 'best';
 $top_dataset_sort2 = 'profitable';
+$top_dataset_sort3 = 'profit_above_market';
+$top_dataset_sort4 = 'market_change';
+$top_dataset_sort5 = 'best_PL';
+$top_dataset_sort6 = 'worst_PL';
+$top_dataset_sort7 = 'profits_sum';
+$top_dataset_sort8 = 'avg_profit';
+$top_dataset_sort9 = 'trades_win';
+$top_dataset_sort10 = 'trades_day';
+$top_dataset_sort11 = 'hodl_time';
+$top_dataset_sort12 = 'price_volatility';
+$top_dataset_sort13 = 'volatility';
+$top_dataset_sort14 = 'cmc_rank';
+$top_dataset_sort15 = 'cmc_marketcap';
+$top_dataset_sort16 = 'cmc_volume';
+$top_dataset_sort17 = 'days';
 
 # Template of CSV output columns. Format [% variable_name %], columns MUST be seperated by comma (,) without any space.
 # Below is compact version
