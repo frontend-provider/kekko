@@ -2,11 +2,11 @@ no warnings qw(uninitialized);
 ############################# START OF CONFIGURATION #############################
 # Put your strategy names between brackets in line below. Strategy seperate with space or newline. You can add all Your strategies from gekko/strategies directory with adding line ALL.
 @strategies = qw(
-
+Strategy
 );
 # Put your pairs between brackets in line below. Use exchange:currency:asset format. Seperate pair using space or newline. You can add all Your paris with ALL line or all pairs for exchange with binance:ALL line or binance:USDT:ALL line. Another option is adding dates for dataset for indivual pairs, ex: binance:BNB:NULS:2018-04-05:2018-05-01
 @pairs = qw(
-
+exchange_simulator:LTC:BTC
 );
 
 # BUG - USE ONE CANDLE VALUE TEMPORARY! Put your candle values between brackets in line below. Use CandleSize:WarmupPeriod format. Seperate pair using space or newline.
@@ -16,11 +16,11 @@ no warnings qw(uninitialized);
 
 ############################# OPTIONAL SETTINGS #############################
 # To specify time range for import or backtest uncomment lines below, but instead this you can use command line input ex.: backtest.pl --from "2018-01-01 00:00:00" --to "2018-01-05 00:00:00". If below lines are commented Gekko is using scan datasets feature in backtest mode.
-#$from = '2018-04-20 15:00:00';
-#$to = '2018-04-25 08:00:00';
+$from = '2020-03-08 00:00:00';
+$to = '2023-03-08 00:00:00';
 
 # If You are using only one exchange or one exchange and one currency You can put default values below, and adding only asset name to @pairs ex: NULS, ADA, TRX - without binance:BTC before asset ex: perl backtest.pl -p NULS,ADA,TRX.
-#$default_set = 'binance:BNB';
+$default_set = 'exchange_simulator:BTC';
 
 # CSV file name. You don't need change this. All new data will append to exist file without deleting or replacing.
 $csv = 'database.csv';
