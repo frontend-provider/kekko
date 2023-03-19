@@ -36,7 +36,7 @@ npm i
 ```
 Thanks developers.
 
-##### [Pm2 Process Manager](https://www.npmjs.com/package/pm2)
+##### [Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
 
 #### Run Gekko-M4
 ```
