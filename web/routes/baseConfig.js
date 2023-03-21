@@ -1,35 +1,41 @@
 var UIconfig = require('../vue/statics/UiConfig');
 var config = {};
-//General Settings
-config.debug =true;
-//Watching
-config.watch = {};
-//Trading Advisor
-config.tradingAdvisor = {};
-//Adapter
-config.adapter='sqlite';
-//Trader
-config.trader ={};
-config.candleWriter={};
-config.adviceLogger={};
-config.adviceWriter={};
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                          GENERAL SETTINGS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+config.silent = false;
+config.debug = true;
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                       CONFIGURING TRADING ADVICE
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+config.tradingAdvisor = {}
+config.candleWriter = {enabled: true}
+
+config.backtestResultExporter = {
+enabled: true,
+writeToDisk: false,
+data: {stratUpdates: true,roundtrips: true,stratCandles: true,trades: true}
+}
+
+config.childToParent = {enabled: true}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                       CONFIGURING ADAPTER
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+config.adapter = UIconfig.adapter;
+
+config.sqlite = {
+path: 'plugins/sqlite',version: 0.1,dataDirectory: 'history',
+dependencies: [{module: 'sqlite3'}]
+}
+
+config.adviceWriter = {enabled: false,muteSoft: true}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING BACKTESTING
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-config.backtestResultExporter = {};
-config.data={};
-config.importer = {};
-config.backtest = {};
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//                       CONFIGURING PAPERTRADER
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-config.paperTrader = {};
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//                       CONFIGURING PERFORMANCE ANALYZER
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-config.performanceAnalyzer = {};
-//Importer
-config.sqlite = {};
-//Child to Parent
-config.childToParent = {};
+
+config.backtest = {daterange: 'scan',batchSize: 50}
+config.importer = {daterange: {from: "2020-03-08 00:00:00"}}
+
 module.exports = config;
