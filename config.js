@@ -16,6 +16,10 @@ config.tradingAdvisor.historySize=1;
 config.tradingAdvisor.method= 'Strategy';
 //Adapter
 config.adapter='sqlite';
+config.sqlite = {
+path: 'plugins/sqlite',version: 0.1,dataDirectory: 'history',
+dependencies: [{module: 'sqlite3'}]
+}
 //Trader
 config.trader ={enabled:false,exchange:'',currency:'',asset:'',key:'',secret:''};
 config.candleWriter={enabled:false,adapter:'sqlite'};
