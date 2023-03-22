@@ -9,7 +9,7 @@ var dateRangeScan = require('../dateRangeScan/parent');
 module.exports = function(config, done) {
 
   util.setConfig(config);
-  var adapter = config[config.adapter];
+  var adapter = config['sqlite'];
   var scan = require(dirs.gekko + adapter.path + '/scanner');
   scan((err, markets) => {
     if(err)
