@@ -23,8 +23,8 @@ exchange_simulator:LTC:BTC
 # To specify time range for import or backtest uncomment lines below, 
 #but instead this you can use command line input ex.: backtest.pl --from "2018-01-01 00:00:00" --to "2018-01-05 00:00:00". 
 #If below lines are commented Gekko is using scan datasets feature in backtest mode.
-$from ='2020-03-08 01:00:00';
-$to = '2023-03-08 01:00:00';
+$from ='2020-03-08 00:00:00';
+$to = '2023-03-08 00:00:00';
 
 
 # If You are using only one exchange or one exchange and one currency You can put default values below, 
