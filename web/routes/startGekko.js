@@ -5,7 +5,7 @@ const Logger = require('../state/logger');
 const apiKeyManager= cache.get('apiKeyManager');
 const gekkoManager = cache.get('gekkos');
 
-const base = require('./baseConfig');
+const base = require('../../config');
 
 // starts an import
 // requires a post body with a config object
