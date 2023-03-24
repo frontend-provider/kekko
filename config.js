@@ -39,35 +39,17 @@ config.backtestResultExporter = {
   }
 };
 
-config.importer = {
-  daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'}
-};
-
-config.backtest = {
-  daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'},
-  batchSize: 50
-};
-
+config.importer = {daterange: {from: "2020-03-08 00:00:00",to:"2023-03-08 00:00:00"}};
+config.backtest = {daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'},batchSize: 50};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PAPERTRADER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 config.paperTrader = {
-  enabled: true,
-  // report the profit in the currency or the asset?
-  reportInCurrency: true,
-  // start balance, on what the current balance is compared with
-  simulationBalance: {
-    // these are in the unit types configured in the watcher.
-    asset: 1,
-    currency: 100,
-  },
-  // how much fee in % does each trade cost?
-  feeMaker: 0.15,
-  feeTaker: 0.25,
-  feeUsing: 'maker',
-  // how much slippage/spread should Gekko assume per trade?
-  slippage: 0.05,
+enabled: true,reportInCurrency: true,
+
+simulationBalance: {asset: 1,currency: 100},
+
+feeMaker: 0.15,feeTaker: 0.25,feeUsing: 'maker',slippage: 0.05
 };
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PERFORMANCE ANALYZER
