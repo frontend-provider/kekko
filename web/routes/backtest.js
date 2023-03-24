@@ -18,13 +18,9 @@ const path = require('path');
 // }
 module.exports = function *() {
   var mode = 'backtest';
-
   var config = {};
-
-  var base = require('./baseConfig');
-
+  var base = require('../../config');
   var req = this.request.body;
-
   _.merge(config, base, req);
 
   this.body = yield pipelineRunner(mode, config);
