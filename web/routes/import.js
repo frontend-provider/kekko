@@ -6,7 +6,7 @@ const cache = require('../state/cache');
 const broadcast = cache.get('broadcast');
 const importManager = cache.get('imports');
 
-const base = require('./baseConfig');
+const base = require('../../config');
 
 // starts an import
 // requires a post body with a config object
