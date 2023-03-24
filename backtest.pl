@@ -97,13 +97,10 @@ sub dbcon {
   if ($database eq 'sqlite') {
     $dbh = DBI->connect("dbi:SQLite:dbname=$_[1]"."_0.1.db", "", "",) or die $DBI::errstr;
   }
-  elsif ($database eq 'postgresql') {
-    $dbh = DBI->connect("dbi:pg:$dbname;host=$dbhost;port=$dbport;, $dbuser, $dbpassword");
-  }
   elsif ($_[0] eq 'csv'){
   }
   else {
-    print 'Your Mongo DB is not supported\n';
+    print 'Sqlite Or CSV file is not supported\n';
   }
   return $dbh;
 }
