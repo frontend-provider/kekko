@@ -6,12 +6,10 @@ var config = {};
 config.debug =true;
 //Watching 
 config.watch = {exchange: 'exchange_simulator',currency: 'LTC',asset: 'BTC'};
-
 //Trading Advisor
 config.tradingAdvisor = {enabled:true};
 config.tradingAdvisor.candleSize=10;
 config.tradingAdvisor.historySize=1;
-
 //Strategy
 config.tradingAdvisor.method= 'Strategy';
 //Adapter
@@ -21,7 +19,7 @@ path: 'plugins/sqlite',version: 0.1,dataDirectory: 'history',
 dependencies: [{module: 'sqlite3'}]
 }
 //Trader
-config.trader ={enabled:false,exchange:'',currency:'',asset:'',key:'',secret:''};
+config.trader ={enabled:false,exchange:'exchange_simulator',currency:'',asset:'',key:'',secret:'',username:''};
 config.candleWriter={enabled:false,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
 config.adviceWriter={enabled:true};
@@ -46,9 +44,7 @@ config.backtest = {daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 config.paperTrader = {
 enabled: true,reportInCurrency: true,
-
 simulationBalance: {asset: 1,currency: 100},
-
 feeMaker: 0.15,feeTaker: 0.25,feeUsing: 'maker',slippage: 0.05
 };
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,4 +57,3 @@ config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,jo
 config.childToParent = {enabled: true};
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
 module.exports = config;
-
