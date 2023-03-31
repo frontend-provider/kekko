@@ -126,7 +126,7 @@ $toml_directory = 'config/strategies/';
 $keep_logs = 'no';
 
 # Threads amount, for 4xcpu cores is recommended to set 5-6 value.
-$threads = 4;
+$threads = 6;
 
 # When you set stfu to 'yes' only results will be displayed.
 $stfu = 'no';
