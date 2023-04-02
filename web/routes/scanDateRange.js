@@ -9,7 +9,7 @@ const scan = promisify(require('../../core/workers/dateRangeScan/parent'));
 // - config.watch
 const route = function *() {
 
-  var config = require('../../config');
+  let config = require('../../config');
 
   _.merge(config, this.request.body);
 
