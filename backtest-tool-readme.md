@@ -31,16 +31,17 @@ You can do the same with many strategies and CandleSize values. You can test all
 ### Open Source: Debian, Ubuntu, Linux Mint
 1. Clone git https://github.com/xFFFFF/Gekko-BacktestTool
 2. Copy files to Gekko's main directory
-3. Install dependencies:   
-`$ sudo cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy`   
-
+3. Install dependencies: 
+```
+sudo cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy  
+```
 ### Open Source: Other Unix-like OS
 1. Clone git https://github.com/xFFFFF/Gekko-BacktestTool
 2. Copy files to Gekko's main directory
-3. Install dependies:   
-`$ su`   
-`$ cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy`   
-   
+3. Install dependencies:
+```
+cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy
+```   
 ### Open Source: MS Windows   
 1. Install [Strawberry Perl](http://strawberryperl.com/)
 2. Download Gekko BacktestTool from [here](https://github.com/xFFFFF/Gekko-BacktestTool/archive/master.zip)
@@ -48,7 +49,9 @@ You can do the same with many strategies and CandleSize values. You can test all
 4. Find *Run...* in Menu Start
 5. Enter cmd.exe and press enter
 6. In appeared Window with black background enter command:
-`cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy`   
+```
+cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy
+```
 
 ### Open Source: Docker container
 The installation tutorial by *bald123* can be found in the Wiki: [Docker installation](https://github.com/xFFFFF/Gekko-BacktestTool/wiki/Docker-installation).
