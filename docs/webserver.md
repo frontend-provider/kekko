@@ -54,7 +54,8 @@ sudo systemctl restart nginx
 sudo a2enmod proxy proxy_http proxy_balancer lbmethod_byrequests
 ```
 Server Configuration :
-change default ports: 
+
+##### Change default port: 
 ```
 sudo nano /etc/apache2/ports.conf
 ```
@@ -99,6 +100,11 @@ sudo nano /etc/apache2/sites-enabled/000-default-ssl.conf
    SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
 </VirtualHost>
+```
+
+```
+sudo a2ensite 000-default
+sudo a2esite 000-default-ssl
 ```
 
 ```
