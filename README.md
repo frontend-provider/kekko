@@ -9,6 +9,11 @@ Gekko-M4 Engine run on Nodejs Version (v18.14.2) Npm (9.5.0)
 
 ##### [Support UniversalBit Project](https://github.com/universalbit-dev/universalbit-dev/tree/main/support)
 
+#### Required Packages:
+```
+sudo apt install curl git build-essential
+```
+
 ##### NVM Node Version Manager:
 nvm allows you to quickly install and use different versions of node via the command line.
 ```
