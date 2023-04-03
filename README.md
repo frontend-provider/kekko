@@ -42,17 +42,15 @@ npm i
 ```
 Thanks developers.
 
-##### [Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
-
-#### Run Gekko-M4
+#### Run Gekko-M4 [Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
 ```
+npm i pm2 -g
 pm2 start gekko-m4.js
 ```
 ---
 ##### [Static IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md) 
 ##### URL: http://192.168.1.146:3007
 ---
-
 ### [BackTest-Tool]
 
 #### Required Packages:
@@ -67,9 +65,7 @@ sudo cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUti
 ```
 perl ./backtest.pl
 ```
-
-
-
+---
 ### Resources:
 
 * Gekko-Quasar-UI [0.6.9-m4](https://github.com/universalbit-dev/gekko-quasar-ui)
@@ -81,13 +77,14 @@ perl ./backtest.pl
 * [Extra-Indicators](https://github.com/Gab0/gekko-extra-indicators)
 ---
 
-##### [TOML](https://toml.io/en/) : TOML is a file format for configuration files. 
-[Configuration files](https://github.com/universalbit-dev/gekko-m4/tree/master/config)
+[TOML] [Configuration files](https://github.com/universalbit-dev/gekko-m4/tree/master/config)
 
-log files are written to this folder : logs/
+---
+[Log] files are written to this folder : logs/
 ```
 tail -f logs/2022-00-00-00-00-watcher-8032292293309007.log
 tail -f logs/2022-00-00-00-00-papertrade-8032292293309007.log
 ```
+---
 [Legal context](https://www.europarl.europa.eu/cmsdata/150761/TAX3%20Study%20on%20cryptocurrencies%20and%20blockchain.pdf)
 Each exchange requires registration, 2fa and verify identity.
