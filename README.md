@@ -51,7 +51,6 @@ pm2 start gekko-m4.js --env development
 
 ---
 ##### [Static IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md) 
-##### URL: http://192.168.1.146:3007
 ---
 ### [BackTest-Tool]
 
