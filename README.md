@@ -38,7 +38,7 @@ cd gekko-m4
 
 -Engine
 ```
-npm i
+npm i --build-from-source
 ```
 Thanks developers.
 
