@@ -40,6 +40,8 @@ server {
 ```
 sudo mkdir /etc/nginx/ssl
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+```
+```
 sudo systemctl restart nginx
 ```
 ---
@@ -55,8 +57,6 @@ Server Configuration :
 ```
 sudo nano /etc/apache2/sites-enabled/000-default.conf 
 ```
-
-
 ```
 <VirtualHost *:80>
   ProxyPreserveHost On
@@ -68,9 +68,9 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
 #### create a self signed certificate:
 ```
 sudo a2enmod ssl
-```
-```
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+```
+```
 sudo systemctl restart apache2
 ```
 ---
