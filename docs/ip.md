@@ -1,7 +1,7 @@
 ### Gekko-M4 Setup Static IP Address
 
 -----
-##### baseUIconfig.js
+##### baseUIconfig.js //* //*
 ```
 nano /web/baseUIconfig.js
 ```
@@ -63,8 +63,3 @@ else window.CONFIG = CONFIG;
 
 * [webserver_nginx_reverse_proxy](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/webserver.md)
 * [webserver_apache2_reverse_proxy](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/webserver.md#webserver-apache2)
-
-#### Run Application:
-```
-pm2 start gekko-m4.js
-```
