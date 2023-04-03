@@ -54,6 +54,17 @@ pm2 start gekko-m4.js
 ##### URL: http://192.168.1.146:3007
 ---
 
+#### [BackTest-Tool]
+
+#### Required Packages:
+```
+sudo apt install perl 
+```
+
+
+
+
+
 ### Resources:
 
 * Gekko-Quasar-UI [0.6.9-m4](https://github.com/universalbit-dev/gekko-quasar-ui)
