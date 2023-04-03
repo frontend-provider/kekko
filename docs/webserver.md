@@ -53,16 +53,31 @@ sudo systemctl restart nginx
 ```
 sudo a2enmod proxy proxy_http proxy_balancer lbmethod_byrequests
 ```
-
 Server Configuration :
+change default ports: 
+```
+sudo nano /etc/apache2/ports.conf
+```
+```
+Listen 8080
+
+<IfModule ssl_module>
+        Listen 4433
+</IfModule>
+
+<IfModule mod_gnutls.c>
+        Listen 4433
+</IfModule>
+```
+---
 ```
 sudo nano /etc/apache2/sites-enabled/000-default.conf 
 ```
 ```
 <VirtualHost *:8080>
   ProxyPreserveHost On
-    ProxyPass / https://192.168.1.146:3007/ 
-    ProxyPassReverse / https://192.168.1.146:3007/
+    ProxyPass / http://192.168.1.146:3007/ 
+    ProxyPassReverse / http://192.168.1.146:3007/
 </VirtualHost>
 ```
 [reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension-ubuntu-20-04)
@@ -71,13 +86,15 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
 sudo a2enmod ssl
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 ```
+---
+
 ```
 sudo nano /etc/apache2/sites-enabled/000-default-ssl.conf 
 ```
 ```
 <VirtualHost *:4433>
-   ServerName your_domain_or_ip
-   DocumentRoot /var/www/your_domain_or_ip
+   ServerName 192.168.1.146
+   DocumentRoot /var/www/192.168.1.146
    SSLEngine on
    SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
