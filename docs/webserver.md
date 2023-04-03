@@ -81,14 +81,22 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
     ProxyPassReverse / http://192.168.1.146:3007/
 </VirtualHost>
 ```
+```
+sudo a2ensite 000-default
+```
+```
+sudo systemctl restart apache2
+```
+
+
 [reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension-ubuntu-20-04)
-#### create a self signed certificate:
+
+#### Create a self signed certificate:
 ```
 sudo a2enmod ssl
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 ```
 ---
-
 ```
 sudo nano /etc/apache2/sites-enabled/000-default-ssl.conf 
 ```
@@ -101,12 +109,9 @@ sudo nano /etc/apache2/sites-enabled/000-default-ssl.conf
    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
 </VirtualHost>
 ```
-
 ```
-sudo a2ensite 000-default
-sudo a2esite 000-default-ssl
+sudo a2ensite 000-default-ssl
 ```
-
 ```
 sudo systemctl restart apache2
 ```
