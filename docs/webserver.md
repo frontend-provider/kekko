@@ -98,7 +98,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/privat
 ```
 ---
 ```
-sudo nano /etc/apache2/sites-enabled/000-default-ssl.conf 
+sudo nano /etc/apache2/sites-available/000-default-ssl.conf 
 ```
 ```
 <VirtualHost *:4433>
