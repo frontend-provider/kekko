@@ -43,6 +43,6 @@ module.exports = {
   },
 
   // retrieve api keys
-  // this cannot touch the frontend for security reaons.
+  // this cannot touch the frontend for security reasons.
   _getApiKeyPair: key => apiKeys[key]
 }
