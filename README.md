@@ -45,7 +45,7 @@ Thanks developers.
 #### Run Gekko-M4 
 ```
 npm i pm2 -g
-pm2 start gekko-m4.js
+pm2 start gekko-m4.js --env development
 ```
 [Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
 
