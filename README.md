@@ -72,7 +72,6 @@ log files are written to this folder : logs/
 ```
 tail -f logs/2022-00-00-00-00-watcher-8032292293309007.log
 tail -f logs/2022-00-00-00-00-papertrade-8032292293309007.log
-tail -f logs/2022-00-00-00-00-tradebot-04218329122948088.log
 ```
 [Legal context](https://www.europarl.europa.eu/cmsdata/150761/TAX3%20Study%20on%20cryptocurrencies%20and%20blockchain.pdf)
 Each exchange requires registration, 2fa and verify identity.
