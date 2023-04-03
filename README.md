@@ -48,20 +48,25 @@ Thanks developers.
 ```
 pm2 start gekko-m4.js
 ```
-
-##### [Static IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md)
 ---
+##### [Static IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md) 
 ##### URL: http://192.168.1.146:3007
 ---
 
-#### [BackTest-Tool]
+### [BackTest-Tool]
 
 #### Required Packages:
 ```
 sudo apt install perl 
 ```
-
-
+#### Install dependencies:
+```
+sudo cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy  
+```
+#### Run
+```
+perl ./backtest.pl
+```
 
 
 
