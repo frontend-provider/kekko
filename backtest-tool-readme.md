@@ -28,14 +28,14 @@ You can do the same with many strategies and CandleSize values. You can test all
 2. Extract downloaded zip.   
 3. Copy all extrated files to main Gekko's directory.   
 
-### Open Source: Debian, Ubuntu, Linux Mint
+### Debian, Ubuntu, Linux Mint
 1. Clone git https://github.com/xFFFFF/Gekko-BacktestTool
 2. Copy files to Gekko's main directory
 3. Install dependencies: 
 ```
 sudo cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy  
 ```
-### Open Source: Other Unix-like OS
+### Other Unix-like OS
 1. Clone git https://github.com/xFFFFF/Gekko-BacktestTool
 2. Copy files to Gekko's main directory
 3. Install dependencies:
@@ -53,7 +53,7 @@ cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils Fi
 cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils File::chdir Statistics::Basic DBI  DBD::SQLite JSON::XS TOML File::Basename File::Find::Wanted Template LWP::UserAgent LWP::Protocol::https Set::CrossProduct DBD::CSV Text::Table File::Copy
 ```
 
-### Open Source: Docker container
+### Docker container
 The installation tutorial by *bald123* can be found in the Wiki: [Docker installation](https://github.com/xFFFFF/Gekko-BacktestTool/wiki/Docker-installation).
 
 ## Run 
