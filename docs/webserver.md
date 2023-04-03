@@ -1,5 +1,5 @@
 #### WebServer Nginx
-[Install](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-10)
+[Install](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04)
 
 ```
 server {
