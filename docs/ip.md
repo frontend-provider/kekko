@@ -40,7 +40,7 @@ const CONFIG = {
   api: {
     host: "192.168.1.146",
     port: 3007,
-    timeout: 10 * 60 * 1000 // 10 minutes
+    timeout: 120000
   },
   ui: {
     ssl: false,
