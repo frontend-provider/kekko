@@ -1,3 +1,4 @@
+
 #### WebServer Nginx
 [Install](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04)
 
@@ -58,10 +59,10 @@ Server Configuration :
 sudo nano /etc/apache2/sites-enabled/000-default.conf 
 ```
 ```
-<VirtualHost *:80>
+<VirtualHost *:8080>
   ProxyPreserveHost On
-    ProxyPass / http://192.168.1.146:3007/ 
-    ProxyPassReverse / http://192.168.1.146:3007/
+    ProxyPass / https://192.168.1.146:3007/ 
+    ProxyPassReverse / https://192.168.1.146:3007/
 </VirtualHost>
 ```
 [reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension-ubuntu-20-04)
@@ -74,7 +75,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/privat
 sudo nano /etc/apache2/sites-enabled/000-default-ssl.conf 
 ```
 ```
-<VirtualHost *:443>
+<VirtualHost *:4433>
    ServerName your_domain_or_ip
    DocumentRoot /var/www/your_domain_or_ip
    SSLEngine on
