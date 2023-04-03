@@ -42,11 +42,13 @@ npm i
 ```
 Thanks developers.
 
-#### Run Gekko-M4 [Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
+#### Run Gekko-M4 
 ```
 npm i pm2 -g
 pm2 start gekko-m4.js
 ```
+[Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
+
 ---
 ##### [Static IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md) 
 ##### URL: http://192.168.1.146:3007
