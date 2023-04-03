@@ -10,8 +10,8 @@ init: function(){
         this.name = 'Strategy';
         this.debug = true;
 
-        this.addTulipIndicator('', '', {});
-        this.addTulipIndicator('', '', {});
+        //this.addTulipIndicator('', '', {});
+        //this.addTulipIndicator('', '', {});
 
 
 if(this.debug ){
