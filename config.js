@@ -20,7 +20,7 @@ dependencies: [{module: 'sqlite3'}]
 }
 //Trader
 config.trader ={enabled:false,exchange:'exchange_simulator',currency:'',asset:'',key:'',secret:'',username:''};
-config.candleWriter={enabled:false,adapter:'sqlite'};
+config.candleWriter={enabled:true,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
 config.adviceWriter={enabled:true};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ config.backtestResultExporter = {
 };
 
 config.importer = {daterange: {from: "2020-03-08 00:00:00",to:"2023-03-08 00:00:00"}};
-config.backtest = {daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'},batchSize: 50};
+config.backtest = {daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'},batchSize: 60};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PAPERTRADER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
