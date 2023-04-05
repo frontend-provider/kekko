@@ -3,7 +3,7 @@
 "currencies":["LTC"],
 "markets":[
 {
-"pair":["BTC","LTC"],"minimalOrder": 
+"pair":["LTC","BTC"],"minimalOrder": 
 {"amount": "0.00009","unit": "asset"}
 }]
 
