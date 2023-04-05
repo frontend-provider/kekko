@@ -75,6 +75,6 @@
   "doc": "docs"
  },
  "scripts": {
-  "postinstall": "npm link exchange/ && npm link web/vue/"
+  "postinstall": "npm link exchange/ && npm link web/vue/ && npm fund"
  }
 }
