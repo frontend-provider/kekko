@@ -1,7 +1,7 @@
 module.exports = {
   apps : [
-{name:"exchange_simulator-strategy01",script:"gekko.js",args: "-c exchange_simulator-strategy01.js"},
-{name:"exchange_simulator-strategy02",script:"gekko.js",args: "-c exchange_simulator-strategy02.js"},
-{name:"exchange_simulator-strategy03",script:"gekko.js",args: "-c exchange_simulator-strategy03.js"}
+{name:"exchange-strategy01",script:"node gekko -c exchange-strategy01.js"},
+{name:"exchange-strategy02",script:"node gekko -c exchange-strategy02.js"},
+{name:"exchange-strategy03",script:"node gekko -c exchange-strategy03.js"}
 ]
 }
