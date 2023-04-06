@@ -1,6 +1,6 @@
 /*
-
-*/
+var ui_config = require('./web/vue/statics/UiConfig');
+var base_config = require('./web/routes/baseConfig');
 var config = {};
 //General Settings
 config.debug =true;
