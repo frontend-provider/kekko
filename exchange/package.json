@@ -2,7 +2,7 @@
   "name": "gekko-broker",
   "version": "0.6.8-m4",
   "description": "Gekko's order execution library",
-  "main": "gekkoBroker.js",
+  "main": "dependencyCheck.js",
   "dependencies": {
     "abbrev": "^1.1.1",
     "after-all-results": "^2.0.0",
