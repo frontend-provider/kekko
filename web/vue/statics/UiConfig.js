@@ -5,25 +5,20 @@ const CONFIG = {
     port: 3007,
     timeout: 120000
   },
-  ui: {
+   ui: {
     ssl: false,
     host: "192.168.1.146",
     port: 3007,
-    path: "/"
+    path: "/",
+    timeout:120000,
+    cert:"./ssl/cert.pem",
+    key:"./ssl/key.pem"
   },
   adapter: "sqlite",
   
   userChartConfig: {
     //patterns:['hasInvertedHammer']
-    indicators: [
-      //"macd",
-      //"macdSignal",
-      //"macdHistogram",
-      //"mystdev",
-      //"dmPlus",
-      //"dmLow",
-      //"momentum"
-    ]
+    indicators: []
     //overlays: []
   }
 };
