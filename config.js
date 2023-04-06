@@ -41,6 +41,7 @@ config.importer = {daterange: {from: "2020-03-08 00:00:00",to:"2023-03-08 00:00:
 config.backtest = {daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'},batchSize: 60};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PAPERTRADER
+// Disable PaperTrader if Trader Enabled
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 config.paperTrader = {
 enabled: true,reportInCurrency: true,
