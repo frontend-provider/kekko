@@ -39,12 +39,21 @@ config.backtestResultExporter = {
 
 config.importer = {daterange: {from: "2020-03-08 00:00:00",to:"2023-03-08 00:00:00"}};
 config.backtest = {daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2023-03-08 00:00:00'},batchSize: 60};
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                       CONFIGURING TRADER
+// Disable Trader if PAPERTRADER Enabled
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+config.trader ={enabled:false,
+exchange:'exchange_simulator',currency:'',asset:'',key:'',secret:'',username:''};
+
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PAPERTRADER
-// Disable PaperTrader if Trader Enabled
+// Disable PaperTrader if TRADER Enabled
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-config.paperTrader = {
-enabled: true,reportInCurrency: true,
+config.paperTrader = {enabled: true,
+reportInCurrency: true,
 simulationBalance: {asset: 1,currency: 100},
 feeMaker: 0.15,feeTaker: 0.25,feeUsing: 'maker',slippage: 0.05
 };
