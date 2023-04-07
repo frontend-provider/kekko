@@ -2,6 +2,6 @@ enabled = true
 dataDirectory = "history"
 path = "plugins/sqlite"
 version = 0.1
-[[dependencies]]
+[dependencies]
 module = "sqlite3"
 
