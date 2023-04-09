@@ -1,5 +1,5 @@
 enabled=true
-candleSize = 15
+candleSize = 10
 historySize = 1
 [talib]
 enabled=false
