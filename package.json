@@ -45,6 +45,7 @@
   "sqlite": "^4.1.2",
   "sqlite3": "^5.1.4",
   "stats-lite": "^2.0.4",
+  "talib": "^1.1.5",
   "tiny-promisify": "^0.1.1",
   "toml": "^3.0.0",
   "toml-j0.4": "^1.1.1",
