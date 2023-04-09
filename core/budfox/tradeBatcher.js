@@ -1,7 +1,9 @@
 var _ = require('lodash');
 var moment = require('moment');
 var util = require('../util');
+var config = util.getConfig();
 var log = require('../log');
+
 var TradeBatcher = function(tid) {
   if(!_.isString(tid))
     throw new Error('tid is not a string');
@@ -83,7 +85,8 @@ TradeBatcher.prototype.convertDates = function(batch) {
   });
 }
 
-module.exports = TradeBatcher;
+exports.TradeBatcher=TradeBatcher;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
