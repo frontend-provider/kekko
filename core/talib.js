@@ -1,18 +1,8 @@
 var semver = require("semver");
 var _ = require('lodash');
-
-// validate that talib is installed, if not we'll throw an exception which will
-// prevent further loading or out outside this module
-try {
-    var talib = require("talib");
-} catch (e) {
-    module.exports = null;
-    return;
-}
-
+var talib = require("talib");
 var talibError = 'Gekko was unable to configure talib indicator:\n\t';
 var talibGTEv103 = semver.gte(talib.version, '1.0.3');
-
 // Wrapper that executes a talib indicator
 var execute = function(callback, params) {
     // talib callback style since talib-v1.0.3
@@ -1573,7 +1563,6 @@ methods.mavp = {
     }
 }
 
-
 methods.max = {
     requires: ['optInTimePeriod'],
     create: (params) => {
@@ -1588,7 +1577,6 @@ methods.max = {
         });
     }
 }
-
 
 methods.maxindex = {
     requires: ['optInTimePeriod'],
@@ -2292,8 +2280,8 @@ methods.wma = {
         });
     }
 }
+exports.methods=methods;
 
-module.exports = methods;
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
