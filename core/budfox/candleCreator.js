@@ -5,7 +5,8 @@
 //The CandleCreator creates one minute candles based on trade batches. 
 var _ = require('lodash');
 var moment = require('moment');
-var util = require(__dirname + '/../util');
+var util = require('../util');
+var config = util.getConfig();
 var CandleCreator = function() {
   _.bindAll(this);
   this.threshold = moment("1970-01-01", "YYYY-MM-DD");
@@ -21,7 +22,6 @@ CandleCreator.prototype.write = function(batch) {
   trades = this.filter(trades);
   this.fillBuckets(trades);
   var candles = this.calculateCandles();
-
   candles = this.addEmptyCandles(candles);
 
   if(_.isEmpty(candles))
@@ -133,7 +133,7 @@ CandleCreator.prototype.addEmptyCandles = function(candles) {
   return candles;
 }
 
-module.exports = CandleCreator;
+exports.CandleCreator= CandleCreator;
 
 /*
 The MIT License (MIT)
