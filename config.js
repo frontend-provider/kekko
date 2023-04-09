@@ -55,8 +55,10 @@ exchange:'exchange_simulator',currency:'',asset:'',key:'',secret:'',username:''}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 config.paperTrader = {enabled: true,
 reportInCurrency: true,
-simulationBalance: {asset: 1,currency: 100},
-feeMaker: 0.15,feeTaker: 0.25,feeUsing: 'maker',slippage: 0.05
+feeMaker: 0.15,
+feeTaker: 0.25,
+feeUsing: 'maker',
+slippage: 0.05
 };
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PERFORMANCE ANALYZER
@@ -67,4 +69,6 @@ config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,jo
 //Child to Parent
 config.childToParent = {enabled: true};
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
-module.exports = config;
+
+exports.config=config;
+
