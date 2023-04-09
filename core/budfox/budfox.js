@@ -1,18 +1,21 @@
 /*
 
 */
+
 var _ = require('lodash');
 var async = require('async');
 var util = require(__dirname + '/../util');
+var config = util.getConfig();
 var dirs = util.dirs();
 var Heart = require(dirs.budfox + 'heart');
 var MarketDataProvider =  require(dirs.budfox + 'marketDataProvider');
 var CandleManager = require(dirs.budfox + 'candleManager');
+//*
 var BudFox = function(config) {
   _.bindAll(this);
 
   Readable.call(this, {objectMode: true});
-// BudFox internal modules:
+//BudFox internal modules:
   this.heart = new Heart;
   this.marketDataProvider = new MarketDataProvider(config);
   this.candleManager = new CandleManager;
@@ -54,8 +57,7 @@ BudFox.prototype._read = function noop() {}
 BudFox.prototype.pushCandles = function(candles) {
   _.each(candles, this.push);
 }
-
-module.exports = BudFox;
+exports.BudFox=BudFox;
 
 /*
 The MIT License (MIT)
