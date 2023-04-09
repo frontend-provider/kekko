@@ -1,13 +1,12 @@
 var _ = require('lodash');
 var moment = require('moment');
 var utc = moment.utc;
-var util = require(__dirname + '/../util');
-var dirs = util.dirs();
+var util = require('../util');
 var config = util.getConfig();
+var dirs = util.dirs();
 var log = require(dirs.core + 'log');
 var exchangeChecker = require(dirs.gekko + 'exchange/exchangeChecker');
 var TradeBatcher = require(util.dirs().budfox + 'tradeBatcher');
-
 var Fetcher = function(config) {
   if(!_.isObject(config))
     throw new Error('TradeFetcher expects a config');
@@ -81,7 +80,8 @@ Fetcher.prototype.processTrades = function(err, trades) {
 Fetcher.prototype.relayTrades = function(batch) {
   this.emit('trades batch', batch);
 }
-module.exports = Fetcher;
+exports.Fetcher=Fetcher;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
