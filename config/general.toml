@@ -13,4 +13,5 @@ currency = ""
 asset = ""
 key=""
 secret=""
+tickrate=20
 
