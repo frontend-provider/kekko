@@ -6,7 +6,7 @@ var _ = require('lodash');
 var moment = require('moment');
 var fs = require('fs');
 
-var util = require(__dirname + '/../util');
+var util = require('../util');
 var dirs = util.dirs();
 var config = util.getConfig();
 var log = require(dirs.core + 'log');
@@ -31,7 +31,7 @@ Manager.prototype.relayCandles = function(candles) {
   this.emit('candles', candles);
 }
 
-module.exports = Manager;
+exports.Manager=Manager;
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
