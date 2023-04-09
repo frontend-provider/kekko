@@ -4,7 +4,7 @@
 
 var _ = require('lodash');
 var async = require('async');
-var util = require(__dirname + '/../util');
+var util = require('../util');
 var config = util.getConfig();
 var dirs = util.dirs();
 var Heart = require(dirs.budfox + 'heart');
