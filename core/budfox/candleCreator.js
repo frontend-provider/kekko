@@ -1,8 +1,7 @@
 /*
-
+CandleCreator creates one minute candles based on trade batches. 
 */
 
-//The CandleCreator creates one minute candles based on trade batches. 
 var _ = require('lodash');
 var moment = require('moment');
 var util = require('../util');
