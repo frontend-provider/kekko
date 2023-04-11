@@ -2,8 +2,7 @@
 
 */
 
-var _ = require('lodash');
-var async = require('async');
+var _ = require('../lodash-core');
 var util = require('../util');
 var config = util.getConfig();
 var dirs = util.dirs();
