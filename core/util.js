@@ -5,7 +5,7 @@
 */
 
 var moment = require('moment');
-var _ = require('lodash');
+var _ = require('./lodash-core');
 var path = require('path');
 var fs = require('fs-extra');
 var file = require('file-system');
