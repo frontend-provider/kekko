@@ -3,6 +3,7 @@
 */
 
 var _ = require('../lodash-core');
+var async = require('async');
 var util = require('../util');
 var config = util.getConfig();
 var dirs = util.dirs();
