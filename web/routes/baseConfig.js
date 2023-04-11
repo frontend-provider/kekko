@@ -9,7 +9,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 var ui_config = require('../../web/vue/statics/UiConfig');
 var base_config={};
 //General Settings
-base_config.debug =true;
+base_config.debug =false;
 base_config.watch= {};
 base_config.tradingAdvisor = {enabled:false};
 base_config.adapter=ui_config.adapter;
@@ -23,5 +23,5 @@ base_config.performanceAnalyzer = {enabled: false};
 base_config.importer={enabled:false};
 base_config.sqlite = {enabled:false};
 base_config.childToParent = {enabled: false};
-base_config['I understand that Gekko only automates MY OWN trading strategies']=false;
-module.exports = base_config;
+base_config['I understand that Gekko only automates MY OWN trading strategies']=true;
+exports.base_config=base_config; 
