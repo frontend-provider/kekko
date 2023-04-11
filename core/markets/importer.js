@@ -1,14 +1,14 @@
-var _ = require('lodash');
+var _ = require('../lodash-core');
 var util = require('../util');
 var config = util.getConfig();
 var dirs = util.dirs();
+
 var log = require(dirs.core + 'log');
 var moment = require('moment');
-var gekkoEnv = util.gekkoEnv();
 
+var gekkoEnv = util.gekkoEnv();
 var adapter = config[config.adapter];
 var daterange = config.importer.daterange;
-
 var from = moment.utc(daterange.from);
 
 if(daterange.to) {
@@ -44,7 +44,6 @@ if(to <= from)
 var Market = function() {
   _.bindAll(this);
   this.exchangeSettings = exchangeChecker.settings(config.watch);
-
   this.tradeBatcher = new TradeBatcher(this.exchangeSettings.tid);
   this.candleManager = new CandleManager;
   this.fetcher = fetcher({
@@ -113,5 +112,5 @@ Market.prototype.processTrades = function(trades) {
 
   setTimeout(this.get, 1000);
 }
+exports.Market = Market;
 
-module.exports = Market;
