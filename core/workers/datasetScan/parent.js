@@ -1,13 +1,13 @@
-var _ = require('lodash');
+var _ = require('../../lodash-core');
+var util = require('../../util');
+var dirs = util.dirs();
+var config = util.getConfig();
+
 var moment = require('moment');
 var async = require('async');
 var os = require('os');
-var util = require('../../util');
-var dirs = util.dirs();
 var dateRangeScan = require('../dateRangeScan/parent');
-
 module.exports = function(config, done) {
-
   util.setConfig(config);
   var adapter = config['sqlite'];
   var scan = require(dirs.gekko + adapter.path + '/scanner');
