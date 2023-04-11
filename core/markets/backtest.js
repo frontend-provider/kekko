@@ -105,4 +105,5 @@ Market.prototype.processCandles = function(err, candles) {
     this.get();
 }
 
-module.exports = Market;
+exports.Market= Market;
+
