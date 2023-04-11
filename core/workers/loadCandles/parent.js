@@ -1,5 +1,9 @@
+var _ = require('../../lodash-core');
+var util = require('../../util');
+var config = util.getConfig();
+var dirs = util.dirs();
+
 const fork = require('child_process').fork;
-var _ = require('lodash');
 
 module.exports = (config, callback) => {
   var debug = typeof v8debug === 'object';
