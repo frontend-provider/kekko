@@ -7,16 +7,17 @@ var moment = require('moment');
 var async = require('async');
 var os = require('os');
 var dateRangeScan = require('../dateRangeScan/parent');
+
 module.exports = function(config, done) {
   util.setConfig(config);
-  var adapter = config[config.adapter];
-  var scan = require(dirs.gekko + adapter.path + '/scanner');
+  var adapter = config.adapter;
+  var scan = require('../../../plugins/sqlite' + '/scanner');
   scan((err, markets) => {
     if(err)
     return done(err);
     let numCPUCores = os.cpus().length;
     if(numCPUCores === undefined)
-    numCPUCores = 1;
+    numCPUCores = 2;
     async.eachLimit(markets, numCPUCores, (market, next) => {
       let marketConfig = _.clone(config);
       marketConfig.watch = market;
@@ -27,7 +28,7 @@ module.exports = function(config, done) {
         next();
       });
 
-    }, 
+    },
     err => {
       let resp = {
         datasets: [],
