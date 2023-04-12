@@ -16,8 +16,7 @@ config.tradingAdvisor.method= 'Strategy';
 //Adapter
 config.adapter='sqlite';
 config.sqlite = {adapter:'sqlite',path: 'plugins/sqlite',version: 0.1,dataDirectory: 'history',dependencies: [{module: 'sqlite3'}]};
-//Trader
-config.trader ={enabled:false,exchange:'exchange_simulator',currency:'',asset:'',key:'',secret:'',username:''};
+
 config.candleWriter={enabled:true,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
 config.adviceWriter={enabled:true};
