@@ -76,6 +76,6 @@
   "doc": "docs"
  },
  "scripts": {
-  "postinstall": "npm link exchange/ && npm fund"
+  "postinstall": "npm link exchange/ && npm fund && npm audit fix"
  }
 }
