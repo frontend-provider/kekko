@@ -10,7 +10,6 @@ var dirs = util.dirs();
 var Heart = require(dirs.budfox + 'heart');
 var MarketDataProvider =  require(dirs.budfox + 'marketDataProvider');
 var CandleManager = require(dirs.budfox + 'candleManager');
-//*
 var BudFox = function(config) {
   _.bindAll(this);
 
