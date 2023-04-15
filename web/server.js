@@ -2,9 +2,11 @@ const config = require('./vue/statics/UiConfig');
 const koa = require('koa');
 const serve = require('koa-static');
 const cors = require('koa-cors');
-const _ = require('lodash');
+const _ = require('../core/lodash-core');
 const bodyParser = require('koa-bodyparser');
-const fs = require('fs');
+const fs = require('fs-extra');
+const https= require('https');
+
 const opn = require('opn');
 const server = require('http').createServer();
 const router = require('koa-router')();
