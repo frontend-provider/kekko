@@ -48,7 +48,7 @@ Heart.prototype.scheduleTicks = function() {
   _.defer(this.tick);
 }
 
-exports.Hearth=Hearth;
+exports.Heart=Heart;
 
 /*
 The MIT License (MIT)
