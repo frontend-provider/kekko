@@ -1,11 +1,11 @@
-var _ = require('../lodash-core');
+var _ = require('lodash');
 var util = require('../util');
 var config = util.getConfig();
 var dirs = util.dirs();
 var log = require(dirs.core + 'log');
 var moment = require('moment');
 
-var adapter = config[config.sqlite];
+var adapter = config[config.adapter];
 var Reader = require(dirs.gekko + adapter.path + '/reader');
 var daterange = config.backtest.daterange;
 
@@ -105,5 +105,4 @@ Market.prototype.processCandles = function(err, candles) {
     this.get();
 }
 
-exports.Market= Market;
-
+module.exports = Market;
