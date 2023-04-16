@@ -3,6 +3,6 @@ feeMaker = 0.5
 feeTaker = 0.5
 feeUsing = "taker"
 slippage = 0.05
-[simulationBalance]
+[[simulationBalance]]
 asset = 1
 currency = 100
