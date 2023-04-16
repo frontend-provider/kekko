@@ -104,8 +104,6 @@ sudo a2ensite 000-default-ssl
 ```
 sudo systemctl restart apache2
 ```
-
-
 [reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension-ubuntu-20-04)
 
 #### Create a self signed certificate:
@@ -119,19 +117,20 @@ sudo nano /etc/apache2/sites-available/000-default-ssl.conf
 ```
 
 ```
+
 <VirtualHost *:4433>
    ServerName 192.168.1.146
-   DocumentRoot /var/www/192.168.1.146
    SSLEngine on
    SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
 </VirtualHost>
-```
 
+```
 ```
 sudo a2ensite 000-default-ssl
 ```
 ```
 sudo systemctl restart apache2
 ```
+
 [SSL-Apache2](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04)
