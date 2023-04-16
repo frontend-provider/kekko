@@ -13,8 +13,6 @@ or specified. Please consider testing it first with paper trading and/or
 backtesting on historical data. Also look at the code to see what how
 it is working.
 */
-var ui_config = require('./web/vue/statics/UiConfig');
-var base_config = require('./web/routes/baseConfig');
 var config = {};
 //General Settings
 config.debug =true;
@@ -64,7 +62,7 @@ config.paperTrader = {enabled: true,
 config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 //Importer
 config.importer={enabled:true};
-config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,journalMode: require('./web/isWindows.js') ? 'DELETE' : 'WAL',dependencies:[{module: 'sqlite3'}] };
+config.sqlite = {path: 'plugins/sqlite',dataDirectory: 'history',version: 0.1,dependencies:[{module: 'sqlite3'}] };
 //Child to Parent
 config.childToParent = {enabled: false};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
