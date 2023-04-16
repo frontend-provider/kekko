@@ -49,9 +49,6 @@ pm2 start gekko-m4.js --env development
 ```
 [Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
 
----
-##### [Static IP](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/ip.md) 
----
 ### [BackTest-Tool]
 
 #### Required Packages:
