@@ -1,7 +1,6 @@
 /*
+
 */
-var ui_config = require('./web/vue/statics/UiConfig');
-var base_config = require('./web/routes/baseConfig');
 var config = {};
 //General Settings
 config.debug =true;
@@ -43,8 +42,6 @@ config.backtest = {daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 config.trader ={enabled:false,
 exchange:'exchange_simulator',currency:'',asset:'',key:'',secret:'',username:''};
-
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PAPERTRADER
 // Disable PaperTrader if TRADER Enabled
@@ -63,6 +60,5 @@ config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 //Child to Parent
 config.childToParent = {enabled: false};
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
-
 exports.config=config;
 
