@@ -15,14 +15,6 @@ console.log('UniversalBit Blockchain Powered by Gekko');
 console.log('\tGekko v' + util.getVersion());
 console.log('##########################################');
 const dirs = util.dirs();
-
-//Remove if condition and enable multi-server files for running terminal one config file 
-//realtime mode for each enabled exchange
-
-if(util.launchUI()) {
-  return require(util.dirs().web + 'server');
-}
-
 const pipeline = require(dirs.core + 'pipeline');
 const config = util.getConfig();
 const mode = util.gekkoMode();
