@@ -1,14 +1,14 @@
 // The heart schedules and emit ticks every 20 seconds.
 
-var _ = require('../lodash-core');
-var util = require('../util');
-var config=util.getConfig();
+var util = require(__dirname + '/../util');
 var log = require(util.dirs().core + 'log');
+
+var _ = require('lodash');
 var moment = require('moment');
 
 if (util.getConfig().watch.tickrate)
   var TICKRATE = util.getConfig().watch.tickrate;
-else if(util.getConfig().watch.exchange === 'exchange')
+else if(util.getConfig().watch.exchange === 'okcoin')
   var TICKRATE = 2;
 else
   var TICKRATE = 20;
@@ -48,8 +48,7 @@ Heart.prototype.scheduleTicks = function() {
   _.defer(this.tick);
 }
 
-exports.Heart=Heart;
-
+module.exports = Heart;
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me

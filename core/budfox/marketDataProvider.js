@@ -3,8 +3,7 @@
 
 */
 var _ = require('lodash');
-var util = require('../util');
-var config=util.getConfig();
+var util = require(__dirname + '/../util');
 var MarketFetcher = require('./marketFetcher');
 var dirs = util.dirs();
 var Manager = function(config) {
@@ -15,14 +14,18 @@ var Manager = function(config) {
   this.source
     .on('trades batch', this.relayTrades);
 }
+
 util.makeEventEmitter(Manager);
+
 // HANDLERS
 Manager.prototype.retrieve = function() {
   this.source.fetch();
 }
+
 Manager.prototype.relayTrades = function(batch) {
   this.sendMarketStart(batch);
   this.emit('marketUpdate', batch.last.date);
+
   this.emit('trades', batch);
 }
 
@@ -30,7 +33,7 @@ Manager.prototype.sendMarketStart = _.once(function(batch) {
   this.emit('marketStart', batch.first.date);
 });
 
-exports.Manager=Manager;
+module.exports = Manager;
 /*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
