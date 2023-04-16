@@ -1,8 +1,8 @@
 enabled=true
 candleSize = 10
 historySize = 1
-[talib]
+[[talib]]
 enabled=false
-[tulind]
+[[tulind]]
 enabled=true
 
