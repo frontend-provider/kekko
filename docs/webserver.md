@@ -79,7 +79,6 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
   ProxyPreserveHost On
     ProxyPass / http://192.168.1.146:3007/ 
     ProxyPassReverse / http://192.168.1.146:3007/
-    Redirect permanent / https://192.168.1.146
 </VirtualHost>
 ```
 ```
