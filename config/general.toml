@@ -4,10 +4,10 @@
 enabled = true
 debug = true
 adapter = "sqlite"
-[dependencies]
+[[dependencies]]
 module="sqlite3"
 
-[watch]
+[[watch]]
 exchange = ""
 currency = ""
 asset = ""
