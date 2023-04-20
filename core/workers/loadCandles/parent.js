@@ -33,35 +33,6 @@ module.exports = (config, callback) => {
 }
 
 /*
-let config = {
-watch: {
-  exchange: 'exmo',
-  currency: 'BTC',
-  asset: 'LTC'
-},
-
-daterange: {
-  from: '2023-01-22 11:22',
-  to: '2023-02-03 19:56'
-},
-
-adapter: 'sqlite',
-sqlite: {
-  path: 'plugins/sqlite',dataDirectory: 'history',
-  version: 0.1,
-  dependencies: [{module: 'sqlite3',version: '5.1.4'}]
-},
-candleSize: 10
-}
-
-module.exports(config, function(err, data) {
-console.log('FINAL CALLBACK');
-console.log('err', err);
-console.log('data', data.length);
-})
-*/
-
-/*
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
