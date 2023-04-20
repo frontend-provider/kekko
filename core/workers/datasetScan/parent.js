@@ -1,23 +1,22 @@
-var _ = require('../../lodash-core');
-var util = require('../../util');
-var dirs = util.dirs();
-var config = util.getConfig();
-
+var _ = require('lodash');
 var moment = require('moment');
 var async = require('async');
 var os = require('os');
+var util = require('../../util');
+var dirs = util.dirs();
 var dateRangeScan = require('../dateRangeScan/parent');
 
 module.exports = function(config, done) {
+
   util.setConfig(config);
-  var adapter = config.adapter;
-  var scan = require('../../../plugins/sqlite' + '/scanner');
+  var adapter = config['sqlite'];
+  var scan = require(dirs.gekko + adapter.path + '/scanner');
   scan((err, markets) => {
     if(err)
     return done(err);
     let numCPUCores = os.cpus().length;
     if(numCPUCores === undefined)
-    numCPUCores = 2;
+    numCPUCores = 1;
     async.eachLimit(markets, numCPUCores, (market, next) => {
       let marketConfig = _.clone(config);
       marketConfig.watch = market;
@@ -28,7 +27,7 @@ module.exports = function(config, done) {
         next();
       });
 
-    },
+    }, 
     err => {
       let resp = {
         datasets: [],
