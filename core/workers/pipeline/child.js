@@ -1,11 +1,11 @@
-var _ = require('../../lodash-core');
-var util = require('../../util');
-var config = util.getConfig();
-var dirs = util.dirs();
-
 var start = (mode, config) => {
+var util = require(__dirname + '/../../util');
+
   // force correct gekko env
   util.setGekkoEnv('child-process');
+
+  var dirs = util.dirs();
+
   // force correct gekko mode & config
   util.setGekkoMode(mode);
   util.setConfig(config);
