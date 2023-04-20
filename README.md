@@ -1,4 +1,4 @@
-### Gekko-[M4](https://en.wikipedia.org/wiki/Messier_4)
+### Gekko-[M4](http://www.wikisky.org/starview?object_type=4&object_id=3)
 #### unlike easy gains
 #### This software is for educational purposes only. Do not risk money which you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.
 -----
