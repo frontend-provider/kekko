@@ -6,7 +6,7 @@ const moment = require('moment');
 const TREND_DURATION = 1000;
 
 const Trader = function() {
-  this.name = 'Exchange Simulator';
+  this.name = 'exchange_simulator';
   this.at = moment().subtract(30, 'minutes');
 
 
