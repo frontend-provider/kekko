@@ -8,7 +8,7 @@ config.debug =true;
 config.watch = {exchange: 'exchange_simulator',currency: 'LTC',asset: 'BTC',tickrate:20};
 //Trading Advisor
 config.tradingAdvisor = {enabled:true};
-config.tradingAdvisor.candleSize=10;
+config.tradingAdvisor.candleSize=15;
 config.tradingAdvisor.historySize=1;
 //Strategy
 config.tradingAdvisor.method= 'Strategy';
