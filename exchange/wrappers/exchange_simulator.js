@@ -52,14 +52,14 @@ Trader.prototype.getTrades = function(since, cb) {
 
 Trader.getCapabilities = function () {
   return {
-    name: 'Exchange_Simulator',
+    name: 'Exchange Simulator',
     slug: 'exchange_simulator',
     currencies: ['LTC'],
     assets: ['BTC'],
     maxTradesAge: 60,
     maxHistoryFetch: null,
     markets: [
-      { pair: ['BTC', 'LTC'], minimalOrder: { amount: 0.00009, unit: 'assets' } },
+      { pair: ['LTC', 'BTC'], minimalOrder: {amount: 0.0004} },
     ],
     requires: ['key', 'secret', 'username'],
     fetchTimespan: 60,
