@@ -1,10 +1,5 @@
-var _ = require('../../lodash-core');
-var util = require('../../util');
-var config = util.getConfig();
-var dirs = util.dirs();
-
 var ForkTask = require('relieve').tasks.ForkTask;
-const fork = require('child_process').fork;//*
+const fork = require('child_process').fork;
 
 module.exports = function(config, done) {
   var debug = typeof v8debug === 'object';
@@ -12,7 +7,7 @@ module.exports = function(config, done) {
     process.execArgv = [];
   }
 
-  task = new ForkTask(fork('./child'));
+  task = new ForkTask(fork(__dirname + '/child'));
   task.send('start', config);
   task.once('ranges', ranges => {
     return done(false, ranges);
