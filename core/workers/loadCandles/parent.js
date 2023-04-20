@@ -1,9 +1,5 @@
-var _ = require('../../lodash-core');
-var util = require('../../util');
-var config = util.getConfig();
-var dirs = util.dirs();
-
 const fork = require('child_process').fork;
+var _ = require('lodash');
 
 module.exports = (config, callback) => {
   var debug = typeof v8debug === 'object';
@@ -35,6 +31,35 @@ module.exports = (config, callback) => {
       done('ERROR, unable to load candles, please check the console.');
   });
 }
+
+/*
+let config = {
+watch: {
+  exchange: 'exmo',
+  currency: 'BTC',
+  asset: 'LTC'
+},
+
+daterange: {
+  from: '2023-01-22 11:22',
+  to: '2023-02-03 19:56'
+},
+
+adapter: 'sqlite',
+sqlite: {
+  path: 'plugins/sqlite',dataDirectory: 'history',
+  version: 0.1,
+  dependencies: [{module: 'sqlite3',version: '5.1.4'}]
+},
+candleSize: 10
+}
+
+module.exports(config, function(err, data) {
+console.log('FINAL CALLBACK');
+console.log('err', err);
+console.log('data', data.length);
+})
+*/
 
 /*
 The MIT License (MIT)

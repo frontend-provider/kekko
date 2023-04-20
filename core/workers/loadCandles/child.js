@@ -1,13 +1,11 @@
-var _ = require('../../lodash-core');
-var util = require('../../util');
-var config = util.getConfig();
-var dirs = util.dirs();
-
 var start = (config, candleSize, daterange) => {
+  var util = require(__dirname + '/../../util');
+
   util.setGekkoEnv('child-process');
   config.debug = false;
   util.setConfig(config);
-  
+
+  var dirs = util.dirs();
   var load = require(dirs.tools + 'candleLoader');
   load(config.candleSize, candles => {
     process.send(candles);
