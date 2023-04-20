@@ -1,36 +1,40 @@
 /*
 
+
 */
 var config = {};
 //General Settings
 config.debug =true;
-//Watching 
+//Watching
 config.watch = {exchange: 'exchange_simulator',currency: 'LTC',asset: 'BTC',tickrate:20};
 //Trading Advisor
-config.tradingAdvisor = {enabled:true};
-config.tradingAdvisor.candleSize=15;
-config.tradingAdvisor.historySize=1;
+config.tradingAdvisor = {enabled:true,candleSize:15,historySize:1};
+
 //Strategy
-config.tradingAdvisor.method= 'Strategy';
+config.tradingAdvisor.method= 'Noop';
+
 //Adapter
 config.adapter='sqlite';
-config.sqlite = {adapter:'sqlite',path: 'plugins/sqlite',version: 0.1,dataDirectory: 'history',dependencies: [{module: 'sqlite3'}]};
+config.sqlite = {
+  adapter:'sqlite',path: 'plugins/sqlite',version: 0.1,
+  dataDirectory: 'history',dependencies: [{module: 'sqlite3'}]
+};
 
 config.candleWriter={enabled:true,adapter:'sqlite'};
 config.adviceLogger={enabled:true};
-config.adviceWriter={enabled:true};
+config.backtestResultExporter={enabled:false};
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING BACKTESTING
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 config.backtestResultExporter = {
   enabled: true,
   writeToDisk: false,
-  data: {
-    stratUpdates: true,
-    roundtrips: true,
-    stratCandles: true,
-    trades: true
-  }
+data: {
+  stratUpdates: true,
+  roundtrips: true,
+  stratCandles: true,
+  trades: true}
 };
 
 config.importer = {daterange: {from: "2020-03-08 00:00:00",to:"2023-03-08 00:00:00"}};
@@ -41,7 +45,11 @@ config.backtest = {daterange: 'scan',daterange:{from:'2020-03-08 00:00:00',to:'2
 // Disable Trader if PAPERTRADER Enabled
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 config.trader ={enabled:false,
-exchange:'exchange_simulator',currency:'',asset:'',key:'',secret:'',username:''};
+exchange:'exchange_simulator',
+currency:'',asset:'',
+key:'',secret:'',username:''
+};
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PAPERTRADER
 // Disable PaperTrader if TRADER Enabled
@@ -53,6 +61,7 @@ feeTaker: 0.25,
 feeUsing: 'maker',
 slippage: 0.05
 };
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING PERFORMANCE ANALYZER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,4 +70,3 @@ config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 config.childToParent = {enabled: false};
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
 module.exports = config;
-
