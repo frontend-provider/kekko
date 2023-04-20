@@ -8,9 +8,9 @@ adapter = "sqlite"
 module="sqlite3"
 
 [[watch]]
-exchange = ""
-currency = ""
-asset = ""
+exchange = "exchange_simulator"
+currency = "LTC"
+asset = "BTC"
 key=""
 secret=""
 tickrate=20
