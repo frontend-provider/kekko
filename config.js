@@ -60,5 +60,5 @@ config.performanceAnalyzer = {enabled: true,riskFreeReturn: 5};
 //Child to Parent
 config.childToParent = {enabled: false};
 config['I understand that Gekko only automates MY OWN trading strategies']=true;
-exports.config=config;
+module.exports = config;
 
