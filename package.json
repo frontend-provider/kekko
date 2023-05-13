@@ -30,6 +30,8 @@
   "koa-router": "^5.4.0",
   "koa-static": "^2.0.0",
   "lodash": "^3.10.1",
+  "lodash.bindall": "^4.4.0",
+  "lodash.noop": "^3.0.1",
   "mathjs": "^9.4.4",
   "moment": "^2.22.1",
   "npm": "^9.6.0",
