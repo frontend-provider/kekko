@@ -1,7 +1,7 @@
 // This method is a noop (it doesn't do anything)
 
 var _ = require('lodash');
-
+var noop = require('lodash.noop');
 // Let's create our own method
 var method = {};
 
