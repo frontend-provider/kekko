@@ -67,7 +67,6 @@ perl ./backtest.pl
 ```
 ---
 ### Resources:
-
 * Gekko-Quasar-UI [0.6.9-m4](https://github.com/universalbit-dev/gekko-quasar-ui)
 * Webserver [Apache2 and Nginx](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/webserver.md)
 * [Docs](https://github.com/universalbit-dev/gekko-m4/tree/master/docs)
@@ -75,16 +74,6 @@ perl ./backtest.pl
 * [Forum](https://forum.gekko.wizb.it/)
 * [Strategies](https://github.com/xFFFFF/Gekko-Strategies)
 * [Extra-Indicators](https://github.com/Gab0/gekko-extra-indicators)
----
-
-[TOML] [Configuration files](https://github.com/universalbit-dev/gekko-m4/tree/master/config)
-
----
-[Log] files are written to this folder : logs/
-```
-tail -f logs/2022-00-00-00-00-watcher-8032292293309007.log
-tail -f logs/2022-00-00-00-00-papertrade-8032292293309007.log
-```
 ---
 [Legal context](https://www.europarl.europa.eu/cmsdata/150761/TAX3%20Study%20on%20cryptocurrencies%20and%20blockchain.pdf)
 Each exchange requires registration, 2fa and verify identity.
