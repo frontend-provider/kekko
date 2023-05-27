@@ -1,8 +1,0 @@
-enabled=true
-candleSize = 15
-historySize = 1
-[[talib]]
-enabled=true
-[[tulind]]
-enabled=true
-

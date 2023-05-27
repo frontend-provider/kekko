@@ -1,9 +1,0 @@
-enabled = true
-dataDirectory = "history"
-path = "plugins/sqlite"
-version = 0.1
-[dependencies]
-module = "sqlite3"
-version = "5.1.4"
-
-
