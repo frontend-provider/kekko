@@ -4,7 +4,7 @@
 "markets":[
 {
 "pair":["LTC","BTC"],"minimalOrder": 
-{"amount": "0.00009","unit": "asset"}
+{"amount": "0.0004","unit": "asset"}
 }]
 
 }
