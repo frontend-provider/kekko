@@ -61,7 +61,7 @@ Trader.getCapabilities = function () {
     markets: [
       { pair: ['LTC', 'BTC'], minimalOrder: {amount: 0.0004} },
     ],
-    requires: ['key', 'secret', 'username'],
+    requires: ['key', 'secret'],
     fetchTimespan: 60,
     tid: 'tid',
     tradable: true
