@@ -1,7 +1,9 @@
 var _ = require('lodash');
 var moment = require('moment');
-var util = require('../util');
-var log = require('../log');
+var util = require('../../core/util.js');
+var config = require('../../core/util.js').getConfig();
+var log = require('../../core/log');
+
 var TradeBatcher = function(tid) {
   if(!_.isString(tid))
     throw new Error('tid is not a string');
