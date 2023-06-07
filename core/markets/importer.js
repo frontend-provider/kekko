@@ -9,10 +9,10 @@ var gekkoEnv = util.gekkoEnv();
 var adapter = config[config.adapter];
 var daterange = config.importer.daterange;
 
-var from = moment.utc(daterange.from);
+var from = moment.utc(config.daterange.from);
 
-if(daterange.to) {
-  var to = moment.utc(daterange.to);
+if(config.daterange.to) {
+  var to = moment.utc(config.daterange.to);
 } else {
   var to = moment().utc();
   log.debug(
