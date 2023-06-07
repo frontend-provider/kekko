@@ -1,10 +1,10 @@
 /*
 
 
-
 */
 var _ = require('lodash');
-var util = require(__dirname + '/util');
+var util = require('./util');
+
 var CandleBatcher = function(candleSize) {
   if(!_.isNumber(candleSize))
     throw new Error('candleSize is not a number');
