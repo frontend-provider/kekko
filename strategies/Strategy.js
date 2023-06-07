@@ -25,8 +25,7 @@ if(this.debug ){
 update: function(){},
 log: function(){},
 check: function(){},
-end: function(){},
-
+end: function(){}
 };
 
 module.exports = strat;
