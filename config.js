@@ -37,9 +37,9 @@ data: {
   trades: true}
 };
 
-config.daterange={from:"2020-03-01 00:00:00",to:"2023-04-28 00:00:00"},
+config.daterange={from:"2020-03-01 00:00:00",to:"2023-04-28 00:00:00"};
 config.importer = {daterange: {from: "2020-03-08 00:00:00",to:"2023-03-08 00:00:00"}};
-config.backtest = batchSize: 60;
+config.backtest = {batchSize: 60};
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING TRADER
