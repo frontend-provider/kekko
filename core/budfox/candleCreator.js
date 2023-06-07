@@ -3,9 +3,13 @@
 */
 
 //The CandleCreator creates one minute candles based on trade batches. 
+
 var _ = require('lodash');
 var moment = require('moment');
-var util = require(__dirname + '/../util');
+var util = require('../../core/util');
+var config = require('../../core/util.js').getConfig();
+
+
 var CandleCreator = function() {
   _.bindAll(this);
   this.threshold = moment("1970-01-01", "YYYY-MM-DD");
