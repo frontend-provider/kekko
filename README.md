@@ -51,6 +51,16 @@ pm2 start gekko-m4.js --env development
 ```
 [Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
 
+
+#### Importer
+```
+node gekko.js -c config.js --import
+```
+#### Backtest
+```
+node gekko.js -c config.js --backtest
+```
+
 ### [BackTest-Tool]
 
 #### Required Packages:
