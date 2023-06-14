@@ -84,6 +84,7 @@ perl ./backtest.pl
 * [Forum](https://forum.gekko.wizb.it/)
 * [Strategies](https://github.com/xFFFFF/Gekko-Strategies)
 * [Extra-Indicators](https://github.com/Gab0/gekko-extra-indicators)
----
-[Legal context](https://www.europarl.europa.eu/cmsdata/150761/TAX3%20Study%20on%20cryptocurrencies%20and%20blockchain.pdf)
-Each exchange requires registration, 2fa and verify identity.
+*[Legal context](https://www.europarl.europa.eu/cmsdata/150761/TAX3%20Study%20on%20cryptocurrencies%20and%20blockchain.pdf)
+*[Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html)
+
+
