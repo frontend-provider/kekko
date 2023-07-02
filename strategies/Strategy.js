@@ -1,10 +1,11 @@
 //https://github.com/universalbit-dev/gekko-m4/blob/master/docs/strategies/creating_a_strategy.md
 var log = require('../core/log.js');
 var config = require('../core/util.js').getConfig();
-var _ = require('lodash');
+var _ = require('../core/lodash-core');
 var ws = require ('reconnecting-websocket');
-var tulind = require('tulind');
-var strat = {
+var tulind = require('../core/tulind');
+
+var method = {
 
 init: function(){
         this.name = 'Strategy';
@@ -22,10 +23,10 @@ if(this.debug ){
 
 },
 
-update: function(){},
-log: function(){},
-check: function(){},
-end: function(){}
+update: function(){},//
+log: function(){},//
+check: function(){},//
+end: function(){}//
 };
 
-module.exports = strat;
+module.exports = method;
