@@ -6,7 +6,7 @@
 -----
 
 #### enhance the application by solving some vulnerabilities.
-Gekko-M4 Engine run on Nodejs Version (v18.14.2) Npm (9.5.0)
+#### Gekko-M4 Engine node v20.4.0 (npm v9.7.2)
 -----
 
 ##### [Support UniversalBit Project](https://github.com/universalbit-dev/universalbit-dev/tree/main/support)
@@ -26,8 +26,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ##### [NodeJs 18 LTS](https://nodejs.org/en/download/)
 
 ```
-nvm install 18
-nvm use 18
+nvm install 20
+nvm use 20
 ```
 
 clone project:
@@ -40,7 +40,7 @@ cd gekko-m4
 
 -Engine
 ```
-npm i --build-from-source
+npm i 
 ```
 Thanks developers.
 
