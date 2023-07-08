@@ -1,5 +1,7 @@
 ##### [Support UniversalBit Project](https://github.com/universalbit-dev/universalbit-dev/tree/main/support)
 
+##### [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html)
+
 ### Gekko-[M4](http://www.wikisky.org/starview?object_type=4&object_id=3)
 #### unlike easy gains
 #### This software is for educational purposes only. Do not risk money which you are afraid to lose. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS.
@@ -84,6 +86,6 @@ perl ./backtest.pl
 * [Extra-Indicators](https://github.com/Gab0/gekko-extra-indicators)
 * [Legal context](https://www.europarl.europa.eu/cmsdata/150761/TAX3%20Study%20on%20cryptocurrencies%20and%20blockchain.pdf)
 
-[Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html)
+
 
 
