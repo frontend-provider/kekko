@@ -9,7 +9,6 @@
 #### Gekko-M4 Engine node v20.4.0 (npm v9.7.2)
 -----
 
-##### [Support UniversalBit Project](https://github.com/universalbit-dev/universalbit-dev/tree/main/support)
 
 #### Required Packages:
 
