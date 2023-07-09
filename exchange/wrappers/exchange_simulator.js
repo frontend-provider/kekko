@@ -1,6 +1,6 @@
 //exchanges: used to test purposes to develop Gekko (works without internet).
 
-const _ = require('lodash');
+const _ = require('../core/lodash-core');
 const moment = require('moment');
 
 const TREND_DURATION = 1000;
