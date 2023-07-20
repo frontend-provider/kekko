@@ -179,7 +179,7 @@ Base.prototype.propogateTick = function(candle) {
   _.each(this.indicators, (indicator, name) => {
     indicators[name] = typeof indicator.result === 'object' ? { ...indicator.result } : indicator.result;
   });
-  
+
   _.each(this.tulipIndicators, (indicator, name) => {
     indicators[name] = indicator.result.result
       ? indicator.result.result
@@ -227,8 +227,6 @@ Base.prototype.addTulipIndicator = function(name, type, parameters) {
 }
 
 Base.prototype.addIndicator = function(name, type, parameters) {
-  if(!_.contains(allowedIndicators, type))
-    util.die('I do not know the indicator ' + type);
 
   if(this.setup)
     util.die('Can only add indicators in the init method!');
