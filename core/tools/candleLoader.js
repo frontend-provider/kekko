@@ -1,5 +1,5 @@
 var batchSize = 1000;
-var _ = require('lodash');
+var _ = require('../lodash');
 var fs = require('fs');
 var moment = require('moment');
 var util = require('../../core/util');

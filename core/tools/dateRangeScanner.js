@@ -1,6 +1,6 @@
 var BATCH_SIZE = 60; // minutes
 var MISSING_CANDLES_ALLOWED = 3; // minutes, per batch
-var _ = require('lodash');
+var _ = require('../lodash');
 var moment = require('moment');
 var async = require('async');
 var util = require('../util');
@@ -50,7 +50,7 @@ var scan = function(done) {
       var missing = optimal - res.available + 1;
 
       log.info(`The database has ${missing} candles missing, Figuring out which ones...`);
-      
+
       var iterator = {
         from: last - (BATCH_SIZE * 60),
         to: last
