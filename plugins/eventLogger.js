@@ -1,5 +1,5 @@
 const log = require('../core/log');
-const _ = require('lodash');
+const _ = require('../core/lodash');
 const subscriptions = require('../subscriptions');
 const config = require('../core/util').getConfig().eventLogger;
 
