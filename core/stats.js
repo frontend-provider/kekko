@@ -1,5 +1,5 @@
 var stats = require('stats-lite');
-var _ = require('lodash');
+var _ = require('./lodash');
 
 
 // simply monkey patch the stats with other stuff we
@@ -9,7 +9,7 @@ var _ = require('lodash');
 //
 // @param returns (array - list of returns)
 // @param rfreturn (number - risk free return)
-// 
+//
 stats.sharpe = (returns, rfreturn) => {
   return (stats.mean(returns) - rfreturn) / stats.stdev(returns);
 }

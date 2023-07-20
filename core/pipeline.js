@@ -1,6 +1,6 @@
 /*
 
-  A pipeline implements a full Gekko Flow based on a config and 
+  A pipeline implements a full Gekko Flow based on a config and
   a mode. The mode is an abstraction that tells Gekko what market
   to load (realtime, backtesting or importing) while making sure
   all enabled plugins are actually supported by that market.
@@ -11,7 +11,7 @@
 */
 var util = require('./util');
 var dirs = util.dirs();
-var _ = require('lodash');
+var _ = require('./lodash');
 var async = require('async');
 var log = require(dirs.core + 'log');
 var pipeline = (settings) => {
@@ -39,7 +39,7 @@ var pipeline = (settings) => {
       }
     );
   };
-  
+
   var referenceEmitters = function(next) {
     _.each(plugins, function(plugin) {
       if(plugin.meta.emits)
@@ -114,7 +114,7 @@ var pipeline = (settings) => {
 
       });
     });
-    
+
     var marketSubscriptions = _.filter(
       subscriptions,
       {emitter: 'market'}
@@ -148,7 +148,7 @@ var pipeline = (settings) => {
     market = new Market(config);
     next();
   }
-  var subscribePluginsToMarket = function(next) {   
+  var subscribePluginsToMarket = function(next) {
     var marketSubscriptions = _.filter(
       subscriptions,
       {emitter: 'market'}

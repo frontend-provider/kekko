@@ -1,4 +1,4 @@
-var _ = require('lodash');
+var _ = require('./lodash');
 var prompt = require('prompt-lite');
 var moment = require('moment');
 var util = require('./util');
@@ -23,7 +23,7 @@ module.exports = function(done) {
       var r = _.first(ranges);
       log.info('Gekko was able to find a single daterange in the locally stored history:');
       log.info('\t', 'from:', moment.unix(r.from).utc().format('YYYY-MM-DD HH:mm:ss'));
-      log.info('\t', 'to:', moment.unix(r.to).utc().format('YYYY-MM-DD HH:mm:ss'));  
+      log.info('\t', 'to:', moment.unix(r.to).utc().format('YYYY-MM-DD HH:mm:ss'));
       setDateRange(r.from, r.to);
       return done();
     }

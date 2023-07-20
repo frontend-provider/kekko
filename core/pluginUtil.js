@@ -2,7 +2,7 @@
 
 */
 
-var _ = require('lodash');
+var _ = require('./lodash');
 var async = require('async');
 var Emitter = require('./emitter');
 var util = require(__dirname + '/util');
@@ -94,7 +94,7 @@ var pluginHelper = {
 
       instance.meta = plugin;
       _.defer(function() {
-        next(null, instance); 
+        next(null, instance);
       });
     }
 

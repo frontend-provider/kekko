@@ -3,7 +3,7 @@ Small writable stream wrapper
 */
 
 var Writable = require('stream').Writable;
-var _ = require('lodash');
+var _ = require('./lodash');
 var async = require('async');
 var moment = require('moment');
 
@@ -29,7 +29,7 @@ Gekko.prototype = Object.create(Writable.prototype, {
 });
 
 if(config.debug && mode !== 'importer') {
-  
+
 Gekko.prototype._write = function(chunk, encoding, _done) {
 
     if(chunk.isFinished) {

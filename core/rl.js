@@ -1,3 +1,4 @@
+_ = require('./lodash');
 var R = {}; // the Recurrent library
 
 (function(global) {
@@ -19,9 +20,9 @@ var R = {}; // the Recurrent library
   var return_v = false;
   var v_val = 0.0;
   var gaussRandom = function() {
-    if(return_v) { 
+    if(return_v) {
       return_v = false;
-      return v_val; 
+      return v_val;
     }
     var u = 2*Math.random()-1;
     var v = 2*Math.random()-1;
@@ -59,7 +60,7 @@ var R = {}; // the Recurrent library
     this.dw = zeros(n * d);
   }
   Mat.prototype = {
-    get: function(row, col) { 
+    get: function(row, col) {
       // slow but careful accessor function
       // we want row-major order
       var ix = (this.d * row) + col;
@@ -70,11 +71,11 @@ var R = {}; // the Recurrent library
       // slow but careful accessor function
       var ix = (this.d * row) + col;
       assert(ix >= 0 && ix < this.w.length);
-      this.w[ix] = v; 
+      this.w[ix] = v;
     },
     setFrom: function(arr) {
       for(var i=0,n=arr.length;i<n;i++) {
-        this.w[i] = arr[i]; 
+        this.w[i] = arr[i];
       }
     },
     setColumn: function(m, i) {
@@ -228,7 +229,7 @@ var R = {}; // the Recurrent library
       // tanh nonlinearity
       var out = new Mat(m.n, m.d);
       var n = m.w.length;
-      for(var i=0;i<n;i++) { 
+      for(var i=0;i<n;i++) {
         out.w[i] = Math.tanh(m.w[i]);
       }
 
@@ -248,7 +249,7 @@ var R = {}; // the Recurrent library
       // sigmoid nonlinearity
       var out = new Mat(m.n, m.d);
       var n = m.w.length;
-      for(var i=0;i<n;i++) { 
+      for(var i=0;i<n;i++) {
         out.w[i] = sig(m.w[i]);
       }
 
@@ -267,7 +268,7 @@ var R = {}; // the Recurrent library
     relu: function(m) {
       var out = new Mat(m.n, m.d);
       var n = m.w.length;
-      for(var i=0;i<n;i++) { 
+      for(var i=0;i<n;i++) {
         out.w[i] = Math.max(0, m.w[i]); // relu
       }
       if(this.needs_backprop) {
@@ -377,7 +378,7 @@ var R = {}; // the Recurrent library
       for(var i=0,n=m.w.length;i<n;i++) { if(m.w[i] > maxval) maxval = m.w[i]; }
 
       var s = 0.0;
-      for(var i=0,n=m.w.length;i<n;i++) { 
+      for(var i=0,n=m.w.length;i<n;i++) {
         out.w[i] = Math.exp(m.w[i] - maxval);
         s += out.w[i];
       }
@@ -442,17 +443,17 @@ var R = {}; // the Recurrent library
       var hidden_size = hidden_sizes[d];
 
       // gates parameters
-      model['Wix'+d] = new RandMat(hidden_size, prev_size , 0, 0.08);  
+      model['Wix'+d] = new RandMat(hidden_size, prev_size , 0, 0.08);
       model['Wih'+d] = new RandMat(hidden_size, hidden_size , 0, 0.08);
       model['bi'+d] = new Mat(hidden_size, 1);
-      model['Wfx'+d] = new RandMat(hidden_size, prev_size , 0, 0.08);  
+      model['Wfx'+d] = new RandMat(hidden_size, prev_size , 0, 0.08);
       model['Wfh'+d] = new RandMat(hidden_size, hidden_size , 0, 0.08);
       model['bf'+d] = new Mat(hidden_size, 1);
-      model['Wox'+d] = new RandMat(hidden_size, prev_size , 0, 0.08);  
+      model['Wox'+d] = new RandMat(hidden_size, prev_size , 0, 0.08);
       model['Woh'+d] = new RandMat(hidden_size, hidden_size , 0, 0.08);
       model['bo'+d] = new Mat(hidden_size, 1);
       // cell write params
-      model['Wcx'+d] = new RandMat(hidden_size, prev_size , 0, 0.08);  
+      model['Wcx'+d] = new RandMat(hidden_size, prev_size , 0, 0.08);
       model['Wch'+d] = new RandMat(hidden_size, hidden_size , 0, 0.08);
       model['bc'+d] = new Mat(hidden_size, 1);
     }
@@ -474,8 +475,8 @@ var R = {}; // the Recurrent library
       var hidden_prevs = [];
       var cell_prevs = [];
       for(var d=0;d<hidden_sizes.length;d++) {
-        hidden_prevs.push(new R.Mat(hidden_sizes[d],1)); 
-        cell_prevs.push(new R.Mat(hidden_sizes[d],1)); 
+        hidden_prevs.push(new R.Mat(hidden_sizes[d],1));
+        cell_prevs.push(new R.Mat(hidden_sizes[d],1));
       }
     } else {
       var hidden_prevs = prev.h;
@@ -549,7 +550,7 @@ var R = {}; // the Recurrent library
   }
 
   var samplei = function(w) {
-    // sample argmax from w, assuming w are 
+    // sample argmax from w, assuming w are
     // probabilities that sum to one
     var r = randf(0,1);
     var x = 0.0;
@@ -987,9 +988,9 @@ var DQNAgent = function(env, opt) {
   this.experience_add_every = getopt(opt, 'experience_add_every', 25); // number of time steps before we add another experience to replay memory
   this.experience_size = getopt(opt, 'experience_size', 5000); // size of experience replay
   this.learning_steps_per_iteration = getopt(opt, 'learning_steps_per_iteration', 10);
-  this.tderror_clamp = getopt(opt, 'tderror_clamp', 1.0); 
+  this.tderror_clamp = getopt(opt, 'tderror_clamp', 1.0);
 
-  this.num_hidden_units =  getopt(opt, 'num_hidden_units', 100); 
+  this.num_hidden_units =  getopt(opt, 'num_hidden_units', 100);
 
   this.env = env;
   this.reset();
@@ -1144,7 +1145,7 @@ SimpleReinforceAgent.prototype = {
     this.actorActions = []; // sampled ones
 
     this.rewardHistory = [];
-    
+
     this.baselineNet = {};
     this.baselineNet.W1 = new R.RandMat(this.nhb, this.ns, 0, 0.01);
     this.baselineNet.b1 = new R.Mat(this.nhb, 1, 0, 0.01);
@@ -1195,7 +1196,7 @@ SimpleReinforceAgent.prototype = {
     var gaussVar = 0.02;
     a.w[0] = R.randn(0, gaussVar);
     a.w[1] = R.randn(0, gaussVar);
-  
+
     this.actorActions.push(a);
 
     // shift state memory
@@ -1456,7 +1457,7 @@ DeterministPG.prototype = {
     if(a.w[0] < -clamp) a.w[0] = -clamp;
     if(a.w[1] > clamp) a.w[1] = clamp;
     if(a.w[1] < -clamp) a.w[1] = -clamp;
-  
+
     // shift state memory
     this.s0 = this.s1;
     this.a0 = this.a1;
@@ -1530,6 +1531,3 @@ global.DQNAgent = DQNAgent;
 //global.RecurrentReinforceAgent = RecurrentReinforceAgent;
 //global.DeterministPG = DeterministPG;
 })(RL);
-
-
-
