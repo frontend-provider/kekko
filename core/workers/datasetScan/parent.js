@@ -1,4 +1,4 @@
-var _ = require('lodash');
+var _ = require('../../lodash');
 var moment = require('moment');
 var async = require('async');
 var os = require('os');
@@ -27,7 +27,7 @@ module.exports = function(config, done) {
         next();
       });
 
-    }, 
+    },
     err => {
       let resp = {
         datasets: [],
