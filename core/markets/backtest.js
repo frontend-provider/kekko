@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var util = require('../util');
-var config = ('../../method-bb.js');
+var config = util.getConfig();
 var dirs = util.dirs();
 var log = require(dirs.core + 'log');
 var moment = require('moment');
