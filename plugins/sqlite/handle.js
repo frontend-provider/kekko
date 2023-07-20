@@ -3,7 +3,7 @@
 
 */
 
-var _ = require('lodash');
+var _ = require('../../core/lodash');
 var fs = require('fs');
 var util = require('../../core/util.js');
 var config = util.getConfig();
@@ -42,7 +42,7 @@ module.exports = {
   initDB: () => {
     var journalMode = config.sqlite.journalMode || 'PERSIST';
     var syncMode = journalMode === 'WAL' ? 'NORMAL' : 'FULL';
-  
+
     var db = new sqlite3.Database(fullPath);
     db.run('PRAGMA synchronous = ' + syncMode);
     db.run('PRAGMA journal_mode = ' + journalMode);

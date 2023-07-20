@@ -2,7 +2,7 @@
 
 
 */
-const _ = require('lodash');
+const _ = require('../../core./lodash');
 const async = require('async');
 const fs = require('fs');
 const util = require('../../core/util.js');
@@ -40,11 +40,11 @@ module.exports = done => {
       handle.all(`SELECT name FROM sqlite_master WHERE type='table'`, (err, tables) => {
         if(err)
           return next(err);
-        
+
         _.each(tables, table => {
           let parts = table.name.split('_');
           let first = parts.shift();
-          if(first === 'candles') 
+          if(first === 'candles')
             markets.push({
               exchange: exchange,
               currency: _.first(parts),
