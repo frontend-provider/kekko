@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var util = require('../util');
-var config = util.getConfig();
+var config = ('../../method-bb.js');
 var dirs = util.dirs();
 var log = require(dirs.core + 'log');
 var moment = require('moment');
@@ -9,8 +9,8 @@ var adapter = config[config.adapter];
 var Reader = require(dirs.gekko + adapter.path + '/reader');
 var daterange = config.backtest.daterange;
 
-var to = moment.utc(config.daterange.to);
-var from = moment.utc(config.daterange.from);
+var to = config.backtest.to;
+var from = config.backtest.from;
 
 if(to <= from)
   util.die('This daterange does not make sense.')
