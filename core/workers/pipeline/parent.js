@@ -1,3 +1,5 @@
+var _ = require('../../lodash');
+
 var fork = require('child_process').fork;
 
 module.exports = (mode, config, callback) => {
