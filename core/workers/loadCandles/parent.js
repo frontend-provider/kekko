@@ -1,5 +1,5 @@
+var _ = require('../../lodash');
 const fork = require('child_process').fork;
-var _ = require('lodash');
 
 module.exports = (config, callback) => {
   var debug = typeof v8debug === 'object';
