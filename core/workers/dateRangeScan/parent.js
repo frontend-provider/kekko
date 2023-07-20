@@ -1,3 +1,4 @@
+var _ = require('../../lodash');
 var ForkTask = require('relieve').tasks.ForkTask;
 const fork = require('child_process').fork;
 

@@ -1,3 +1,4 @@
+var _ = require('../../lodash');
 var util = require(__dirname + '/../../util');
 var dirs = util.dirs();
 var ipc = require('relieve').IPCEE(process);
