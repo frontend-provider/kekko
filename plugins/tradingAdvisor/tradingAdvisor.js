@@ -1,7 +1,6 @@
 var util = require('../../core/util');
 var _ = require('lodash');
 var fs = require('fs');
-var toml = require('toml');
 
 var config = util.getConfig();
 var dirs = util.dirs();
