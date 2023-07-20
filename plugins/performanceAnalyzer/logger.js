@@ -1,6 +1,6 @@
 // log trade performance results
 
-const _ = require('lodash');
+const _ = require('../../core/lodash');
 const moment = require('moment');
 const humanizeDuration = require('humanize-duration');
 
