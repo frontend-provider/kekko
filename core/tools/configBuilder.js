@@ -3,7 +3,6 @@ var _ = require('../lodash');
 var util = require('../util');
 var dirs = util.dirs();
 
-// build a config object out of a directory of TOML files
 module.exports = function() {
   const configDir = util.dirs().config;
 
