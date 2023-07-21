@@ -34,9 +34,7 @@ clone project:
 git clone https://github.com/universalbit-dev/gekko-m4.git
 cd gekko-m4
 ```
-
-#### installation:
-
+#### Install:
 -Engine
 ```
 npm i 
@@ -48,7 +46,7 @@ Thanks developers.
 npm i pm2 -g
 pm2 start gekko-m4.js --env development
 ```
-[Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
+#### [Pm2 Process Manager](https://pm2.keymetrics.io/docs/usage/quick-start/)
 
 
 #### Importer
@@ -74,8 +72,15 @@ cpan install Parallel::ForkManager Time::Elapsed Getopt::Long List::MoreUtils Fi
 ```
 perl ./backtest.pl
 ```
+
+#### [Tulip Node](https://www.npmjs.com/package/tulind)
+Tulip Node is the official node.js wrapper for Tulip Indicators. It provides 100+ technical analysis indicator functions, such as: simple moving average, Bollinger Bands, MACD, Parabolic SAR, Stochastic Oscillator, and many more.
+```
+npm install tulind --build-from-source
+```
+
 ---
-### Resources:
+#### Resources:
 * Gekko-Quasar-UI [0.6.9-m4](https://github.com/universalbit-dev/gekko-quasar-ui)
 * Webserver [Apache2 and Nginx](https://github.com/universalbit-dev/gekko-m4/blob/master/docs/webserver.md)
 * [Docs](https://github.com/universalbit-dev/gekko-m4/tree/master/docs)
