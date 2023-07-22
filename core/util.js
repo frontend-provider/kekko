@@ -10,7 +10,7 @@ var fs = require('fs-extra');
 var file = require('file-system');
 var semver = require('semver');
 var program = require('commander');
-var startTime = moment();
+var startTime = moment().utc();
 
 var _config = false;
 var _package = false;
