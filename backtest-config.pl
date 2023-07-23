@@ -23,13 +23,15 @@ exchange_simulator:LTC:BTC
 # To specify time range for import or backtest uncomment lines below, 
 #but instead this you can use command line input ex.: backtest.pl --from "2018-01-01 00:00:00" --to "2018-01-05 00:00:00". 
 #If below lines are commented Gekko is using scan datasets feature in backtest mode.
-$from ='2020-03-08 00:00:00';
-$to = '2023-03-08 00:00:00';
+$from ="2020-03-08 00:00:00";
+$to = "2023-03-08 00:00:00";
 
 
 # If You are using only one exchange or one exchange and one currency You can put default values below, 
 # and adding only asset name to @pairs ex: NULS, ADA, TRX - without binance:BTC before asset ex: perl backtest.pl -p NULS,ADA,TRX.
+
 $default_set = 'exchange_simulator:BTC';
+
 
 # CSV file name. You don't need change this. All new data will append to exist file without deleting or replacing.
 $csv = 'database.csv';
@@ -79,7 +81,7 @@ $top_dataset_sort16 = 'days';
 $csv_columns = \ "[% currency %],[% asset %],[% exchange %],[% strategy %],[% profit %],[% profit_day %],[% profit_year %],[% sharpe_ratio %],[% market_change %],[% profit_market %],[% trades %],[% trades_day %],[% winning_trades %],[% lost_trades %],[% percentage_wins %],[% best_win %],[% median_wins %],[% worst_loss %],[% median_losses %],[% avg_exposed_duration %],[% candle_size %],[% warmup_period %],[% dataset_days %],[% backtest_start %],[% dataset_from %],[% dataset_to %],[% CMC_Rank %],[% current_marketcap %],[% open_price %],[% close_price %],[% lowest_price %],[% highest_price %],[% avg_price %],[% price_volality %],[% volume %],[% volume_day %],[% volume_CMC %],[% overall_trades %],[% overall_trades_day %],[% note %]";
 
 # Do You want coinmarketcap.com data in CSV output?
-$cmc_data = 'yes';
+$cmc_data = 'no';
 
 # Single backtest results interval for print backtests summary (% complete, eta, avg backtest time, elapsed) for all results from current instance
 $summary_interval = 60;
