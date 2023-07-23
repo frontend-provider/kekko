@@ -7,7 +7,6 @@ var _ = require('../core/lodash');
 var ws = require ('reconnecting-websocket');
 var tulind = require('../core/tulind');
 
-var noop = require('lodash.noop');
 // Let's create our own method
 var method = {};
 
