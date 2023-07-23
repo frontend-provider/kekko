@@ -119,8 +119,8 @@ $top_dataset_limit = 100;
 $print_roundtrips = 'yes';
 
 # Use TOML strat's config files instead JSON?
-$use_toml_files = 'yes';
-$toml_directory = 'config/strategies/';
+$use_toml_files = 'no';
+$toml_directory = '';
 
 # Do you need Gekko's log files in log directory?
 $keep_logs = 'no';
@@ -133,6 +133,12 @@ $stfu = 'no';
 
 # If You set $use_toml_files to 'no' then add Your strat's config in JSON format between brackets below.
 $stratsettings = q(
+
+
+
+
+
+
 
 );
 
