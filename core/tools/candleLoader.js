@@ -1,6 +1,6 @@
 var batchSize = 1000;
 var _ = require('../lodash');
-var fs = require('fs');
+var fs = require('fs-extra');
 var moment = require('moment');
 var util = require('../../core/util');
 var config = util.getConfig();
