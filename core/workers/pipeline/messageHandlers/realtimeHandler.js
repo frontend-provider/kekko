@@ -1,6 +1,6 @@
 // pass back all messages as is
 // (except for errors and logs)
-const _ = require('../../../lodash');
+_ = require('../../../lodash');
 module.exports = cb => {
 
   return {
