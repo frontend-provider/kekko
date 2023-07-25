@@ -1,5 +1,5 @@
 var _ = require('../lodash');
-var fs = require('fs');
+var fs = require('fs-extra');
 var moment = require('moment');
 var util = require('../util');
 var config = util.getConfig();
