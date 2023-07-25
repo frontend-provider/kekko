@@ -2,7 +2,7 @@
 
 
 */
-var _ = require('lodash');
+const _ = require('lodash');
 var util = require(__dirname + '/../util');
 var MarketFetcher = require('./marketFetcher');
 var dirs = util.dirs();
