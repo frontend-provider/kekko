@@ -1,4 +1,4 @@
-const _ = require('../../../lodash');
+_ = require('../../../lodash');
 
 // Relay the backtest message it when it comes in.
 
