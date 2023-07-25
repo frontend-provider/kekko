@@ -1,4 +1,4 @@
-var _ = require('lodash');
+const _ = require('lodash');
 var util = require('../util');
 var config = util.getConfig();
 var dirs = util.dirs();
