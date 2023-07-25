@@ -1,9 +1,9 @@
 // The candleManager consumes trades and emits:
 // - `candles`: array of minutly candles.
 // - `candle`: the most recent candle after a fetch Gekko.
-var _ = require('lodash');
+const _ = require('lodash');
 var moment = require('moment');
-var fs = require('fs');
+var fs = require('fs-extra');
 var util = require('../../core/util');
 var dirs = util.dirs();
 var config = require('../../core/util.js').getConfig();
