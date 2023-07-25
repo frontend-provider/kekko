@@ -1,7 +1,7 @@
 /*
 
 */
-var _ = require('lodash');
+const _ = require('lodash');
 var async = require('async');
 var util = require(__dirname + '/../util');
 var dirs = util.dirs();
