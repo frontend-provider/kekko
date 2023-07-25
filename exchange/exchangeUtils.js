@@ -1,4 +1,4 @@
-const retry=require('retry');const errors=require('./exchangeErrors');const _=require('lodash');bindAll=require('lodash.bindall');const retryInstance=(options,checkFn,callback,e)=>{if(!options){options={retries:100,factor:1.2,minTimeout:1*1000,maxTimeout:4*1000};}
+const retry=require('retry');const errors=require('./exchangeErrors');const _=require('lodash');const retryInstance=(options,checkFn,callback,e)=>{if(!options){options={retries:100,factor:1.2,minTimeout:1*1000,maxTimeout:4*1000};}
 let attempt=0;const operation=retry.operation(options);operation.attempt(function(currentAttempt){checkFn((err,result)=>{if(!err){return callback(undefined,result);}
 console.log(new Date,err.message);let maxAttempts=err.retry;if(maxAttempts===true)
 maxAttempts=10;if(err.retry&&attempt++<maxAttempts){return operation.retry(err);}
