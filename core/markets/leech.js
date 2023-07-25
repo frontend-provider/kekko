@@ -1,4 +1,4 @@
-var _ = require('lodash');
+const _ = require('lodash');
 var moment = require('moment');
 var util = require('../util');
 var dirs = util.dirs();
