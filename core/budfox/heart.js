@@ -3,7 +3,7 @@
 var util = require(__dirname + '/../util');
 var log = require(util.dirs().core + 'log');
 
-var _ = require('lodash');
+const _ = require('lodash');
 var moment = require('moment');
 
 if (util.getConfig().watch.tickrate)
