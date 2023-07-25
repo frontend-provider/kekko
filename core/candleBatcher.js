@@ -2,7 +2,7 @@
 
 
 */
-var _ = require('lodash');
+const _ = require('lodash');
 var util = require('./util');
 
 var CandleBatcher = function(candleSize) {
