@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const fs = require('fs');
+const fs = require('fs-extra');
 const util = require('../../core/util');
 const config = util.getConfig();
 const dirs = util.dirs();

@@ -1,6 +1,6 @@
-var util = require('../../core/util');
-var _ = require('lodash');
-var fs = require('fs');
+util = require('../../core/util');
+const _ = require('lodash');
+var fs = require('fs-extra');
 
 var config = util.getConfig();
 var dirs = util.dirs();
