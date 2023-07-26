@@ -3,8 +3,8 @@
 
 */
 
-var _ = require('../../core/lodash');
-var fs = require('fs');
+_ = require('../../core/lodash');
+var fs = require('fs-extra');
 var util = require('../../core/util.js');
 var config = util.getConfig();
 var dirs = util.dirs();

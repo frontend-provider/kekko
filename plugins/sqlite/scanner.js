@@ -2,9 +2,9 @@
 
 
 */
-const _ = require('../../core./lodash');
+_ = require('../../core./lodash');
 const async = require('async');
-const fs = require('fs');
+const fs = require('fs-extra');
 const util = require('../../core/util.js');
 const config = util.getConfig();
 const dirs = util.dirs();

@@ -2,7 +2,7 @@
 
 
 */
-var _ = require('lodash');
+const _ = require('lodash');
 var config = require('../../core/util.js').getConfig();
 var sqlite = require('./handle');
 var sqliteUtil = require('./util');
@@ -10,7 +10,7 @@ var util = require('../../core/util');
 var log = require('../../core/log');
 
 var Store = function(done, pluginMeta) {
-  _.bindAll(this);
+  _.bindAll(this);    //lodash.bindall@3
   this.done = done;
 
   this.db = sqlite.initDB(false);
@@ -86,7 +86,7 @@ Store.prototype.writeCandles = function() {
     this.db.run("COMMIT");
     // TEMP: should fix https://forum.gekko.wizb.it/thread-57279-post-59194.html#pid59194
     this.db.run("pragma wal_checkpoint;");
-    
+
     this.cache = [];
   }
 
@@ -95,7 +95,7 @@ Store.prototype.writeCandles = function() {
 
 var processCandle = function(candle, done) {
   this.cache.push(candle);
-  if (!this.buffered || this.cache.length > 1000) 
+  if (!this.buffered || this.cache.length > 1000)
     this.writeCandles();
 
   done();
