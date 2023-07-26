@@ -8,7 +8,7 @@ callback(err,result);});});}
 const allMethods=targetClass=>{const propertys=Object.getOwnPropertyNames(Object.getPrototypeOf(targetClass))
 propertys.splice(propertys.indexOf('constructor'),1)
 return propertys}
-bindAll=(targetClass,methodNames=[])=>{for(const name of!methodNames.length?allMethods(targetClass):methodNames){targetClass[name]=targetClass[name].bind(targetClass)}}
+const bindAll=(targetClass,methodNames=[])=>{for(const name of!methodNames.length?allMethods(targetClass):methodNames){targetClass[name]=targetClass[name].bind(targetClass)}}
 const isValidOrder=({api,market,amount,price})=>{let reason=false;if(amount<market.minimalOrder.amount){reason='Amount is too small';}
 if(_.isFunction(api.isValidPrice)&&!api.isValidPrice(price)){reason='Price is not valid';}
 if(_.isFunction(api.isValidLot)&&!api.isValidLot(price,amount)){reason='Lot size is too small';}

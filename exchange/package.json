@@ -2,7 +2,7 @@
   "name": "gekko-broker",
   "version": "0.6.8-m4",
   "description": "Gekko's order execution library",
-  "main": "dependencyCheck.js",
+  "main": "gekkoBroker.js",
   "dependencies": {
     "abbrev": "^1.1.1",
     "after-all-results": "^2.0.0",
@@ -286,6 +286,5 @@
   "homepage": "https://github.com/universalbit-dev/gekko-m4/tree/master#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {}
+  }
 }
