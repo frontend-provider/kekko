@@ -1,5 +1,5 @@
 
-const _ = require('lodash');
+let _ = require('lodash');
 require('lodash-migrate');
 const moment = require('moment');
 
