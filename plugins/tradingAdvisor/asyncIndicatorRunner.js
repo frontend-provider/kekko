@@ -1,4 +1,6 @@
-const _ = require('../../core/lodash');
+let _ = require('../../core/lodash');
+require('lodash-migrate');
+
 const fs = require('fs-extra');
 const util = require('../../core/util');
 const config = util.getConfig();
