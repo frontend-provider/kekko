@@ -1,4 +1,5 @@
 const _ = require('lodash');
+require('lodash-migrate');
 var moment = require('moment');
 var utc = moment.utc;
 var util = require(__dirname + '/../util');
