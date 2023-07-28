@@ -1,4 +1,5 @@
-_ = require('../lodash');
+let _ = require('../lodash');
+require('lodash-migrate');
 var util = require('../util');
 var dirs = util.dirs();
 var exchangeChecker = require(dirs.gekko + 'exchange/exchangeChecker');
