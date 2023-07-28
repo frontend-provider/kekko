@@ -1,4 +1,4 @@
-const _ = require('lodash');
+let _ = require('lodash');
 require('lodash-migrate');
 var moment = require('moment');
 var util = require('../../core/util.js');
