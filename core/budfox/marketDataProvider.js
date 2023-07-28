@@ -3,6 +3,7 @@
 
 */
 const _ = require('lodash');
+require('lodash-migrate');
 var util = require(__dirname + '/../util');
 var MarketFetcher = require('./marketFetcher');
 var dirs = util.dirs();
