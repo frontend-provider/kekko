@@ -1,5 +1,7 @@
 var fs = require('fs-extra');
-var _ = require('../lodash');
+let _ = require('../lodash');
+require('lodash-migrate');
+
 var util = require('../util');
 var dirs = util.dirs();
 
