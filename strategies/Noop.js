@@ -1,4 +1,6 @@
 // This method is a noop (it doesn't do anything)
+//
+//https://github.com/universalbit-dev/gekko-m4/tree/master/docs/strategies
 
 var log = require('../core/log.js');
 var config = require('../core/util.js').getConfig();
