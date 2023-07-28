@@ -1,4 +1,5 @@
 const _ = require('lodash');
+require('lodash-migrate');
 var moment = require('moment');
 var util = require('../../core/util.js');
 var config = require('../../core/util.js').getConfig();
