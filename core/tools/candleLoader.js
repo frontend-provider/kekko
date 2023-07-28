@@ -1,5 +1,7 @@
-var batchSize = 1000;
-var _ = require('../lodash');
+var batchSize = 10000;
+let _ = require('../lodash');
+require('lodash-migrate');
+
 var fs = require('fs-extra');
 var moment = require('moment');
 var util = require('../../core/util');
