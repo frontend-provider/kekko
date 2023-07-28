@@ -4,6 +4,7 @@ var util = require(__dirname + '/../util');
 var log = require(util.dirs().core + 'log');
 
 const _ = require('lodash');
+require('lodash-migrate');
 var moment = require('moment');
 
 if (util.getConfig().watch.tickrate)
