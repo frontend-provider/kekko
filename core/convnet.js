@@ -1,4 +1,5 @@
-var _ = require('./lodash');
+let _ = require('./lodash');
+require('lodash-migrate');
 var semver = require('semver');
 
 var convnetjs = convnetjs || { REVISION: 'ALPHA' };
