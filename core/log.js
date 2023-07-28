@@ -4,7 +4,7 @@
 */
 var moment = require('moment');
 var fmt = require('util').format;
-const _ = require('lodash');
+let _ = require('lodash');
 require('lodash-migrate');
 var util = require('./util');
 var config = util.getConfig();
