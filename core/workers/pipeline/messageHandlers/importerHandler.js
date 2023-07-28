@@ -1,4 +1,5 @@
-_ = require('../../../lodash');
+let _ = require('../../../lodash');
+require('lodash-migrate');
 
 module.exports = cb => {
 
