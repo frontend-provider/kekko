@@ -1,4 +1,6 @@
-var _ = require('../lodash');
+let _ = require('../lodash');
+require('lodash-migrate');
+
 var fs = require('fs-extra');
 var moment = require('moment');
 var util = require('../util');
