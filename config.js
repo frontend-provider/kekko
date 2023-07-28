@@ -6,7 +6,7 @@ var config = {};
 //General Settings
 config.debug =true;
 //Watching
-config.watch = {exchange: 'exchange_simulator',currency: 'LTC',asset: 'BTC',tickrate:20};
+config.watch = {exchange: 'exchange_simulator',currency: 'LTC',asset: 'BTC',tickrate:5};
 //Trading Advisor
 config.tradingAdvisor = {enabled:true,candleSize:15,historySize:1};
 
