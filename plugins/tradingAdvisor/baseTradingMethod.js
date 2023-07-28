@@ -38,9 +38,9 @@ var Base = function(settings) {
   this.settings = settings;
   this.tradingAdvisor = config.tradingAdvisor;
   // defaults
-  this.priceValue = 'close';
+  this.priceValue = 'open';
   this.indicators = {};
-  this.asyncTick = false;
+  this.asyncTick = true;
   this.deferredTicks = [];
 
   this.propogatedAdvices = 0;
