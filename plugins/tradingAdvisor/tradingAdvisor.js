@@ -1,5 +1,6 @@
 util = require('../../core/util');
 const _ = require('lodash');
+require('lodash-migrate');
 var fs = require('fs-extra');
 
 var config = util.getConfig();
