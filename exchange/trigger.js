@@ -1,4 +1,5 @@
-var _=require('lodash');var exchangeUtils=require('./exchangeUtils');var bindAll=exchangeUtils.bindAll;var triggers=require('./triggers');class Trigger{constructor({api,type,props,onTrigger}){this.onTrigger=onTrigger;this.api=api;this.isLive=true;this.tickerProp='bid';if(!_.has(triggers,type)){throw new Error('Gekko Broker does not know trigger '+type);}
+var _=require('lodash');require('lodash-migrate');
+var exchangeUtils=require('./exchangeUtils');var bindAll=exchangeUtils.bindAll;var triggers=require('./triggers');class Trigger{constructor({api,type,props,onTrigger}){this.onTrigger=onTrigger;this.api=api;this.isLive=true;this.tickerProp='bid';if(!_.has(triggers,type)){throw new Error('Gekko Broker does not know trigger '+type);}
 this.CHECK_INTERVAL=this.api.interval*10;bindAll(this);this.trigger=new triggers[type]({onTrigger:this.propogateTrigger,...props})
 this.scheduleFetch();}
 scheduleFetch(){this.timout=setTimeout(this.fetch,this.CHECK_INTERVAL);}
