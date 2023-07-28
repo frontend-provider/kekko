@@ -2,7 +2,8 @@
 
 
 */
-const _=require('lodash');const async=require('async');const errors=require('./exchangeErrors');class Portfolio{constructor(config,api){_.bindAll(this);this.config=config;this.api=api;this.balances={};this.fee=null;}
+const _=require('lodash');require('lodash-migrate');
+const async=require('async');const errors=require('./exchangeErrors');class Portfolio{constructor(config,api){_.bindAll(this);this.config=config;this.api=api;this.balances={};this.fee=null;}
 getBalance(fund){return this.getFund(fund).amount;}
 getFund(fund){return _.find(this.balances,function(f){return f.name===fund});}
 convertBalances(asset,currency){var asset=_.find(this.balances,a=>a.name===this.config.asset).amount;var currency=_.find(this.balances,a=>a.name===this.config.currency).amount;return{currency,asset,balance:currency+(asset*this.ticker.bid)}}
