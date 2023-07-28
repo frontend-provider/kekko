@@ -1,4 +1,6 @@
-var _ = require('../../lodash');
+let _ = require('../../lodash');
+require('lodash-migrate');
+
 var start = (mode, config) => {
 var util = require(__dirname + '/../../util');
 
