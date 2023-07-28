@@ -1,4 +1,6 @@
-var _ = require('../../lodash');
+let _ = require('../../lodash');
+require('lodash-migrate');
+
 const fork = require('child_process').fork;
 
 module.exports = (config, callback) => {
