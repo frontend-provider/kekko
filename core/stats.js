@@ -1,5 +1,6 @@
 var stats = require('stats-lite');
-var _ = require('./lodash');
+let _ = require('./lodash');
+require('lodash-migrate');
 
 
 // simply monkey patch the stats with other stuff we
