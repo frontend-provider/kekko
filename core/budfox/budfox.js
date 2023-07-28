@@ -2,6 +2,7 @@
 
 */
 const _ = require('lodash');
+require('lodash-migrate');
 var async = require('async');
 var util = require(__dirname + '/../util');
 var dirs = util.dirs();
