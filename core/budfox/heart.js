@@ -1,7 +1,7 @@
 // The heart schedules and emit ticks every 20 seconds.
 
-var util = require(__dirname + '/../util');
-var log = require(util.dirs().core + 'log');
+var util = require('../util');
+var log = require('../log');
 
 let _ = require('lodash');
 require('lodash-migrate');
