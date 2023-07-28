@@ -2,7 +2,8 @@
 
 
 */
-const EventEmitter=require('events');const _= require('lodash');require('lodash-migrate');const exchangeUtils=require('../exchangeUtils');
+const EventEmitter=require('events');let _= require('lodash');require('lodash-migrate');
+const exchangeUtils=require('../exchangeUtils');
 const bindAll=exchangeUtils.bindAll;const isValidOrder=exchangeUtils.isValidOrder;const states=require('./states');class BaseOrder extends EventEmitter{constructor(api){super();this.api=api;this.checkInterval=api.interval||1500;this.status=states.INITIALIZING;this.completed=false;this.completing=false;bindAll(this);}
 submit({side,amount,price,alreadyFilled}){const check=isValidOrder({market:this.market,api:this.api,amount,price});if(!check.valid){if(alreadyFilled){return this.filled();}
 this.emit('invalidOrder',check.reason);this.rejected(check.reason);}
