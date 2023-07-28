@@ -3,7 +3,7 @@
 var log = require('../core/log.js');
 var config = require('../core/util.js').getConfig();
 var ccxt = require ('ccxt');
-var _ = require('../core/lodash');
+let _ = require('../core/lodash');require('lodash-migrate');
 var ws = require ('reconnecting-websocket');
 var tulind = require('../core/tulind');
 
