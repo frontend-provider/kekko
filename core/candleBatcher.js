@@ -3,6 +3,7 @@
 
 */
 const _ = require('lodash');
+require('lodash-migrate');
 var util = require('./util');
 
 var CandleBatcher = function(candleSize) {
