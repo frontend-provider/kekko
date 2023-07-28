@@ -3,6 +3,7 @@
 
 */
 const _ = require('lodash');
+require('lodash-migrate');
 var config = require('../../core/util.js').getConfig();
 var sqlite = require('./handle');
 var sqliteUtil = require('./util');
