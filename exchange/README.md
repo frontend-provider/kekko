@@ -20,7 +20,7 @@ Gekko Broker is a library that sits between trading applications and Gekko Broke
 
 
 
-This document descibres the API layer between the exchange wrappers and Gekko Broker.
+This document describes the API layer between the exchange wrappers and Gekko Broker.
 
 ## Wrapper API Changelog
 ### Gekko 0.5.x to Gekko (Broker) 0.6.0
