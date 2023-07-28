@@ -1,4 +1,6 @@
-_ = require('./lodash');
+let _ = require('./lodash');
+require('lodash-migrate');
+
 var R = {}; // the Recurrent library
 
 (function(global) {
