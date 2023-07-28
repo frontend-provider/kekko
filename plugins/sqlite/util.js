@@ -2,7 +2,8 @@
 
 
 */
-
+let _ = require('../../core/lodash');
+require('lodash-migrate');
 var config = require('../../core/util.js').getConfig();
 var watch = config.watch;
 var settings = {
