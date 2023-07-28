@@ -18,7 +18,8 @@ throw ':(';
 
 */
 
-const _= require('../../core/lodash');
+let _= require('../../core/lodash');
+require('lodash-migrate');
 const async = require('async');
 const events = require('events');
 const moment = require('moment');
