@@ -1,4 +1,5 @@
-_ = require('../../../lodash');
+let _ = require('../../../lodash');
+require('lodash-migrate');
 
 // Relay the backtest message it when it comes in.
 
