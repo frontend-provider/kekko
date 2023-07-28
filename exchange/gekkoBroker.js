@@ -6,6 +6,7 @@
 */
 
 const _ = require('lodash');
+require('lodash-migrate');
 const async = require('async');
 const events = require('events');
 const moment = require('moment');
