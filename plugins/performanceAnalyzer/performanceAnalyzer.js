@@ -1,5 +1,6 @@
 
 const _ = require('lodash');
+require('lodash-migrate');
 const moment = require('moment');
 
 const statslite = require('stats-lite');
