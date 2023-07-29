@@ -41,7 +41,7 @@
   "semver": "^7.5.3",
   "sqlite": "^4.2.1",
   "sqlite3": "^5.1.6",
-  "stats-lite": "^2.0.4",
+  "stats-lite": "^2.2.0",
   "tiny-promisify": "^0.1.1",
   "toml": "^3.0.0",
   "toml-j0.4": "^1.1.1",
