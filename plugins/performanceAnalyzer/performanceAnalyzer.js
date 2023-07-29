@@ -1,19 +1,17 @@
-
 let _ = require('lodash');
 require('lodash-migrate');
-const moment = require('moment');
 
+const moment = require('moment');
 const statslite = require('stats-lite');
 const util = require('../../core/util');
-const log = require(util.dirs().core + 'log')
-const ENV = util.gekkoEnv();
+const dirs = util.dirs();
 
+const log = require(dirs.core + 'log')
+const ENV = util.gekkoEnv();
 const config = util.getConfig();
 const perfConfig = config.performanceAnalyzer;
 const watchConfig = config.watch;
-
 const Logger = require('./logger');
-
 const PerformanceAnalyzer = function() {
   _.bindAll(this);
 
@@ -21,19 +19,13 @@ const PerformanceAnalyzer = function() {
     start: false,
     end: false
   }
-
   this.startPrice = 0;
   this.endPrice = 0;
-
   this.currency = watchConfig.currency;
   this.asset = watchConfig.asset;
-
   this.logger = new Logger(watchConfig);
-
   this.trades = 0;
-
   this.exposure = 0;
-
   this.roundTrips = [];
   this.losses = [];
   this.roundTrip = {
@@ -41,13 +33,10 @@ const PerformanceAnalyzer = function() {
     entry: false,
     exit: false
   }
-
   this.portfolio = {};
   this.balance;
-
   this.start = {};
   this.openRoundTrip = false;
-
   this.warmupCompleted = false;
 }
 
@@ -76,12 +65,11 @@ PerformanceAnalyzer.prototype.processCandle = function(candle, done) {
     return done();
   }
 
-  this.price = candle.close;
-  this.dates.end = candle.start.clone().add(1, 'minute');
-
+  this.price = candle.open;
+  this.dates.end = candle.start.clone().add(1, 'second');
   if(!this.dates.start) {
     this.dates.start = candle.start;
-    this.startPrice = candle.close;
+    this.startPrice = candle.open;
   }
 
   this.endPrice = candle.close;
@@ -151,15 +139,12 @@ PerformanceAnalyzer.prototype.registerRoundtripPart = function(trade) {
 PerformanceAnalyzer.prototype.handleCompletedRoundtrip = function() {
   var roundtrip = {
     id: this.roundTrip.id,
-
     entryAt: this.roundTrip.entry.date,
     entryPrice: this.roundTrip.entry.price,
     entryBalance: this.roundTrip.entry.total,
-
     exitAt: this.roundTrip.exit.date,
     exitPrice: this.roundTrip.exit.price,
     exitBalance: this.roundTrip.exit.total,
-
     duration: this.roundTrip.exit.date.diff(this.roundTrip.entry.date)
   }
 
@@ -216,7 +201,6 @@ PerformanceAnalyzer.prototype.calculateReportStatistics = function() {
     balance: this.balance,
     profit,
     relativeProfit: relativeProfit,
-
     yearlyProfit: profit / timespan.asYears(),
     relativeYearlyProfit,
 
@@ -247,6 +231,5 @@ PerformanceAnalyzer.prototype.finalize = function(done) {
   }
   done();
 }
-
 
 module.exports = PerformanceAnalyzer;
