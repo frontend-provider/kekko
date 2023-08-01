@@ -17,9 +17,7 @@ throw ':(';
     - It can be moved
 
 */
-
-let _= require('../../core/lodash');
-require('lodash-migrate');
+let _ = require('../../core/lodash');
 const async = require('async');
 const events = require('events');
 const moment = require('moment');
