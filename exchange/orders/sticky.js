@@ -2,7 +2,6 @@
 
 
 */
-let _= require('../../core/lodash');require('lodash-migrate');
 const async=require('async');const events=require('events');const moment=require('moment');const errors=require('../exchangeErrors');const BaseOrder=require('./order');const states=require('./states');class StickyOrder extends BaseOrder{constructor({api,marketConfig,capabilities}){super(api);this.market=marketConfig;this.capabilities=capabilities;this.sticking=false;this.roundPrice=this.api.roundPrice.bind(this.api);this.roundAmount=this.api.roundAmount.bind(this.api);if(_.isFunction(this.api.outbidPrice)){this.outbidPrice=this.api.outbidPrice.bind(this.api);}}
 create(side,rawAmount,params={}){if(this.completed||this.completing){return false;}
 console.log(new Date,'sticky create',side);this.side=side;this.amount=this.roundAmount(rawAmount);this.initialLimit=params.initialLimit;if(side==='buy'){if(params.limit){this.limit=this.roundPrice(params.limit);}else{this.noLimit=true;this.limit=Infinity;}}else{if(params.limit){this.limit=this.roundPrice(params.limit);}else{this.noLimit=true;this.limit=-Infinity;}}
