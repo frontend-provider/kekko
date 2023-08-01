@@ -6,7 +6,7 @@ var config = {};
 //General Settings
 config.debug =true;
 //Watching
-config.watch = {exchange: 'exchange_simulator',currency: 'LTC',asset: 'BTC',tickrate:5};
+config.watch = {exchange: 'exchange_simulator',currency: 'LTC',asset: 'BTC',tickrate:10};
 //Trading Advisor
 config.tradingAdvisor = {enabled:true,candleSize:15,historySize:1};
 
@@ -37,9 +37,11 @@ data: {
   trades: true}
 };
 
-config.backtest = {daterange: 'scan',batchSize: 50};
-config.daterange= {from: "2020-03-01 00:00:00",to: "2023-07-03 00:00:00"};
-config.importer = {daterange: {from: "2020-03-01 00:00:00",to:"2023-07-03 00:00:00"}};
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                       CONFIGURING BACKTESTING
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+config.backtest ={enabled:true,daterange:'scan',,batchSize: 60};
+config.daterange={from:'2020-03-01 00:00:00',to:'2023-07-03 00:00:00'};
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING TRADER
