@@ -37,10 +37,7 @@ data: {
   trades: true}
 };
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//                       CONFIGURING BACKTESTING
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-config.backtest ={enabled:true,daterange:'scan',,batchSize: 60};
+config.backtest ={enabled:true,daterange:'scan',batchSize: 60};
 config.daterange={from:'2020-03-01 00:00:00',to:'2023-07-03 00:00:00'};
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
