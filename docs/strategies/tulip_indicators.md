@@ -1,4 +1,4 @@
-# Tulip indicators
+# [Tulip indicators](https://tulipindicators.org/)
 
 When writing [your own strategy](./creating_a_trading_method.md) you can use all indicators offered by [the Tulip Indicators library](https://tulipindicators.org/). Gekko will pass the correct market data to Tulip and you only have to provide the `optIn` configurable parameters.
 
