@@ -1,7 +1,7 @@
 // required indicators
 // Simple Moving Average - O(1) implementation 
 let _ = require('../../core/lodash');
-require ('lodash-migrate');
+
 var Indicator = function(windowLength) {
   this.input = 'price';
   this.windowLength = windowLength;
