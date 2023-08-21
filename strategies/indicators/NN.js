@@ -9,7 +9,7 @@ let DQNAgent = require('../../core/rl.js');
 let deepqlearn = require('convnet/build/deepqlearn');
 var math = require('mathjs');
 var Indicator = function(settings) {
-  this.input = 'candle'
+  this.input = 'candle';
   this.result = false;
   this.lastPrice = 0;
   this.settings = settings;
@@ -25,15 +25,16 @@ var Indicator = function(settings) {
   this.stoplossCounter = 0;
 
   this.DEMA = new DEMA(5);
+  this.out_depth=4;
 
     let layers = [
-      {type:'input', out_sx:7, out_sy:8, out_depth: 4},
+      {type:'input', out_sx:7, out_sy:8, out_depth: this.out_depth},
       {type:'fc', num_neurons: this.layer_neurons, activation: this.layer_activation},
       {type:'regression', num_neurons: 1}
     ];
 
     this.nn = new convnetjs.Net();
-    this.nn.makeLayers( layers );
+    this.nn.makeLayers(layers);
     if(settings.method == 'sgd')
     {
       this.trainer = new convnetjs.SGDTrainer(this.nn, {
@@ -70,12 +71,15 @@ Indicator.prototype.setNormalizeFactor = function(candle) {
   log.debug('Set normalization factor to',this.scale);
 }
 
-Indicator.prototype.learn = function () {
-  for (let i = 0; i < this.priceBuffer.length - 1; i++) {
-    let data = [this.priceBuffer[i]];
-    let current_price = [this.priceBuffer[i + 1]];
+Indicator.prototype.learn = function() {
+  for (let i = 0; i < this.priceBuffer.length - this.out_depth; i++) {
+    let data = this.priceBuffer[i];
+    let current_price = this.priceBuffer[i + 1];
     let vol = new convnetjs.Vol(data);
     this.trainer.train(vol, current_price);
+    let predicted_values = this.nn.forward(vol);
+    let accuracymatch = predicted_values.w[0] === current_price.first;
+    this.nn.backward(accuracymatch);
     this.predictionCount++;
   }
 }
@@ -92,7 +96,7 @@ Indicator.prototype.predictCandle = function() {
 }
 
 Indicator.prototype.update = function(candle) {
-  this.DEMA.update((candle.high + candle.close + candle.low + candle.vwp)/4);
+  this.DEMA.update((candle.high + candle.open + candle.low + candle.vwp)/4);
   let demaFast = this.DEMA.result;
 
   if (1 === this.scale && 1 < candle.high && 0 === this.predictionCount) this.setNormalizeFactor(candle);
@@ -111,11 +115,11 @@ Indicator.prototype.check = function(candle){
   if(this.predictionCount > this.settings.min_predictions)
   {
     let prediction = this.predictCandle() * this.scale;
-    let currentPrice = candle.close;
+    let currentPrice = candle.open;
     let meanp = math.mean(prediction, currentPrice);
     let meanAlpha = (meanp - currentPrice) / currentPrice * 100;
 
-    let signalSell = candle.close > this.prevPrice;
+    let signalSell = candle.open > this.prevPrice;
 
     let signal = meanp < currentPrice;
     if ('buy' !== this.prevAction && signal === false  && meanAlpha> this.settings.threshold_buy )
@@ -131,7 +135,5 @@ Indicator.prototype.check = function(candle){
     }
   }
 }
-
-
 
 module.exports = Indicator;
