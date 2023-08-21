@@ -1,6 +1,5 @@
 // required indicators
 let _ = require('../../core/lodash');
-require('lodash-migrate');
 var SMA = require('./SMA');
 
 var Indicator = function (weight) {
