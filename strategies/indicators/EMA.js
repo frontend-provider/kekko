@@ -1,5 +1,9 @@
 ﻿// @link http://en.wikipedia.org/wiki/Exponential_moving_average#Exponential_moving_average
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var Indicator = function(weight) {
   this.input = 'price';
   this.weight = weight;
@@ -28,7 +32,7 @@ Indicator.prototype.calculate = function(price) {
 
   // yesterday
   var y = this.result;
-  
+
   // calculation
   this.result = price * k + y * (1 - k);
 }

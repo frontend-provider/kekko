@@ -2,6 +2,11 @@
 // Settings
 //   optInTimePeriod: SMA Time Period;
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
+
 var SMA = require("./SMA");
 
 var Indicator = function(settings) {

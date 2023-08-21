@@ -1,6 +1,9 @@
 // required indicators
-// Simple Moving Average - O(1) implementation 
+// Simple Moving Average - O(1) implementation
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
 
 var Indicator = function(windowLength) {
   this.input = 'price';

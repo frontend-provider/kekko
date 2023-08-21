@@ -1,6 +1,10 @@
 // STC coded by Gab0 03/29/2018;
 //settings: short, long, signal, cycle, smooth;
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var MACD = require('./MACD');
 var STOCH = require('./STOCH');
 

@@ -3,6 +3,10 @@
 // "ported" from tulip: https://tulipindicators.org/dx
 // gab0 - 2018;
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var ATR = require('./ATR.js');
 
 var Indicator = function (period)

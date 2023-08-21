@@ -5,16 +5,17 @@
 // * gekko indicator - in a synchronous way, by excuting tulip functionality
 // * with await/promise.
 // * This approach also exposes Tulip functionality to multi timeframe
-// * strategies, with custom candle size batching, where asyncIndicatorRunner 
-// * is not available 
+// * strategies, with custom candle size batching, where asyncIndicatorRunner
+// * is not available
 // ****************************************************************************
 
+let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
 
 const tulind = require('tulind');
-const util = require('../../core/util');
 const dirs = util.dirs();
-const log = require(dirs.core + 'log');
-let _ = require('../../core/lodash');
 
 var Indicator = function(config) {
     this.config = config;
@@ -76,7 +77,7 @@ Indicator.prototype.updateCandle = function (candle) {
 
 
 Indicator.prototype.update = function (candle) {
-    this.addCandle(candle) ;  
+    this.addCandle(candle) ;
 
     return new Promise((resolve, reject) => {
         //e.g. this.indName = 'sma'

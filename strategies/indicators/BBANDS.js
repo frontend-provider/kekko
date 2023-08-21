@@ -3,6 +3,11 @@
 // not exact results when compared to TA-Lib but GOOD ENOUGH;
 // Bollinger Bands implementation;
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
+
 var SMA = require('./SMA.js');
 var Indicator = function(BBSettings) {
     this.input='price';

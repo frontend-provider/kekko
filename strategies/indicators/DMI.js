@@ -4,6 +4,10 @@
 //    should maybe be like plus_di and minus_di?
 // that case just change dm_up to di_up on this code, also with _down;
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var ADX = require('./DX');
 
 var Indicator = function (period) {

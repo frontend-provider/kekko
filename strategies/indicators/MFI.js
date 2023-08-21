@@ -1,5 +1,9 @@
 //MFI indicator by Gab0 - 04/jan/2019;
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var SMA = require('./SMA');
 
 var Indicator = function(settings) {
@@ -42,7 +46,7 @@ Indicator.prototype.update = function(candle) {
         this.posHist.push(0.0);
         this.negHist.push(moneyFlow);
     }
-    else 
+    else
     {
         this.posHist.push(0.0);
         this.negHist.push(0.0);

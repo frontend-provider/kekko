@@ -3,6 +3,10 @@
 // INPUT SETTINGS:
 // optInTimePeriod: period for EMA
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var SMA = require('./SMA');
 
 var Indicator = function(settings) {

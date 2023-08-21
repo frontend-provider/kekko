@@ -1,5 +1,9 @@
 //TRIX indicator by Gab0 - 05/jan/2019;
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var EMA = require('./EMA');
 
 var Indicator = function(settings) {
@@ -49,7 +53,7 @@ Indicator.prototype.update = function(price) {
             {
                 this.thirdema.update(this.secondema.result);
             }
-            
+
         }
 
 

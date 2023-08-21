@@ -2,9 +2,12 @@
 // Ported by Gab0 march-2018
 // ref http://www.tadoc.org/indicator/STOCH.htm
 // state: badly coded, uncertain results;
+let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
 
 var SMA = require('./SMA');
-let _ = require('../../core/lodash');
 
 var Indicator = function(settings) {
     this.input = 'candle';

@@ -2,6 +2,10 @@
 
 // required indicators
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var CCI = require('./CCI.js');
 var EMA = require('./EMA.js');
 
@@ -14,7 +18,7 @@ var Indicator = function(config) {
   this.ema2 = new EMA(this.emaLength);
   this.ema3 = new EMA(this.emaLength);
 }
- 
+
 Indicator.prototype.update = function (candle) {
   this.cci.update(candle);
 
@@ -23,11 +27,10 @@ Indicator.prototype.update = function (candle) {
     let v1 = 0.1 * (this.cci.result / 4);
     this.ema1.update(v1);
     this.ema2.update(this.ema1.result);
-    this.ema3.update(this.ema2.result); 
+    this.ema3.update(this.ema2.result);
     this.result = (Math.exp(2 * this.ema3.result)-1) / (Math.exp(2 * this.ema3.result)+1);
-    
+
   }
 }
 
 module.exports = Indicator;
-

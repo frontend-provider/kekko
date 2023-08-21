@@ -2,6 +2,10 @@
 
 // required indicators
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var CCI = require('./CCI.js');
 var WMA = require('./WMA.js');
 
@@ -12,7 +16,7 @@ var Indicator = function(config) {
   this.cci = new CCI({ history: this.cciLength, constant: 0.015 });
   this.wma = new WMA(this.wmaLength);
 }
- 
+
 Indicator.prototype.update = function (candle) {
   this.cci.update(candle);
 
@@ -21,11 +25,10 @@ Indicator.prototype.update = function (candle) {
     let v1 = 0.1 * (this.cci.result / 4);
     this.wma.update(v1);
 
-    if (this.wma.result) { 
+    if (this.wma.result) {
         this.result = (Math.exp(2 * this.wma.result)-1) / (Math.exp(2 * this.wma.result)+1);
     }
   }
 }
 
 module.exports = Indicator;
-

@@ -2,6 +2,11 @@
 // formula http://www.fmlabs.com/reference/default.htm?url=ATR.htm
 // Gab0 - 01/24/2018
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
+
 var TRANGE = require('./TRANGE.js');
 var SMMA = require('./SMMA.js');
 

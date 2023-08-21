@@ -1,5 +1,9 @@
 // required indicators
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var SMMA = require('./SMMA.js');
 
 var Indicator = function (settings) {

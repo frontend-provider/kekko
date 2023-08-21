@@ -1,12 +1,13 @@
-//https://cs.stanford.edu/people/karpathy/convnetjs/
-var DEMA = require('./DEMA.js');
+let DEMA = require('./DEMA.js');
+let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 let convnetjs = require('../../core/convnet.js');
 let DQNAgent = require('../../core/rl.js');
 let deepqlearn = require('convnet/build/deepqlearn');
 var math = require('mathjs');
-
-var log = require('../../core/log.js');
-
 var Indicator = function(settings) {
   this.input = 'candle'
   this.result = false;
@@ -32,9 +33,7 @@ var Indicator = function(settings) {
     ];
 
     this.nn = new convnetjs.Net();
-//https://cs.stanford.edu/people/karpathy/convnetjs/demo/trainers.html
     this.nn.makeLayers( layers );
-
     if(settings.method == 'sgd')
     {
       this.trainer = new convnetjs.SGDTrainer(this.nn, {
@@ -93,7 +92,7 @@ Indicator.prototype.predictCandle = function() {
 }
 
 Indicator.prototype.update = function(candle) {
-  this.DEMA.update( (candle.high + candle.close + candle.low + candle.vwp) /4);
+  this.DEMA.update((candle.high + candle.close + candle.low + candle.vwp)/4);
   let demaFast = this.DEMA.result;
 
   if (1 === this.scale && 1 < candle.high && 0 === this.predictionCount) this.setNormalizeFactor(candle);

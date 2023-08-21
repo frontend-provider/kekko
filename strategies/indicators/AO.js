@@ -1,5 +1,10 @@
 //AO indicator by Gab0 - 04/jan/2019;
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
+
 var SMA = require('./SMA');
 
 var Indicator = function(settings) {

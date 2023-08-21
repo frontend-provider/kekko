@@ -2,6 +2,10 @@
 // compatible with Gekko Trading Bot. ported from tulip.
 // Gab0 - 2018
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var Indicator = function()
 {
 

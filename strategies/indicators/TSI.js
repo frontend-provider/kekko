@@ -1,5 +1,9 @@
 // required indicators
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var EMA = require('./EMA.js');
 
 var Indicator = function(settings) {
@@ -15,14 +19,14 @@ var Indicator = function(settings) {
 Indicator.prototype.update = function(candle) {
   var close = candle.close;
   var prevClose = this.lastClose;
-  
+
   if (prevClose === null) {
     // Set initial price to prevent invalid change calculation
     this.lastClose = close;
     // Do not calculate TSI on first close
     return;
   }
-  
+
   var momentum = close - prevClose;
 
   this.inner.update(momentum);

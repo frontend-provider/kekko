@@ -1,6 +1,10 @@
 // ROC indicator, ported by Gab0
 // 10-april-2018 v1.0final
 let _ = require('../../core/lodash');
+let util = require('../../core/util');
+let config = util.getConfig();
+let log = require('../../core/log.js');
+
 var Indicator = function(windowLength) {
     this.input = 'price';
     this.windowLength = windowLength;
