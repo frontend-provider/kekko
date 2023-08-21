@@ -32,7 +32,7 @@ var Indicator = function(settings) {
     ];
 
     this.nn = new convnetjs.Net();
-
+//https://cs.stanford.edu/people/karpathy/convnetjs/demo/trainers.html
     this.nn.makeLayers( layers );
 
     if(settings.method == 'sgd')
