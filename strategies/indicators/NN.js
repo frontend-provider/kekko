@@ -98,7 +98,7 @@ Indicator.prototype.update = function(candle) {
 
   if (1 === this.scale && 1 < candle.high && 0 === this.predictionCount) this.setNormalizeFactor(candle);
 
-  this.priceBuffer.push(smmaFast / this.scale );
+  this.priceBuffer.push(demaFast / this.scale );
   if (2 > this.priceBuffer.length) return;
 
    for (i=0;i<3;++i)
