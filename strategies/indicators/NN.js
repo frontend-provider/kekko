@@ -1,4 +1,4 @@
-
+//https://cs.stanford.edu/people/karpathy/convnetjs/
 var DEMA = require('./DEMA.js');
 let convnetjs = require('../../core/convnet.js');
 let DQNAgent = require('../../core/rl.js');
