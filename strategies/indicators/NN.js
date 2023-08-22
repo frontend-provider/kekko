@@ -23,24 +23,25 @@ var Indicator = function(settings) {
   this.prevAction = 'wait';
   this.prevPrice = 0;
   this.stoplossCounter = 0;
+  this.out_depth_nn=4;
   this.DEMA = new DEMA(5);
 
   var layers = [
-    {type:'input', out_sx: 7, out_sy:8, out_depth: 4},
+    {type:'input', out_sx: 7, out_sy:8, out_depth: this.out_depth_nn},
     {type:'svm', num_classes:20},
     {type:'conv', num_neurons: 10000,group_size: 2,activation:'sigmoid'},
     {type:'svm', num_classes:20},
     {type:'regression', num_neurons: 20}
   ];
   var layers2 = [
-    {type:'input', out_sx: 7, out_sy:8, out_depth: 4},
+    {type:'input', out_sx: 7, out_sy:8, out_depth: this.out_depth_nn},
     {type:'svm', num_classes:20},
     {type:'fc', num_neurons: 10000,group_size: 2,activation:'relu'},
     {type:'svm', num_classes:20},
     {type:'regression', num_neurons: 20}
   ];
   var layers3 = [
-    {type:'input', out_sx: 7, out_sy:8, out_depth: 4},
+    {type:'input', out_sx: 7, out_sy:8, out_depth: this.out_depth_nn},
     {type:'svm', num_classes:20},
     {type:'conv', num_neurons: 10000,group_size: 2,activation:'sigmoid'},
     {type:'svm', num_classes:20},
@@ -81,12 +82,13 @@ var Indicator = function(settings) {
 }
 
 Indicator.prototype.setNormalizeFactor = function(candle) {
+  this.candle = candle;
   this.scale = Math.pow(10,Math.trunc(candle.high).toString().length+2);
   log.debug('Set normalization factor to',this.scale);
 }
 
 Indicator.prototype.learn = function () {
-  for (let i = 0; i < this.priceBuffer.length - 1; i++) {
+  for (let i = 0; i < this.priceBuffer.length - this.out_depth; i++) {
     let data = [this.priceBuffer[i]];
     let current_price = [this.priceBuffer[i + 1]];
     let vol = new convnetjs.Vol(data);
@@ -107,41 +109,37 @@ Indicator.prototype.predictCandle = function() {
 }
 
 Indicator.prototype.update = function(candle) {
+  this.candle = candle;
   this.DEMA.update((candle.high + candle.close + candle.low + candle.vwp)/4);
   let demaFast = this.DEMA.result;
 
   if (1 === this.scale && 1 < candle.high && 0 === this.predictionCount) this.setNormalizeFactor(candle);
+  this.priceBuffer.push([
+    (candle.low / this.scale),(candle.high / this.scale),
+    (candle.close / this.scale),(candle.open / this.scale),
+    (candle.volume / 1000),(demaFast / this.scale)
+  ]);
 
-  this.priceBuffer.push(demaFast / this.scale );
   if (2 > this.priceBuffer.length) return;
-
   for (i=0;i<3;++i)this.learn();
   while (this.settings.price_buffer_len < this.priceBuffer.length) this.priceBuffer.shift();
 }
 
 Indicator.prototype.check = function(candle){
-
+  this.candle = candle;
   if(this.predictionCount > this.settings.min_predictions)
   {
     let prediction = this.predictCandle() * this.scale;
     let currentPrice = candle.close;
     let meanp = math.mean(prediction, currentPrice);
     let meanAlpha = (meanp - currentPrice) / currentPrice * 100;
-
     let signalSell = candle.close > this.prevPrice;
-
     let signal = meanp < currentPrice;
     if ('buy' !== this.prevAction && signal === false  && meanAlpha> this.settings.threshold_buy )
-    {
-      log.debug('|NN|NO-BUY|',meanAlpha);
-      //return 'long';
-    }
+    {log.debug('|NN|NO-BUY|',meanAlpha);}
     else if
     ('sell' !== this.prevAction && signal === true && meanAlpha < this.settings.threshold_sell && signalSell)
-    {
-      log.debug('|NN|NO-SELL|',meanAlpha);
-      //return 'short';
-    }
+    {log.debug('|NN|NO-SELL|',meanAlpha);}
   }
 }
 
