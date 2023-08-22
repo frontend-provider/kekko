@@ -21,29 +21,31 @@ var method = {
   prevPrice : 0,
   stoplossCounter : 0,
   hodl_threshold : 1,
-
-  // init the strategy
+  
   init : function() {
 
     this.name = 'NN';
+    this.candle = candle;
     this.requiredHistory = 60;
+    this.out_depth_nn=4;
+
     this.addTulipIndicator('demaFast', 'dema', {optInTimePeriod: this.settings.DEMA});
     var layers = [
-      {type:'input', out_sx: 7, out_sy:8, out_depth: 4},
+      {type:'input', out_sx: 7, out_sy:8, out_depth: this.out_depth_nn},
       {type:'svm', num_classes:20},
       {type:'conv', num_neurons: 10000,group_size: 2,activation:'sigmoid'},
       {type:'svm', num_classes:20},
       {type:'regression', num_neurons: 20}
     ];
     var layers2 = [
-      {type:'input', out_sx: 7, out_sy:8, out_depth: 4},
+      {type:'input', out_sx: 7, out_sy:8, out_depth: this.out_depth_nn},
       {type:'svm', num_classes:20},
       {type:'fc', num_neurons: 10000,group_size: 2,activation:'relu'},
       {type:'svm', num_classes:20},
       {type:'regression', num_neurons: 20}
     ];
     var layers3 = [
-      {type:'input', out_sx: 7, out_sy:8, out_depth: 4},
+      {type:'input', out_sx: 7, out_sy:8, out_depth: this.out_depth_nn},
       {type:'svm', num_classes:20},
       {type:'conv', num_neurons: 10000,group_size: 2,activation:'sigmoid'},
       {type:'svm', num_classes:20},
@@ -58,12 +60,11 @@ var method = {
       batch_size: this.batchsize,
       l2_decay: this.settings.decay
     });
-
     this.hodl_threshold = this.settings.hodl_threshold || 1;
   },
 
   learn: function() {
-    for (let i = 0; i < this.priceBuffer.length - 4; i++) {
+    for (let i = 0; i < this.priceBuffer.length - this.out_depth_nn; i++) {
       let data = this.priceBuffer[i];
       let current_price = this.priceBuffer[i + 1];
       let vol = new convnetjs.Vol(data);
@@ -75,8 +76,8 @@ var method = {
     }
   },
 
-
   setNormalizeFactor : function(candle) {
+    this.candle = candle;
     this.scale = Math.pow(10,Math.trunc(candle.high).toString().length+2);
     log.debug('Set normalization factor to',this.scale);
   },
@@ -84,20 +85,22 @@ var method = {
   update : function(candle)
   {
     let demaFast = this.tulipIndicators.demaFast.result.result;
-
+    this.candle = candle;
     if (1 === this.scale && 1 < candle.high && 0 === this.predictionCount) this.setNormalizeFactor(candle);
+    this.priceBuffer.push([
+      (candle.low / this.scale),(candle.high / this.scale),
+      (candle.close / this.scale),(candle.open / this.scale),
+      (candle.volume / 1000),(demaFast / this.scale)
+    ]);
 
-    this.priceBuffer.push(demaFast / this.scale );
     if (2 > this.priceBuffer.length) return;
-    for (tweakme=0;tweakme<5;++tweakme)
-    this.learn();
+    for (tweakme=0;tweakme<5;++tweakme)this.learn();
 
     while (this.settings.price_buffer_len < this.priceBuffer.length) this.priceBuffer.shift();
   },
 
   onTrade: function(event) {
-    if ('buy' === event.action)
-    {this.indicators.stoploss.long(event.price);}
+    if ('buy' === event.action){this.indicators.stoploss.long(event.price);}
     this.prevAction = event.action;this.prevPrice = event.price;
   },
 
@@ -108,30 +111,22 @@ var method = {
   },
 
   check : function(candle) {
+    this.candle = candle;
     if(this.predictionCount > this.settings.min_predictions)
     {
     if ('buy' === this.prevAction && this.settings.stoploss_enabled && 'stoploss' === this.indicators.stoploss.action)
-      {
-        this.stoplossCounter++;
-        log.debug('>>>>>>>>>> STOPLOSS triggered <<<<<<<<<<');
-        //this.advice('short');
-      }
+      {this.stoplossCounter++;log.debug('>>>>>>>>>> STOPLOSS triggered <<<<<<<<<<');}
       let prediction = this.predictCandle() * this.scale;
-      let currentPrice = candle.close;
+      let currentPrice = candle.open;
       let meanp = math.mean(prediction, currentPrice);
       let meanAlpha = (meanp - currentPrice) / currentPrice * 100;
-      let signalSell = candle.close > this.prevPrice || candle.close < (this.prevPrice*this.hodl_threshold);
+      let signalSell = candle.open > this.prevPrice || candle.open < (this.prevPrice*this.hodl_threshold);
       let signal = meanp < currentPrice;
       if ('buy' !== this.prevAction && signal === false  && meanAlpha> this.settings.threshold_buy )
-      {
-        log.debug('|NN|NO-BUY|',meanAlpha);
-      }
-
+      {log.debug('|NN|NO-BUY|',meanAlpha);}
       else if
       ('sell' !== this.prevAction && signal === true && meanAlpha < this.settings.threshold_sell && signalSell)
-      {
-        log.debug('|NN|NO-SELL|',meanAlpha);
-      }
+      {log.debug('|NN|NO-SELL|',meanAlpha);}
 
     }
   },
