@@ -53,7 +53,7 @@ var Indicator = function(settings) {
     if(settings.method == 'sgd')
     {
       this.trainer = new convnetjs.SGDTrainer(this.nn, {
-        learning_rate: settings.learning_rate,
+        learning_rate: 0.01,
         momentum: 0.9,
         batch_size: 8,
         l2_decay: 0.001
