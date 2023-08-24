@@ -38,7 +38,7 @@ threshold_sell:-1.0,
 //https://cs.stanford.edu/people/karpathy/convnetjs/demo/trainers.html
 method:'sgd',
 learning_rate:0.01,
-momentum:0.1,
+momentum:0.9,
 l1_decay:0.001,
 decay:0.001,
 stoploss_enabled:false,
