@@ -54,9 +54,9 @@ var Indicator = function(settings) {
     {
       this.trainer = new convnetjs.SGDTrainer(this.nn, {
         learning_rate: settings.learning_rate,
-        momentum: settings.momentum,
-        batch_size: this.batchsize,
-        l2_decay: settings.decay
+        momentum: 0.9,
+        batch_size: 8,
+        l2_decay: 0.001
       });
     }
     else if(settings.method == 'adadelta')
