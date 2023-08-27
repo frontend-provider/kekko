@@ -94,7 +94,7 @@ Optional parameters:
 
 ```
 
-#### Run
+#### Run BackTest-Tool
 ```
 perl ./backtest.pl
 ```
@@ -104,6 +104,27 @@ Tulip Node is the official node.js wrapper for Tulip Indicators. It provides 100
 ```
 npm install tulind --build-from-source
 ```
+#### [Bitcoin-Chart-cli](https://github.com/madnight/bitcoin-chart-cli)
+##### installation:
+```
+npm install bitcoin-chart-cli -g
+```
+#### Usage
+```
+# run default
+bitcoin-chart-cli
+
+# run with options
+bitcoin-chart-cli --coin ETH -d 360 -w 80 -h 20
+
+# run with your own api key for higher requests limits
+export CRYPTOCOMPARE_API_KEY=your_api_key
+bitcoin-chart-cli --coin XRP -ti RSI SMA BB EMA MACD
+```
+
+
+
+
 
 ---
 #### Resources:
