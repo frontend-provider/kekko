@@ -23,7 +23,7 @@
   "fs": "^0.0.1-security",
   "fs-extra": "^11.1.0",
   "gekko-broker": "file:exchange",
-  "humanize-duration": "^3.20.1",
+  "humanize-duration": "^3.29.0",
   "lodash": "^3.10.1",
   "lodash-migrate": "^0.3.16",
   "mathjs": "^9.4.4",
