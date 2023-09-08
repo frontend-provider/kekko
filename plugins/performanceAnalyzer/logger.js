@@ -1,13 +1,19 @@
 // log trade performance results
 
-const _ = require('../../core/lodash');
+let _ = require('lodash');
+require('lodash-migrate');
+
 const moment = require('moment');
 const humanizeDuration = require('humanize-duration');
 
+var log = require('../../core/log.js');
 const util = require('../../core/util.js');
+
+var config = util.getConfig();
+
 const dirs = util.dirs();
 const mode = util.gekkoMode();
-const log = require(dirs.core + 'log');
+
 
 const Logger = function(watchConfig) {
   this.currency = watchConfig.currency;

@@ -3,12 +3,13 @@ require('lodash-migrate');
 
 const moment = require('moment');
 const statslite = require('stats-lite');
-const util = require('../../core/util');
+var util = require('../../core/util.js');
 const dirs = util.dirs();
 
-const log = require(dirs.core + 'log')
 const ENV = util.gekkoEnv();
-const config = util.getConfig();
+var log = require('../../core/log.js');
+var config = util.getConfig();
+
 const perfConfig = config.performanceAnalyzer;
 const watchConfig = config.watch;
 const Logger = require('./logger');
