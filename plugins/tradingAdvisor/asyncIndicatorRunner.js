@@ -1,14 +1,13 @@
-let _ = require('../../core/lodash');
+let _ = require('lodash');
 require('lodash-migrate');
-
-const fs = require('fs-extra');
+let fs = require('fs-extra');
 const util = require('../../core/util');
-const config = util.getConfig();
+var config = util.getConfig();
 const dirs = util.dirs();
-const log = require(dirs.core + 'log');
+const talib=require('../../core/talib');
+const tulind=require('../../core/tulind');
+const log = require('../../core/log');
 
-const talib = require(dirs.core + 'talib');
-const tulind = require(dirs.core + 'tulind');
 
 const allowedTalibIndicators = _.keys(talib);
 const allowedTulipIndicators = _.keys(tulind);
@@ -17,14 +16,7 @@ const AsyncIndicatorRunner = function() {
   this.talibIndicators = {};
   this.tulipIndicators = {};
 
-  this.candleProps = {
-    open: [],
-    high: [],
-    low: [],
-    close: [],
-    volume: []
-  };
-
+  this.candleProps = {open: [],high: [],low: [],close: [],volume: []};
   this.candlePropsCacheSize = 10000;
 
   this.inflight = false;

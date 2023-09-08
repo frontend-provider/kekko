@@ -1,10 +1,11 @@
 let _ = require('lodash');
 require('lodash-migrate');
-const fs = require('fs-extra');
+
+let fs = require('fs-extra');
 const util = require('../../core/util');
-const config = util.getConfig();
+var config = util.getConfig();
 const dirs = util.dirs();
-const log = require(dirs.core + 'log');
+const log = require('../../core/log');
 
 const ENV = util.gekkoEnv();
 const mode = util.gekkoMode();
@@ -91,53 +92,40 @@ util.makeEventEmitter(Base);
 Base.prototype.tick = function(candle, done) {
   this.age++;
 
-  const afterAsync = () => {
-    this.calculateSyncIndicators(candle, done);
-  }
+  const afterAsync = () => {this.calculateSyncIndicators(candle, done);}
 
   if(this.asyncTick) {
     this.asyncIndicatorRunner.processCandle(candle, () => {
-
-      if(!this.talibIndicators) {
-        this.talibIndicators = this.asyncIndicatorRunner.talibIndicators;
-        this.tulipIndicators = this.asyncIndicatorRunner.tulipIndicators;
-      }
-
+      this.talibIndicators = this.asyncIndicatorRunner.talibIndicators;
+      this.tulipIndicators = this.asyncIndicatorRunner.tulipIndicators;
       afterAsync();
     });
-  } else {
-    afterAsync();
-  }
+  } else {afterAsync();}
 }
 
 Base.prototype.isBusy = function() {
-  if(!this.asyncTick)
-    return false;
-
-  return this.asyncIndicatorRunner.inflight;
-}
+  if(!this.asyncTick)return false;return this.asyncIndicatorRunner.inflight;}
 
 Base.prototype.calculateSyncIndicators = function(candle, done) {
-  // update all indicators
-  var price = candle[this.priceValue];
-  _.each(this.indicators, function(i) {
-    if(i.input === 'price')
-      i.update(price);
-    if(i.input === 'candle')
-      i.update(candle);
-  },this);
+// update all indicators
+var price = candle[this.priceValue];
+_.each(this.indicators, function(i) {
+  if(i.input === 'price')
+  i.update(price);
+  if(i.input === 'candle')
+  i.update(candle);
+},
+this);
 
-  this.propogateTick(candle);
-
-  return done();
+this.propogateTick(candle);
+return done();
 }
 
 Base.prototype.propogateTick = function(candle) {
   this.candle = candle;
   this.update(candle);
-
   this.processedTicks++;
-  var isAllowedToCheck = this.requiredHistory <= this.age;
+  isAllowedToCheck = this.requiredHistory <= this.age;
 
   if(!this.completedWarmup) {
 
