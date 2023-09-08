@@ -4,13 +4,14 @@
 */
 let _ = require('lodash');
 require('lodash-migrate');
-const util = require('../../core/util');
+var util = require('../../core/util.js');
 const ENV = util.gekkoEnv();
-const config = util.getConfig();
+var log = require('../../core/log.js');
+var config = util.getConfig();
+
 const calcConfig = config.paperTrader;
 const watchConfig = config.watch;
 const dirs = util.dirs();
-const log = require(dirs.core + 'log');
 const TrailingStop = require(dirs.broker + 'triggers/trailingStop');
 const PaperTrader = function() {
   _.bindAll(this);
@@ -41,7 +42,6 @@ const PaperTrader = function() {
   this.propogatedTriggers = 0;
 
   this.warmupCompleted = false;
-
   this.warmupCandle;
 }
 
