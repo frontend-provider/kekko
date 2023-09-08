@@ -2,12 +2,14 @@
 
 
 */
-let _ = require('../../core./lodash');
+let _ = require('../../core/lodash');
 require('lodash-migrate');
+
 const async = require('async');
 let fs = require('fs-extra');
 const util = require('../../core/util.js');
-const config = util.getConfig();
+var config = util.getConfig();
+
 const dirs = util.dirs();
 var sqlite3 = require('sqlite3');
 // todo: rewrite with generators or async/await..

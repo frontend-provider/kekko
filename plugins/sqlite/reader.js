@@ -4,8 +4,11 @@
 */
 let _ = require('lodash');
 require('lodash-migrate');
+
 var util = require('../../core/util.js');
 var config = util.getConfig();
+
+
 var log = require(util.dirs().core + 'log');
 
 var sqlite = require('./handle');
