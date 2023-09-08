@@ -1,6 +1,6 @@
-const log = require('../core/log');
+var log = require('../core/log');
 let _ = require('../core/lodash');
-require('lodash-migrate');
+
 const subscriptions = require('../subscriptions');
 const config = require('../core/util').getConfig().eventLogger;
 
