@@ -1,6 +1,7 @@
 # ccxt-ohlcv
+##### (open,high,low,close,volume)
+fetches OHLCV values from most crypto exchanges using ccxt library.
 
-fetches OHLC values from most crypto exchanges using ccxt library.
 Saves candles to a sqlite database.
 by default resumes from last candle fetched.
 
