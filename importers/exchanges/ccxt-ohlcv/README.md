@@ -1,6 +1,6 @@
 # ccxt-ohlcv
 ##### (open,high,low,close,volume)
-fetches OHLCV values from most crypto exchanges using ccxt library.
+fetches OHLCV values from most crypto exchanges using [ccxt](https://pypi.org/project/ccxt/) module.
 
 Saves candles to a sqlite database.
 by default resumes from last candle fetched.
