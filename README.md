@@ -39,7 +39,7 @@ cd gekko-m4
 #### Install:
 -Engine
 ```
-npm i 
+npm i && npm audit fix
 ```
 Thanks developers.
 
