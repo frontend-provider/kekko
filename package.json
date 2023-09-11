@@ -46,7 +46,7 @@
   "stats-lite": "^2.2.0",
   "tiny-promisify": "^0.1.1",
   "tulind": "^0.8.20",
-  "utf-8-validate": "^5.0.5",
+  "utf-8-validate": "^6.0.3",
   "util": "^0.12.5",
   "uuid": "^9.0.0",
   "websocket": "^1.0.34",
