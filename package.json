@@ -14,7 +14,7 @@
   "@neurosity/reinforcejs": "^1.0.0",
   "async": "^3.2.4",
   "co-fs": "^1.2.0",
-  "commander": "^2.13.0",
+  "commander": "^11.0.0",
   "convnet": "^1.0.0",
   "crypto-js": "^4.1.1",
   "events": "^3.3.0",
