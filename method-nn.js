@@ -19,7 +19,7 @@ var config = {};
 //General Settings
 config.debug =true;
 
-config.watch = {exchange: '',currency:'BTC',asset:'LTC',key:'',secret:'',ticker:10};
+config.watch = {exchange: '',currency:'BTC',asset:'LTC',key:'',secret:''};
 //Trading Advisor
 config.tradingAdvisor = {enabled:true,candleSize:1,historySize:10};
 config.tradingAdvisor.method= 'NEURALNET';
