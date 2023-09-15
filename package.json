@@ -44,7 +44,7 @@
   "sqlite": "^4.2.1",
   "sqlite3": "^5.1.6",
   "stats-lite": "^2.2.0",
-  "tiny-promisify": "^0.1.1",
+  "tiny-promisify": "^1.0.0",
   "tulind": "^0.8.20",
   "utf-8-validate": "^6.0.3",
   "util": "^0.12.5",
