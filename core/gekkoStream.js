@@ -3,8 +3,7 @@ Small writable stream wrapper
 */
 
 var Writable = require('stream').Writable;
-let _ = require('./lodash');
-require('lodash-migrate');
+const _ = require('./lodash');
 
 var async = require('async');
 var moment = require('moment');
