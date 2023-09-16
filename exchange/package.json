@@ -52,6 +52,7 @@
     "concat-map": "^0.0.1",
     "console-control-strings": "^1.1.0",
     "copy": "^0.3.2",
+    "core-js":"^3.32.2",
     "core-util-is": "^1.0.2",
     "crc-32": "^1.2.2",
     "dashdash": "^1.14.1",
