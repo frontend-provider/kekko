@@ -1,5 +1,4 @@
-let _ = require('../../lodash');
-require('lodash-migrate');
+const _ = require('../../lodash');
 
 var ForkTask = require('relieve').tasks.ForkTask;
 const fork = require('child_process').fork;

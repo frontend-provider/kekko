@@ -1,5 +1,4 @@
-let _ = require('../../lodash');
-require('lodash-migrate');
+const _ = require('../../lodash');
 
 var util = require(__dirname + '/../../util');
 var dirs = util.dirs();
