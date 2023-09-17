@@ -1,5 +1,6 @@
 let _ = require('lodash');
 require('lodash-migrate');
+
 var moment = require('moment');
 var utc = moment.utc;
 var util = require(__dirname + '/../util');
@@ -21,7 +22,7 @@ var Fetcher = function(config) {
 // trade information from an exchange.
   this.exchangeTrader = new DataProvider(config.watch);
   this.exchange = exchangeChecker.settings(config.watch);
-  
+
   var requiredHistory = config.tradingAdvisor.candleSize * config.tradingAdvisor.historySize;
 // If the trading adviser is enabled we might need a very specific fetch since
 // to line up [local db, trading method, and fetching]

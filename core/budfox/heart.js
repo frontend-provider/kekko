@@ -1,22 +1,23 @@
 // The heart schedules and emit ticks every 20 seconds.
 
-var util = require('../util');
-var log = require('../log');
+
 
 let _ = require('lodash');
 require('lodash-migrate');
+var util = require('../util');
+var log = require('../log');
+
 var moment = require('moment');
 
 if (util.getConfig().watch.tickrate)
   var TICKRATE = util.getConfig().watch.tickrate;
-else if(util.getConfig().watch.exchange != '')
+else if(util.getConfig().watch.exchange != 'exmo')
   var TICKRATE = 2;
 else
   var TICKRATE = 20;
 
 var Heart = function() {
   this.lastTick = false;
-
   _.bindAll(this);
 }
 
