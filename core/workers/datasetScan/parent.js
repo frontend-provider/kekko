@@ -1,4 +1,5 @@
-var _ = require('../../lodash');
+const _ = require('../../lodash');
+
 var moment = require('moment');
 var async = require('async');
 var os = require('os');
