@@ -1,7 +1,6 @@
-let _ = require('../lodash');
-require('lodash-migrate');
+const _ = require('../lodash');
 
-var fs = require('fs-extra');
+let fs = require('fs-extra');
 var moment = require('moment');
 var util = require('../util');
 var config = util.getConfig();

@@ -1,8 +1,7 @@
-var batchSize = 10000;
-let _ = require('../lodash');
-require('lodash-migrate');
+const _ = require('../lodash');
 
-var fs = require('fs-extra');
+var batchSize = 10000;
+let fs = require('fs-extra');
 var moment = require('moment');
 var util = require('../../core/util');
 var config = util.getConfig();
@@ -30,7 +29,7 @@ if(!to.isValid())
 
 let iterator = {
   from: from.clone(),
-  to: from.clone().add(batchSize, 'm').subtract(1, 's')
+  to: from.clone().add(batchSize, 's').subtract(1, 's')
 }
 
 var DONE = false;
@@ -65,8 +64,8 @@ const getBatch = () => {
 
 const shiftIterator = () => {
   iterator = {
-    from: iterator.from.clone().add(batchSize, 'm'),
-    to: iterator.from.clone().add(batchSize * 2, 'm').subtract(1, 's')
+    from: iterator.from.clone().add(batchSize, 's'),
+    to: iterator.from.clone().add(batchSize * 2, 's').subtract(1, 's')
   }
 }
 
@@ -96,10 +95,13 @@ const handleCandles = (err, data) => {
 const handleBatchedCandles = candle => {
   result.push(candle);
 }
+
 /*
+
 The MIT License (MIT)
 Copyright (c) 2014-2017 Mike van Rossum mike@mvr.me
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 */

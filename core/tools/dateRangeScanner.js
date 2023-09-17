@@ -1,6 +1,9 @@
+
+const _ = require('../lodash');
 var BATCH_SIZE = 60; // minutes
 var MISSING_CANDLES_ALLOWED = 3; // minutes, per batch
-var _ = require('../lodash');
+
+
 var moment = require('moment');
 var async = require('async');
 var util = require('../util');
