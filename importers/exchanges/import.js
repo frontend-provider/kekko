@@ -1,4 +1,4 @@
-let _ = require('../../core/lodash')
+const _ = require('../../core/lodash')
 var moment = require('moment');
 var util = require('../../core/util.js');
 var log = require('../../core/log');
