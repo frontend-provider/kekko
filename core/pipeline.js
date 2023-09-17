@@ -11,8 +11,7 @@
 */
 var util = require('./util');
 var dirs = util.dirs();
-let _ = require('./lodash');
-require('lodash-migrate');
+const _ = require('./lodash');
 
 var async = require('async');
 var log = require(dirs.core + 'log');
