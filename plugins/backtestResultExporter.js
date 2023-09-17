@@ -5,7 +5,7 @@ const log = require('../core/log');
 let _ = require('lodash');
 require('lodash-migrate');
 
-const util = require('../core/util.js');
+const util = require('../core/util');
 const env = util.gekkoEnv();
 const config = util.getConfig();
 const moment = require('moment');

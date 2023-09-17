@@ -3,7 +3,7 @@ moment = require('moment');
 let _ = require('lodash');
 require('lodash-migrate');
 
-util = require('../core/util.js');
+util = require('../core/util');
 config = util.getConfig();
 adviceLoggerConfig = config.adviceLogger;
 

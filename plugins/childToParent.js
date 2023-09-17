@@ -2,12 +2,11 @@
 // them and sends it to the parent process.
 
 var log = require('../core/log');
-let _ = require('lodash');
-require('lodash-migrate');
+const _ = require('../core/lodash');
 
 const subscriptions = require('../subscriptions');
 
-var util = require('../core/util.js');
+var util = require('../core/util');
 const config = util.getConfig();
 
 const ChildToParent = function() {
