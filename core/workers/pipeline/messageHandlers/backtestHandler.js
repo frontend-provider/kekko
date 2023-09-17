@@ -1,8 +1,6 @@
-let _ = require('../../../lodash');
-require('lodash-migrate');
+const _ = require('lodash');
 
 // Relay the backtest message it when it comes in.
-
 module.exports = done => {
   let backtest;
 

@@ -1,8 +1,4 @@
-// pass back all messages as is
-// (except for errors and logs)
-
-let _ = require('../../../lodash');
-require('lodash-migrate');
+const _ = require('lodash');
 
 module.exports = cb => {
 
