@@ -1,6 +1,4 @@
-let _ = require('../../lodash');
-require('lodash-migrate');
-
+const _ = require('../../lodash');
 var start = (config, candleSize, daterange) => {
 var util = require(__dirname + '/../../util');
 
