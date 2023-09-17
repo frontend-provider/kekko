@@ -1,6 +1,7 @@
 var semver = require("semver");
-let _ = require('./lodash');
-require('lodash-migrate');
+const _ = require('./lodash');
+
+
 
 // validate that talib is installed, if not we'll throw an exception which will
 // prevent further loading or out outside this module

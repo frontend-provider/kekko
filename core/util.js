@@ -1,11 +1,10 @@
 /*
 
 
-
 */
 
 var moment = require('moment');
-const _ = require('./lodash');
+const _ = require('lodash');
 
 var fs = require('fs-extra');
 var file = require('file-system');
@@ -26,11 +25,9 @@ var util = {
     if(_config)
       return _config;
 
-    if(!program.config)
-        util.die('Please specify a config file.', true);
+    if(!program.config)util.die('Please specify a config file.', true);
 
-    if(!fs.existsSync(util.dirs().gekko + program.config))
-      util.die('Cannot find the specified config file.', true);
+    if(!fs.existsSync(util.dirs().gekko + program.config))util.die('Cannot find the specified config file.', true);
 
     _config = require(util.dirs().gekko + program.config);
     return _config;

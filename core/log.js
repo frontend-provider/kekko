@@ -4,8 +4,10 @@
 */
 var moment = require('moment');
 var fmt = require('util').format;
-let _ = require('lodash');
+
+const _ = require('lodash');
 require('lodash-migrate');
+
 var util = require('./util');
 var config = util.getConfig();
 var debug = config.debug;
@@ -63,7 +65,7 @@ Log.prototype = {
 
 if(debug)
   Log.prototype.debug = function() {
-    this._write('info', arguments, 'DEBUG');  
+    this._write('info', arguments, 'DEBUG');
   }
 else
   Log.prototype.debug = _.noop;

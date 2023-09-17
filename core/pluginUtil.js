@@ -2,11 +2,11 @@
 
 */
 
-let _ = require('./lodash');
-require('lodash-migrate');
+const _ = require('./lodash');
+
 var async = require('async');
 var Emitter = require('./emitter');
-var util = require(__dirname + '/util');
+var util = require('./util');
 var log = require(util.dirs().core + 'log');
 var config = util.getConfig();
 var pluginDir = util.dirs().plugins;
@@ -22,7 +22,6 @@ var pluginHelper = {
         }
         catch(e) {
           log.error('ERROR LOADING DEPENDENCY', dep.module);
-
           if(!e.message) {
             log.error(e);
             util.die();

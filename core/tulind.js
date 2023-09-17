@@ -1,6 +1,6 @@
 var semver = require('semver');
-let _ = require('./lodash');
-require('lodash-migrate');
+const _ = require('./lodash');
+
 
 var tulind= require ('tulind');
 var tulindError = 'Gekko was unable to configure Tulip Indicators:\n\t';

@@ -1,5 +1,4 @@
-let _ = require('./lodash');
-require('lodash-migrate');
+const _ = require('./lodash');
 
 var prompt = require('prompt-lite');
 var moment = require('moment');

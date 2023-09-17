@@ -2,14 +2,15 @@
 
 
 */
-let _ = require('lodash');
+const _ = require('lodash');
 require('lodash-migrate');
+
 var util = require('./util');
 
-var CandleBatcher = function(candleSize) {
+var CandleBatcher =
+function(candleSize) {
   if(!_.isNumber(candleSize))
     throw new Error('candleSize is not a number');
-  
   this.candleSize = candleSize;
   this.smallCandles = [];
   this.calculatedCandles = [];
