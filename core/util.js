@@ -114,8 +114,7 @@ var util = {
       importers: ROOT + 'importers/exchanges/',
       tools: ROOT + 'core/tools/',
       workers: ROOT + 'core/workers/',
-      web: ROOT + 'web/',
-      config: ROOT + 'config/',
+      ui: ROOT + 'ui/',
       broker: ROOT + 'exchange/'
     }
   },
