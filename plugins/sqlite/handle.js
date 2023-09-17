@@ -3,8 +3,7 @@
 
 */
 
-let _ = require('../../core/lodash');
-require('lodash-migrate');
+const _ = require('../../core/lodash');
 
 let fs = require('fs-extra');
 var util = require('../../core/util.js');
