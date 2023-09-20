@@ -24,7 +24,7 @@
   "fs-extra": "^11.1.0",
   "gekko-broker": "file:exchange",
   "humanize-duration": "^3.20.1",
-  "koa": "^1.7.0",
+  "koa": "^2.14.2",
   "koa-bodyparser": "^2.2.0",
   "koa-cors": "0.0.16",
   "koa-logger": "^1.3.0",
