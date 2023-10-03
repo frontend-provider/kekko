@@ -33,7 +33,7 @@ nvm use 20
 
 clone project:
 ```
-git clone https://github.com/universalbit-dev/gekko-m4.git
+git clone https://github.com/tomastudja/kekko.git
 cd gekko-m4
 ```
 #### Install:
