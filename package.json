@@ -17,7 +17,7 @@
   "co-fs": "^1.2.0",
   "commander": "^11.0.0",
   "convnet": "^1.0.0",
-  "core-js":"^3.32.2",
+  "core-js":"^3.33.0",
   "crypto-js": "^4.1.1",
   "file-system": "^2.2.2",
   "fs": "^0.0.1-security",
